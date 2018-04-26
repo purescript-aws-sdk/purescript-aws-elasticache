@@ -73,19 +73,19 @@ deleteCacheCluster (ElastiCache.Service serviceImpl) = AWS.request serviceImpl m
 
 
 -- | <p>Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
-deleteCacheParameterGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteCacheParameterGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteCacheParameterGroup (ElastiCache.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteCacheParameterGroup"
 
 
 -- | <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache security group if it is associated with any clusters.</p> </note>
-deleteCacheSecurityGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteCacheSecurityGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteCacheSecurityGroup (ElastiCache.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteCacheSecurityGroup"
 
 
 -- | <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet group if it is associated with any clusters.</p> </note>
-deleteCacheSubnetGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteCacheSubnetGroup :: forall eff. ElastiCache.Service -> ElastiCacheTypes.DeleteCacheSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteCacheSubnetGroup (ElastiCache.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteCacheSubnetGroup"
 

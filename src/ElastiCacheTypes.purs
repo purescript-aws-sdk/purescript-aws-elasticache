@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -61,7 +60,7 @@ newAddTagsToResourceMessage' _ResourceName _Tags customize = (AddTagsToResourceM
 
 -- | <p>Represents the allowed node types you can use to modify your cluster or replication group.</p>
 newtype AllowedNodeTypeModificationsMessage = AllowedNodeTypeModificationsMessage 
-  { "ScaleUpModifications" :: NullOrUndefined (NodeTypeList)
+  { "ScaleUpModifications" :: Maybe (NodeTypeList)
   }
 derive instance newtypeAllowedNodeTypeModificationsMessage :: Newtype AllowedNodeTypeModificationsMessage _
 derive instance repGenericAllowedNodeTypeModificationsMessage :: Generic AllowedNodeTypeModificationsMessage _
@@ -71,12 +70,12 @@ instance encodeAllowedNodeTypeModificationsMessage :: Encode AllowedNodeTypeModi
 
 -- | Constructs AllowedNodeTypeModificationsMessage from required parameters
 newAllowedNodeTypeModificationsMessage :: AllowedNodeTypeModificationsMessage
-newAllowedNodeTypeModificationsMessage  = AllowedNodeTypeModificationsMessage { "ScaleUpModifications": (NullOrUndefined Nothing) }
+newAllowedNodeTypeModificationsMessage  = AllowedNodeTypeModificationsMessage { "ScaleUpModifications": Nothing }
 
 -- | Constructs AllowedNodeTypeModificationsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAllowedNodeTypeModificationsMessage' :: ( { "ScaleUpModifications" :: NullOrUndefined (NodeTypeList) } -> {"ScaleUpModifications" :: NullOrUndefined (NodeTypeList) } ) -> AllowedNodeTypeModificationsMessage
-newAllowedNodeTypeModificationsMessage'  customize = (AllowedNodeTypeModificationsMessage <<< customize) { "ScaleUpModifications": (NullOrUndefined Nothing) }
+newAllowedNodeTypeModificationsMessage' :: ( { "ScaleUpModifications" :: Maybe (NodeTypeList) } -> {"ScaleUpModifications" :: Maybe (NodeTypeList) } ) -> AllowedNodeTypeModificationsMessage
+newAllowedNodeTypeModificationsMessage'  customize = (AllowedNodeTypeModificationsMessage <<< customize) { "ScaleUpModifications": Nothing }
 
 
 
@@ -124,7 +123,7 @@ newAuthorizeCacheSecurityGroupIngressMessage' _CacheSecurityGroupName _EC2Securi
 
 
 newtype AuthorizeCacheSecurityGroupIngressResult = AuthorizeCacheSecurityGroupIngressResult 
-  { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup)
+  { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup)
   }
 derive instance newtypeAuthorizeCacheSecurityGroupIngressResult :: Newtype AuthorizeCacheSecurityGroupIngressResult _
 derive instance repGenericAuthorizeCacheSecurityGroupIngressResult :: Generic AuthorizeCacheSecurityGroupIngressResult _
@@ -134,12 +133,12 @@ instance encodeAuthorizeCacheSecurityGroupIngressResult :: Encode AuthorizeCache
 
 -- | Constructs AuthorizeCacheSecurityGroupIngressResult from required parameters
 newAuthorizeCacheSecurityGroupIngressResult :: AuthorizeCacheSecurityGroupIngressResult
-newAuthorizeCacheSecurityGroupIngressResult  = AuthorizeCacheSecurityGroupIngressResult { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newAuthorizeCacheSecurityGroupIngressResult  = AuthorizeCacheSecurityGroupIngressResult { "CacheSecurityGroup": Nothing }
 
 -- | Constructs AuthorizeCacheSecurityGroupIngressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizeCacheSecurityGroupIngressResult' :: ( { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } ) -> AuthorizeCacheSecurityGroupIngressResult
-newAuthorizeCacheSecurityGroupIngressResult'  customize = (AuthorizeCacheSecurityGroupIngressResult <<< customize) { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newAuthorizeCacheSecurityGroupIngressResult' :: ( { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } ) -> AuthorizeCacheSecurityGroupIngressResult
+newAuthorizeCacheSecurityGroupIngressResult'  customize = (AuthorizeCacheSecurityGroupIngressResult <<< customize) { "CacheSecurityGroup": Nothing }
 
 
 
@@ -154,7 +153,7 @@ instance encodeAutomaticFailoverStatus :: Encode AutomaticFailoverStatus where e
 
 -- | <p>Describes an Availability Zone in which the cluster is launched.</p>
 newtype AvailabilityZone = AvailabilityZone 
-  { "Name" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
   }
 derive instance newtypeAvailabilityZone :: Newtype AvailabilityZone _
 derive instance repGenericAvailabilityZone :: Generic AvailabilityZone _
@@ -164,12 +163,12 @@ instance encodeAvailabilityZone :: Encode AvailabilityZone where encode = generi
 
 -- | Constructs AvailabilityZone from required parameters
 newAvailabilityZone :: AvailabilityZone
-newAvailabilityZone  = AvailabilityZone { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone  = AvailabilityZone { "Name": Nothing }
 
 -- | Constructs AvailabilityZone's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailabilityZone' :: ( { "Name" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) } ) -> AvailabilityZone
-newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone' :: ( { "Name" :: Maybe (String) } -> {"Name" :: Maybe (String) } ) -> AvailabilityZone
+newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": Nothing }
 
 
 
@@ -202,31 +201,31 @@ instance encodeBooleanOptional :: Encode BooleanOptional where encode = genericE
 
 -- | <p>Contains all of the attributes of a specific cluster.</p>
 newtype CacheCluster = CacheCluster 
-  { "CacheClusterId" :: NullOrUndefined (String)
-  , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint)
-  , "ClientDownloadLandingPage" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheClusterStatus" :: NullOrUndefined (String)
-  , "NumCacheNodes" :: NullOrUndefined (IntegerOptional)
-  , "PreferredAvailabilityZone" :: NullOrUndefined (String)
-  , "CacheClusterCreateTime" :: NullOrUndefined (TStamp)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues)
-  , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration)
-  , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList)
-  , "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus)
-  , "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "CacheNodes" :: NullOrUndefined (CacheNodeList)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList)
-  , "ReplicationGroupId" :: NullOrUndefined (String)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional)
-  , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
-  , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
+  { "CacheClusterId" :: Maybe (String)
+  , "ConfigurationEndpoint" :: Maybe (Endpoint)
+  , "ClientDownloadLandingPage" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheClusterStatus" :: Maybe (String)
+  , "NumCacheNodes" :: Maybe (IntegerOptional)
+  , "PreferredAvailabilityZone" :: Maybe (String)
+  , "CacheClusterCreateTime" :: Maybe (TStamp)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "PendingModifiedValues" :: Maybe (PendingModifiedValues)
+  , "NotificationConfiguration" :: Maybe (NotificationConfiguration)
+  , "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList)
+  , "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus)
+  , "CacheSubnetGroupName" :: Maybe (String)
+  , "CacheNodes" :: Maybe (CacheNodeList)
+  , "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "SecurityGroups" :: Maybe (SecurityGroupMembershipList)
+  , "ReplicationGroupId" :: Maybe (String)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "AuthTokenEnabled" :: Maybe (BooleanOptional)
+  , "TransitEncryptionEnabled" :: Maybe (BooleanOptional)
+  , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional)
   }
 derive instance newtypeCacheCluster :: Newtype CacheCluster _
 derive instance repGenericCacheCluster :: Generic CacheCluster _
@@ -236,12 +235,12 @@ instance encodeCacheCluster :: Encode CacheCluster where encode = genericEncode 
 
 -- | Constructs CacheCluster from required parameters
 newCacheCluster :: CacheCluster
-newCacheCluster  = CacheCluster { "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthTokenEnabled": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheClusterCreateTime": (NullOrUndefined Nothing), "CacheClusterId": (NullOrUndefined Nothing), "CacheClusterStatus": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheNodes": (NullOrUndefined Nothing), "CacheParameterGroup": (NullOrUndefined Nothing), "CacheSecurityGroups": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "ClientDownloadLandingPage": (NullOrUndefined Nothing), "ConfigurationEndpoint": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NotificationConfiguration": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newCacheCluster  = CacheCluster { "AtRestEncryptionEnabled": Nothing, "AuthTokenEnabled": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheClusterCreateTime": Nothing, "CacheClusterId": Nothing, "CacheClusterStatus": Nothing, "CacheNodeType": Nothing, "CacheNodes": Nothing, "CacheParameterGroup": Nothing, "CacheSecurityGroups": Nothing, "CacheSubnetGroupName": Nothing, "ClientDownloadLandingPage": Nothing, "ConfigurationEndpoint": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NotificationConfiguration": Nothing, "NumCacheNodes": Nothing, "PendingModifiedValues": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupId": Nothing, "SecurityGroups": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "TransitEncryptionEnabled": Nothing }
 
 -- | Constructs CacheCluster's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheCluster' :: ( { "CacheClusterId" :: NullOrUndefined (String) , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint) , "ClientDownloadLandingPage" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheClusterStatus" :: NullOrUndefined (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CacheClusterCreateTime" :: NullOrUndefined (TStamp) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues) , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration) , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList) , "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheNodes" :: NullOrUndefined (CacheNodeList) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList) , "ReplicationGroupId" :: NullOrUndefined (String) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> {"CacheClusterId" :: NullOrUndefined (String) , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint) , "ClientDownloadLandingPage" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheClusterStatus" :: NullOrUndefined (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CacheClusterCreateTime" :: NullOrUndefined (TStamp) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues) , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration) , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList) , "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheNodes" :: NullOrUndefined (CacheNodeList) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList) , "ReplicationGroupId" :: NullOrUndefined (String) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } ) -> CacheCluster
-newCacheCluster'  customize = (CacheCluster <<< customize) { "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthTokenEnabled": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheClusterCreateTime": (NullOrUndefined Nothing), "CacheClusterId": (NullOrUndefined Nothing), "CacheClusterStatus": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheNodes": (NullOrUndefined Nothing), "CacheParameterGroup": (NullOrUndefined Nothing), "CacheSecurityGroups": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "ClientDownloadLandingPage": (NullOrUndefined Nothing), "ConfigurationEndpoint": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NotificationConfiguration": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newCacheCluster' :: ( { "CacheClusterId" :: Maybe (String) , "ConfigurationEndpoint" :: Maybe (Endpoint) , "ClientDownloadLandingPage" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheClusterStatus" :: Maybe (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "PreferredAvailabilityZone" :: Maybe (String) , "CacheClusterCreateTime" :: Maybe (TStamp) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (PendingModifiedValues) , "NotificationConfiguration" :: Maybe (NotificationConfiguration) , "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList) , "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus) , "CacheSubnetGroupName" :: Maybe (String) , "CacheNodes" :: Maybe (CacheNodeList) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (SecurityGroupMembershipList) , "ReplicationGroupId" :: Maybe (String) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthTokenEnabled" :: Maybe (BooleanOptional) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> {"CacheClusterId" :: Maybe (String) , "ConfigurationEndpoint" :: Maybe (Endpoint) , "ClientDownloadLandingPage" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheClusterStatus" :: Maybe (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "PreferredAvailabilityZone" :: Maybe (String) , "CacheClusterCreateTime" :: Maybe (TStamp) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (PendingModifiedValues) , "NotificationConfiguration" :: Maybe (NotificationConfiguration) , "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList) , "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus) , "CacheSubnetGroupName" :: Maybe (String) , "CacheNodes" :: Maybe (CacheNodeList) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (SecurityGroupMembershipList) , "ReplicationGroupId" :: Maybe (String) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthTokenEnabled" :: Maybe (BooleanOptional) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } ) -> CacheCluster
+newCacheCluster'  customize = (CacheCluster <<< customize) { "AtRestEncryptionEnabled": Nothing, "AuthTokenEnabled": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheClusterCreateTime": Nothing, "CacheClusterId": Nothing, "CacheClusterStatus": Nothing, "CacheNodeType": Nothing, "CacheNodes": Nothing, "CacheParameterGroup": Nothing, "CacheSecurityGroups": Nothing, "CacheSubnetGroupName": Nothing, "ClientDownloadLandingPage": Nothing, "ConfigurationEndpoint": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NotificationConfiguration": Nothing, "NumCacheNodes": Nothing, "PendingModifiedValues": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupId": Nothing, "SecurityGroups": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "TransitEncryptionEnabled": Nothing }
 
 
 
@@ -266,8 +265,8 @@ instance encodeCacheClusterList :: Encode CacheClusterList where encode = generi
 
 -- | <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
 newtype CacheClusterMessage = CacheClusterMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "CacheClusters" :: NullOrUndefined (CacheClusterList)
+  { "Marker" :: Maybe (String)
+  , "CacheClusters" :: Maybe (CacheClusterList)
   }
 derive instance newtypeCacheClusterMessage :: Newtype CacheClusterMessage _
 derive instance repGenericCacheClusterMessage :: Generic CacheClusterMessage _
@@ -277,12 +276,12 @@ instance encodeCacheClusterMessage :: Encode CacheClusterMessage where encode = 
 
 -- | Constructs CacheClusterMessage from required parameters
 newCacheClusterMessage :: CacheClusterMessage
-newCacheClusterMessage  = CacheClusterMessage { "CacheClusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheClusterMessage  = CacheClusterMessage { "CacheClusters": Nothing, "Marker": Nothing }
 
 -- | Constructs CacheClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheClusterMessage' :: ( { "Marker" :: NullOrUndefined (String) , "CacheClusters" :: NullOrUndefined (CacheClusterList) } -> {"Marker" :: NullOrUndefined (String) , "CacheClusters" :: NullOrUndefined (CacheClusterList) } ) -> CacheClusterMessage
-newCacheClusterMessage'  customize = (CacheClusterMessage <<< customize) { "CacheClusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheClusterMessage' :: ( { "Marker" :: Maybe (String) , "CacheClusters" :: Maybe (CacheClusterList) } -> {"Marker" :: Maybe (String) , "CacheClusters" :: Maybe (CacheClusterList) } ) -> CacheClusterMessage
+newCacheClusterMessage'  customize = (CacheClusterMessage <<< customize) { "CacheClusters": Nothing, "Marker": Nothing }
 
 
 
@@ -298,11 +297,11 @@ instance encodeCacheClusterNotFoundFault :: Encode CacheClusterNotFoundFault whe
 
 -- | <p>Provides all of the details about a particular cache engine version.</p>
 newtype CacheEngineVersion = CacheEngineVersion 
-  { "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheParameterGroupFamily" :: NullOrUndefined (String)
-  , "CacheEngineDescription" :: NullOrUndefined (String)
-  , "CacheEngineVersionDescription" :: NullOrUndefined (String)
+  { "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheParameterGroupFamily" :: Maybe (String)
+  , "CacheEngineDescription" :: Maybe (String)
+  , "CacheEngineVersionDescription" :: Maybe (String)
   }
 derive instance newtypeCacheEngineVersion :: Newtype CacheEngineVersion _
 derive instance repGenericCacheEngineVersion :: Generic CacheEngineVersion _
@@ -312,12 +311,12 @@ instance encodeCacheEngineVersion :: Encode CacheEngineVersion where encode = ge
 
 -- | Constructs CacheEngineVersion from required parameters
 newCacheEngineVersion :: CacheEngineVersion
-newCacheEngineVersion  = CacheEngineVersion { "CacheEngineDescription": (NullOrUndefined Nothing), "CacheEngineVersionDescription": (NullOrUndefined Nothing), "CacheParameterGroupFamily": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing) }
+newCacheEngineVersion  = CacheEngineVersion { "CacheEngineDescription": Nothing, "CacheEngineVersionDescription": Nothing, "CacheParameterGroupFamily": Nothing, "Engine": Nothing, "EngineVersion": Nothing }
 
 -- | Constructs CacheEngineVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheEngineVersion' :: ( { "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "CacheEngineDescription" :: NullOrUndefined (String) , "CacheEngineVersionDescription" :: NullOrUndefined (String) } -> {"Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "CacheEngineDescription" :: NullOrUndefined (String) , "CacheEngineVersionDescription" :: NullOrUndefined (String) } ) -> CacheEngineVersion
-newCacheEngineVersion'  customize = (CacheEngineVersion <<< customize) { "CacheEngineDescription": (NullOrUndefined Nothing), "CacheEngineVersionDescription": (NullOrUndefined Nothing), "CacheParameterGroupFamily": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing) }
+newCacheEngineVersion' :: ( { "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "CacheEngineDescription" :: Maybe (String) , "CacheEngineVersionDescription" :: Maybe (String) } -> {"Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "CacheEngineDescription" :: Maybe (String) , "CacheEngineVersionDescription" :: Maybe (String) } ) -> CacheEngineVersion
+newCacheEngineVersion'  customize = (CacheEngineVersion <<< customize) { "CacheEngineDescription": Nothing, "CacheEngineVersionDescription": Nothing, "CacheParameterGroupFamily": Nothing, "Engine": Nothing, "EngineVersion": Nothing }
 
 
 
@@ -332,8 +331,8 @@ instance encodeCacheEngineVersionList :: Encode CacheEngineVersionList where enc
 
 -- | <p>Represents the output of a <a>DescribeCacheEngineVersions</a> operation.</p>
 newtype CacheEngineVersionMessage = CacheEngineVersionMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList)
+  { "Marker" :: Maybe (String)
+  , "CacheEngineVersions" :: Maybe (CacheEngineVersionList)
   }
 derive instance newtypeCacheEngineVersionMessage :: Newtype CacheEngineVersionMessage _
 derive instance repGenericCacheEngineVersionMessage :: Generic CacheEngineVersionMessage _
@@ -343,24 +342,24 @@ instance encodeCacheEngineVersionMessage :: Encode CacheEngineVersionMessage whe
 
 -- | Constructs CacheEngineVersionMessage from required parameters
 newCacheEngineVersionMessage :: CacheEngineVersionMessage
-newCacheEngineVersionMessage  = CacheEngineVersionMessage { "CacheEngineVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheEngineVersionMessage  = CacheEngineVersionMessage { "CacheEngineVersions": Nothing, "Marker": Nothing }
 
 -- | Constructs CacheEngineVersionMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheEngineVersionMessage' :: ( { "Marker" :: NullOrUndefined (String) , "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList) } -> {"Marker" :: NullOrUndefined (String) , "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList) } ) -> CacheEngineVersionMessage
-newCacheEngineVersionMessage'  customize = (CacheEngineVersionMessage <<< customize) { "CacheEngineVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheEngineVersionMessage' :: ( { "Marker" :: Maybe (String) , "CacheEngineVersions" :: Maybe (CacheEngineVersionList) } -> {"Marker" :: Maybe (String) , "CacheEngineVersions" :: Maybe (CacheEngineVersionList) } ) -> CacheEngineVersionMessage
+newCacheEngineVersionMessage'  customize = (CacheEngineVersionMessage <<< customize) { "CacheEngineVersions": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</p>
 newtype CacheNode = CacheNode 
-  { "CacheNodeId" :: NullOrUndefined (String)
-  , "CacheNodeStatus" :: NullOrUndefined (String)
-  , "CacheNodeCreateTime" :: NullOrUndefined (TStamp)
-  , "Endpoint" :: NullOrUndefined (Endpoint)
-  , "ParameterGroupStatus" :: NullOrUndefined (String)
-  , "SourceCacheNodeId" :: NullOrUndefined (String)
-  , "CustomerAvailabilityZone" :: NullOrUndefined (String)
+  { "CacheNodeId" :: Maybe (String)
+  , "CacheNodeStatus" :: Maybe (String)
+  , "CacheNodeCreateTime" :: Maybe (TStamp)
+  , "Endpoint" :: Maybe (Endpoint)
+  , "ParameterGroupStatus" :: Maybe (String)
+  , "SourceCacheNodeId" :: Maybe (String)
+  , "CustomerAvailabilityZone" :: Maybe (String)
   }
 derive instance newtypeCacheNode :: Newtype CacheNode _
 derive instance repGenericCacheNode :: Generic CacheNode _
@@ -370,12 +369,12 @@ instance encodeCacheNode :: Encode CacheNode where encode = genericEncode option
 
 -- | Constructs CacheNode from required parameters
 newCacheNode :: CacheNode
-newCacheNode  = CacheNode { "CacheNodeCreateTime": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CacheNodeStatus": (NullOrUndefined Nothing), "CustomerAvailabilityZone": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing), "SourceCacheNodeId": (NullOrUndefined Nothing) }
+newCacheNode  = CacheNode { "CacheNodeCreateTime": Nothing, "CacheNodeId": Nothing, "CacheNodeStatus": Nothing, "CustomerAvailabilityZone": Nothing, "Endpoint": Nothing, "ParameterGroupStatus": Nothing, "SourceCacheNodeId": Nothing }
 
 -- | Constructs CacheNode's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheNode' :: ( { "CacheNodeId" :: NullOrUndefined (String) , "CacheNodeStatus" :: NullOrUndefined (String) , "CacheNodeCreateTime" :: NullOrUndefined (TStamp) , "Endpoint" :: NullOrUndefined (Endpoint) , "ParameterGroupStatus" :: NullOrUndefined (String) , "SourceCacheNodeId" :: NullOrUndefined (String) , "CustomerAvailabilityZone" :: NullOrUndefined (String) } -> {"CacheNodeId" :: NullOrUndefined (String) , "CacheNodeStatus" :: NullOrUndefined (String) , "CacheNodeCreateTime" :: NullOrUndefined (TStamp) , "Endpoint" :: NullOrUndefined (Endpoint) , "ParameterGroupStatus" :: NullOrUndefined (String) , "SourceCacheNodeId" :: NullOrUndefined (String) , "CustomerAvailabilityZone" :: NullOrUndefined (String) } ) -> CacheNode
-newCacheNode'  customize = (CacheNode <<< customize) { "CacheNodeCreateTime": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CacheNodeStatus": (NullOrUndefined Nothing), "CustomerAvailabilityZone": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing), "SourceCacheNodeId": (NullOrUndefined Nothing) }
+newCacheNode' :: ( { "CacheNodeId" :: Maybe (String) , "CacheNodeStatus" :: Maybe (String) , "CacheNodeCreateTime" :: Maybe (TStamp) , "Endpoint" :: Maybe (Endpoint) , "ParameterGroupStatus" :: Maybe (String) , "SourceCacheNodeId" :: Maybe (String) , "CustomerAvailabilityZone" :: Maybe (String) } -> {"CacheNodeId" :: Maybe (String) , "CacheNodeStatus" :: Maybe (String) , "CacheNodeCreateTime" :: Maybe (TStamp) , "Endpoint" :: Maybe (Endpoint) , "ParameterGroupStatus" :: Maybe (String) , "SourceCacheNodeId" :: Maybe (String) , "CustomerAvailabilityZone" :: Maybe (String) } ) -> CacheNode
+newCacheNode'  customize = (CacheNode <<< customize) { "CacheNodeCreateTime": Nothing, "CacheNodeId": Nothing, "CacheNodeStatus": Nothing, "CustomerAvailabilityZone": Nothing, "Endpoint": Nothing, "ParameterGroupStatus": Nothing, "SourceCacheNodeId": Nothing }
 
 
 
@@ -399,15 +398,15 @@ instance encodeCacheNodeList :: Encode CacheNodeList where encode = genericEncod
 
 -- | <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.</p>
 newtype CacheNodeTypeSpecificParameter = CacheNodeTypeSpecificParameter 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "Source" :: NullOrUndefined (String)
-  , "DataType" :: NullOrUndefined (String)
-  , "AllowedValues" :: NullOrUndefined (String)
-  , "IsModifiable" :: NullOrUndefined (Boolean)
-  , "MinimumEngineVersion" :: NullOrUndefined (String)
-  , "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList)
-  , "ChangeType" :: NullOrUndefined (ChangeType)
+  { "ParameterName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "Source" :: Maybe (String)
+  , "DataType" :: Maybe (String)
+  , "AllowedValues" :: Maybe (String)
+  , "IsModifiable" :: Maybe (Boolean)
+  , "MinimumEngineVersion" :: Maybe (String)
+  , "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList)
+  , "ChangeType" :: Maybe (ChangeType)
   }
 derive instance newtypeCacheNodeTypeSpecificParameter :: Newtype CacheNodeTypeSpecificParameter _
 derive instance repGenericCacheNodeTypeSpecificParameter :: Generic CacheNodeTypeSpecificParameter _
@@ -417,12 +416,12 @@ instance encodeCacheNodeTypeSpecificParameter :: Encode CacheNodeTypeSpecificPar
 
 -- | Constructs CacheNodeTypeSpecificParameter from required parameters
 newCacheNodeTypeSpecificParameter :: CacheNodeTypeSpecificParameter
-newCacheNodeTypeSpecificParameter  = CacheNodeTypeSpecificParameter { "AllowedValues": (NullOrUndefined Nothing), "CacheNodeTypeSpecificValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newCacheNodeTypeSpecificParameter  = CacheNodeTypeSpecificParameter { "AllowedValues": Nothing, "CacheNodeTypeSpecificValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "Source": Nothing }
 
 -- | Constructs CacheNodeTypeSpecificParameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheNodeTypeSpecificParameter' :: ( { "ParameterName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) , "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList) , "ChangeType" :: NullOrUndefined (ChangeType) } -> {"ParameterName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) , "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList) , "ChangeType" :: NullOrUndefined (ChangeType) } ) -> CacheNodeTypeSpecificParameter
-newCacheNodeTypeSpecificParameter'  customize = (CacheNodeTypeSpecificParameter <<< customize) { "AllowedValues": (NullOrUndefined Nothing), "CacheNodeTypeSpecificValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newCacheNodeTypeSpecificParameter' :: ( { "ParameterName" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) , "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList) , "ChangeType" :: Maybe (ChangeType) } -> {"ParameterName" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) , "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList) , "ChangeType" :: Maybe (ChangeType) } ) -> CacheNodeTypeSpecificParameter
+newCacheNodeTypeSpecificParameter'  customize = (CacheNodeTypeSpecificParameter <<< customize) { "AllowedValues": Nothing, "CacheNodeTypeSpecificValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "Source": Nothing }
 
 
 
@@ -437,8 +436,8 @@ instance encodeCacheNodeTypeSpecificParametersList :: Encode CacheNodeTypeSpecif
 
 -- | <p>A value that applies only to a certain cache node type.</p>
 newtype CacheNodeTypeSpecificValue = CacheNodeTypeSpecificValue 
-  { "CacheNodeType" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "CacheNodeType" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeCacheNodeTypeSpecificValue :: Newtype CacheNodeTypeSpecificValue _
 derive instance repGenericCacheNodeTypeSpecificValue :: Generic CacheNodeTypeSpecificValue _
@@ -448,12 +447,12 @@ instance encodeCacheNodeTypeSpecificValue :: Encode CacheNodeTypeSpecificValue w
 
 -- | Constructs CacheNodeTypeSpecificValue from required parameters
 newCacheNodeTypeSpecificValue :: CacheNodeTypeSpecificValue
-newCacheNodeTypeSpecificValue  = CacheNodeTypeSpecificValue { "CacheNodeType": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newCacheNodeTypeSpecificValue  = CacheNodeTypeSpecificValue { "CacheNodeType": Nothing, "Value": Nothing }
 
 -- | Constructs CacheNodeTypeSpecificValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheNodeTypeSpecificValue' :: ( { "CacheNodeType" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"CacheNodeType" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> CacheNodeTypeSpecificValue
-newCacheNodeTypeSpecificValue'  customize = (CacheNodeTypeSpecificValue <<< customize) { "CacheNodeType": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newCacheNodeTypeSpecificValue' :: ( { "CacheNodeType" :: Maybe (String) , "Value" :: Maybe (String) } -> {"CacheNodeType" :: Maybe (String) , "Value" :: Maybe (String) } ) -> CacheNodeTypeSpecificValue
+newCacheNodeTypeSpecificValue'  customize = (CacheNodeTypeSpecificValue <<< customize) { "CacheNodeType": Nothing, "Value": Nothing }
 
 
 
@@ -468,9 +467,9 @@ instance encodeCacheNodeTypeSpecificValueList :: Encode CacheNodeTypeSpecificVal
 
 -- | <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
 newtype CacheParameterGroup = CacheParameterGroup 
-  { "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "CacheParameterGroupFamily" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "CacheParameterGroupName" :: Maybe (String)
+  , "CacheParameterGroupFamily" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeCacheParameterGroup :: Newtype CacheParameterGroup _
 derive instance repGenericCacheParameterGroup :: Generic CacheParameterGroup _
@@ -480,12 +479,12 @@ instance encodeCacheParameterGroup :: Encode CacheParameterGroup where encode = 
 
 -- | Constructs CacheParameterGroup from required parameters
 newCacheParameterGroup :: CacheParameterGroup
-newCacheParameterGroup  = CacheParameterGroup { "CacheParameterGroupFamily": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newCacheParameterGroup  = CacheParameterGroup { "CacheParameterGroupFamily": Nothing, "CacheParameterGroupName": Nothing, "Description": Nothing }
 
 -- | Constructs CacheParameterGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheParameterGroup' :: ( { "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"CacheParameterGroupName" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> CacheParameterGroup
-newCacheParameterGroup'  customize = (CacheParameterGroup <<< customize) { "CacheParameterGroupFamily": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newCacheParameterGroup' :: ( { "CacheParameterGroupName" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) } -> {"CacheParameterGroupName" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) } ) -> CacheParameterGroup
+newCacheParameterGroup'  customize = (CacheParameterGroup <<< customize) { "CacheParameterGroupFamily": Nothing, "CacheParameterGroupName": Nothing, "Description": Nothing }
 
 
 
@@ -501,9 +500,9 @@ instance encodeCacheParameterGroupAlreadyExistsFault :: Encode CacheParameterGro
 
 -- | <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
 newtype CacheParameterGroupDetails = CacheParameterGroupDetails 
-  { "Marker" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (ParametersList)
-  , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList)
+  { "Marker" :: Maybe (String)
+  , "Parameters" :: Maybe (ParametersList)
+  , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList)
   }
 derive instance newtypeCacheParameterGroupDetails :: Newtype CacheParameterGroupDetails _
 derive instance repGenericCacheParameterGroupDetails :: Generic CacheParameterGroupDetails _
@@ -513,12 +512,12 @@ instance encodeCacheParameterGroupDetails :: Encode CacheParameterGroupDetails w
 
 -- | Constructs CacheParameterGroupDetails from required parameters
 newCacheParameterGroupDetails :: CacheParameterGroupDetails
-newCacheParameterGroupDetails  = CacheParameterGroupDetails { "CacheNodeTypeSpecificParameters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newCacheParameterGroupDetails  = CacheParameterGroupDetails { "CacheNodeTypeSpecificParameters": Nothing, "Marker": Nothing, "Parameters": Nothing }
 
 -- | Constructs CacheParameterGroupDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheParameterGroupDetails' :: ( { "Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } -> {"Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } ) -> CacheParameterGroupDetails
-newCacheParameterGroupDetails'  customize = (CacheParameterGroupDetails <<< customize) { "CacheNodeTypeSpecificParameters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newCacheParameterGroupDetails' :: ( { "Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } -> {"Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } ) -> CacheParameterGroupDetails
+newCacheParameterGroupDetails'  customize = (CacheParameterGroupDetails <<< customize) { "CacheNodeTypeSpecificParameters": Nothing, "Marker": Nothing, "Parameters": Nothing }
 
 
 
@@ -533,7 +532,7 @@ instance encodeCacheParameterGroupList :: Encode CacheParameterGroupList where e
 
 -- | <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> </ul>
 newtype CacheParameterGroupNameMessage = CacheParameterGroupNameMessage 
-  { "CacheParameterGroupName" :: NullOrUndefined (String)
+  { "CacheParameterGroupName" :: Maybe (String)
   }
 derive instance newtypeCacheParameterGroupNameMessage :: Newtype CacheParameterGroupNameMessage _
 derive instance repGenericCacheParameterGroupNameMessage :: Generic CacheParameterGroupNameMessage _
@@ -543,12 +542,12 @@ instance encodeCacheParameterGroupNameMessage :: Encode CacheParameterGroupNameM
 
 -- | Constructs CacheParameterGroupNameMessage from required parameters
 newCacheParameterGroupNameMessage :: CacheParameterGroupNameMessage
-newCacheParameterGroupNameMessage  = CacheParameterGroupNameMessage { "CacheParameterGroupName": (NullOrUndefined Nothing) }
+newCacheParameterGroupNameMessage  = CacheParameterGroupNameMessage { "CacheParameterGroupName": Nothing }
 
 -- | Constructs CacheParameterGroupNameMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheParameterGroupNameMessage' :: ( { "CacheParameterGroupName" :: NullOrUndefined (String) } -> {"CacheParameterGroupName" :: NullOrUndefined (String) } ) -> CacheParameterGroupNameMessage
-newCacheParameterGroupNameMessage'  customize = (CacheParameterGroupNameMessage <<< customize) { "CacheParameterGroupName": (NullOrUndefined Nothing) }
+newCacheParameterGroupNameMessage' :: ( { "CacheParameterGroupName" :: Maybe (String) } -> {"CacheParameterGroupName" :: Maybe (String) } ) -> CacheParameterGroupNameMessage
+newCacheParameterGroupNameMessage'  customize = (CacheParameterGroupNameMessage <<< customize) { "CacheParameterGroupName": Nothing }
 
 
 
@@ -574,9 +573,9 @@ instance encodeCacheParameterGroupQuotaExceededFault :: Encode CacheParameterGro
 
 -- | <p>Status of the cache parameter group.</p>
 newtype CacheParameterGroupStatus = CacheParameterGroupStatus 
-  { "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "ParameterApplyStatus" :: NullOrUndefined (String)
-  , "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList)
+  { "CacheParameterGroupName" :: Maybe (String)
+  , "ParameterApplyStatus" :: Maybe (String)
+  , "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList)
   }
 derive instance newtypeCacheParameterGroupStatus :: Newtype CacheParameterGroupStatus _
 derive instance repGenericCacheParameterGroupStatus :: Generic CacheParameterGroupStatus _
@@ -586,19 +585,19 @@ instance encodeCacheParameterGroupStatus :: Encode CacheParameterGroupStatus whe
 
 -- | Constructs CacheParameterGroupStatus from required parameters
 newCacheParameterGroupStatus :: CacheParameterGroupStatus
-newCacheParameterGroupStatus  = CacheParameterGroupStatus { "CacheNodeIdsToReboot": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing) }
+newCacheParameterGroupStatus  = CacheParameterGroupStatus { "CacheNodeIdsToReboot": Nothing, "CacheParameterGroupName": Nothing, "ParameterApplyStatus": Nothing }
 
 -- | Constructs CacheParameterGroupStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheParameterGroupStatus' :: ( { "CacheParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList) } -> {"CacheParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList) } ) -> CacheParameterGroupStatus
-newCacheParameterGroupStatus'  customize = (CacheParameterGroupStatus <<< customize) { "CacheNodeIdsToReboot": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing) }
+newCacheParameterGroupStatus' :: ( { "CacheParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList) } -> {"CacheParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList) } ) -> CacheParameterGroupStatus
+newCacheParameterGroupStatus'  customize = (CacheParameterGroupStatus <<< customize) { "CacheNodeIdsToReboot": Nothing, "CacheParameterGroupName": Nothing, "ParameterApplyStatus": Nothing }
 
 
 
 -- | <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
 newtype CacheParameterGroupsMessage = CacheParameterGroupsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList)
+  { "Marker" :: Maybe (String)
+  , "CacheParameterGroups" :: Maybe (CacheParameterGroupList)
   }
 derive instance newtypeCacheParameterGroupsMessage :: Newtype CacheParameterGroupsMessage _
 derive instance repGenericCacheParameterGroupsMessage :: Generic CacheParameterGroupsMessage _
@@ -608,21 +607,21 @@ instance encodeCacheParameterGroupsMessage :: Encode CacheParameterGroupsMessage
 
 -- | Constructs CacheParameterGroupsMessage from required parameters
 newCacheParameterGroupsMessage :: CacheParameterGroupsMessage
-newCacheParameterGroupsMessage  = CacheParameterGroupsMessage { "CacheParameterGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheParameterGroupsMessage  = CacheParameterGroupsMessage { "CacheParameterGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs CacheParameterGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheParameterGroupsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList) } -> {"Marker" :: NullOrUndefined (String) , "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList) } ) -> CacheParameterGroupsMessage
-newCacheParameterGroupsMessage'  customize = (CacheParameterGroupsMessage <<< customize) { "CacheParameterGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheParameterGroupsMessage' :: ( { "Marker" :: Maybe (String) , "CacheParameterGroups" :: Maybe (CacheParameterGroupList) } -> {"Marker" :: Maybe (String) , "CacheParameterGroups" :: Maybe (CacheParameterGroupList) } ) -> CacheParameterGroupsMessage
+newCacheParameterGroupsMessage'  customize = (CacheParameterGroupsMessage <<< customize) { "CacheParameterGroups": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul>
 newtype CacheSecurityGroup = CacheSecurityGroup 
-  { "OwnerId" :: NullOrUndefined (String)
-  , "CacheSecurityGroupName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList)
+  { "OwnerId" :: Maybe (String)
+  , "CacheSecurityGroupName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList)
   }
 derive instance newtypeCacheSecurityGroup :: Newtype CacheSecurityGroup _
 derive instance repGenericCacheSecurityGroup :: Generic CacheSecurityGroup _
@@ -632,12 +631,12 @@ instance encodeCacheSecurityGroup :: Encode CacheSecurityGroup where encode = ge
 
 -- | Constructs CacheSecurityGroup from required parameters
 newCacheSecurityGroup :: CacheSecurityGroup
-newCacheSecurityGroup  = CacheSecurityGroup { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EC2SecurityGroups": (NullOrUndefined Nothing), "OwnerId": (NullOrUndefined Nothing) }
+newCacheSecurityGroup  = CacheSecurityGroup { "CacheSecurityGroupName": Nothing, "Description": Nothing, "EC2SecurityGroups": Nothing, "OwnerId": Nothing }
 
 -- | Constructs CacheSecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheSecurityGroup' :: ( { "OwnerId" :: NullOrUndefined (String) , "CacheSecurityGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) } -> {"OwnerId" :: NullOrUndefined (String) , "CacheSecurityGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) } ) -> CacheSecurityGroup
-newCacheSecurityGroup'  customize = (CacheSecurityGroup <<< customize) { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EC2SecurityGroups": (NullOrUndefined Nothing), "OwnerId": (NullOrUndefined Nothing) }
+newCacheSecurityGroup' :: ( { "OwnerId" :: Maybe (String) , "CacheSecurityGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) } -> {"OwnerId" :: Maybe (String) , "CacheSecurityGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) } ) -> CacheSecurityGroup
+newCacheSecurityGroup'  customize = (CacheSecurityGroup <<< customize) { "CacheSecurityGroupName": Nothing, "Description": Nothing, "EC2SecurityGroups": Nothing, "OwnerId": Nothing }
 
 
 
@@ -653,8 +652,8 @@ instance encodeCacheSecurityGroupAlreadyExistsFault :: Encode CacheSecurityGroup
 
 -- | <p>Represents a cluster's status within a particular cache security group.</p>
 newtype CacheSecurityGroupMembership = CacheSecurityGroupMembership 
-  { "CacheSecurityGroupName" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "CacheSecurityGroupName" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeCacheSecurityGroupMembership :: Newtype CacheSecurityGroupMembership _
 derive instance repGenericCacheSecurityGroupMembership :: Generic CacheSecurityGroupMembership _
@@ -664,12 +663,12 @@ instance encodeCacheSecurityGroupMembership :: Encode CacheSecurityGroupMembersh
 
 -- | Constructs CacheSecurityGroupMembership from required parameters
 newCacheSecurityGroupMembership :: CacheSecurityGroupMembership
-newCacheSecurityGroupMembership  = CacheSecurityGroupMembership { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newCacheSecurityGroupMembership  = CacheSecurityGroupMembership { "CacheSecurityGroupName": Nothing, "Status": Nothing }
 
 -- | Constructs CacheSecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheSecurityGroupMembership' :: ( { "CacheSecurityGroupName" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"CacheSecurityGroupName" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> CacheSecurityGroupMembership
-newCacheSecurityGroupMembership'  customize = (CacheSecurityGroupMembership <<< customize) { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newCacheSecurityGroupMembership' :: ( { "CacheSecurityGroupName" :: Maybe (String) , "Status" :: Maybe (String) } -> {"CacheSecurityGroupName" :: Maybe (String) , "Status" :: Maybe (String) } ) -> CacheSecurityGroupMembership
+newCacheSecurityGroupMembership'  customize = (CacheSecurityGroupMembership <<< customize) { "CacheSecurityGroupName": Nothing, "Status": Nothing }
 
 
 
@@ -684,8 +683,8 @@ instance encodeCacheSecurityGroupMembershipList :: Encode CacheSecurityGroupMemb
 
 -- | <p>Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.</p>
 newtype CacheSecurityGroupMessage = CacheSecurityGroupMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups)
+  { "Marker" :: Maybe (String)
+  , "CacheSecurityGroups" :: Maybe (CacheSecurityGroups)
   }
 derive instance newtypeCacheSecurityGroupMessage :: Newtype CacheSecurityGroupMessage _
 derive instance repGenericCacheSecurityGroupMessage :: Generic CacheSecurityGroupMessage _
@@ -695,12 +694,12 @@ instance encodeCacheSecurityGroupMessage :: Encode CacheSecurityGroupMessage whe
 
 -- | Constructs CacheSecurityGroupMessage from required parameters
 newCacheSecurityGroupMessage :: CacheSecurityGroupMessage
-newCacheSecurityGroupMessage  = CacheSecurityGroupMessage { "CacheSecurityGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheSecurityGroupMessage  = CacheSecurityGroupMessage { "CacheSecurityGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs CacheSecurityGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheSecurityGroupMessage' :: ( { "Marker" :: NullOrUndefined (String) , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups) } -> {"Marker" :: NullOrUndefined (String) , "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups) } ) -> CacheSecurityGroupMessage
-newCacheSecurityGroupMessage'  customize = (CacheSecurityGroupMessage <<< customize) { "CacheSecurityGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheSecurityGroupMessage' :: ( { "Marker" :: Maybe (String) , "CacheSecurityGroups" :: Maybe (CacheSecurityGroups) } -> {"Marker" :: Maybe (String) , "CacheSecurityGroups" :: Maybe (CacheSecurityGroups) } ) -> CacheSecurityGroupMessage
+newCacheSecurityGroupMessage'  customize = (CacheSecurityGroupMessage <<< customize) { "CacheSecurityGroups": Nothing, "Marker": Nothing }
 
 
 
@@ -744,10 +743,10 @@ instance encodeCacheSecurityGroups :: Encode CacheSecurityGroups where encode = 
 
 -- | <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul>
 newtype CacheSubnetGroup = CacheSubnetGroup 
-  { "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "CacheSubnetGroupDescription" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Subnets" :: NullOrUndefined (SubnetList)
+  { "CacheSubnetGroupName" :: Maybe (String)
+  , "CacheSubnetGroupDescription" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "Subnets" :: Maybe (SubnetList)
   }
 derive instance newtypeCacheSubnetGroup :: Newtype CacheSubnetGroup _
 derive instance repGenericCacheSubnetGroup :: Generic CacheSubnetGroup _
@@ -757,12 +756,12 @@ instance encodeCacheSubnetGroup :: Encode CacheSubnetGroup where encode = generi
 
 -- | Constructs CacheSubnetGroup from required parameters
 newCacheSubnetGroup :: CacheSubnetGroup
-newCacheSubnetGroup  = CacheSubnetGroup { "CacheSubnetGroupDescription": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCacheSubnetGroup  = CacheSubnetGroup { "CacheSubnetGroupDescription": Nothing, "CacheSubnetGroupName": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 -- | Constructs CacheSubnetGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheSubnetGroup' :: ( { "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupDescription" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } -> {"CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupDescription" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } ) -> CacheSubnetGroup
-newCacheSubnetGroup'  customize = (CacheSubnetGroup <<< customize) { "CacheSubnetGroupDescription": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newCacheSubnetGroup' :: ( { "CacheSubnetGroupName" :: Maybe (String) , "CacheSubnetGroupDescription" :: Maybe (String) , "VpcId" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } -> {"CacheSubnetGroupName" :: Maybe (String) , "CacheSubnetGroupDescription" :: Maybe (String) , "VpcId" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } ) -> CacheSubnetGroup
+newCacheSubnetGroup'  customize = (CacheSubnetGroup <<< customize) { "CacheSubnetGroupDescription": Nothing, "CacheSubnetGroupName": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 
 
@@ -788,8 +787,8 @@ instance encodeCacheSubnetGroupInUse :: Encode CacheSubnetGroupInUse where encod
 
 -- | <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 newtype CacheSubnetGroupMessage = CacheSubnetGroupMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups)
+  { "Marker" :: Maybe (String)
+  , "CacheSubnetGroups" :: Maybe (CacheSubnetGroups)
   }
 derive instance newtypeCacheSubnetGroupMessage :: Newtype CacheSubnetGroupMessage _
 derive instance repGenericCacheSubnetGroupMessage :: Generic CacheSubnetGroupMessage _
@@ -799,12 +798,12 @@ instance encodeCacheSubnetGroupMessage :: Encode CacheSubnetGroupMessage where e
 
 -- | Constructs CacheSubnetGroupMessage from required parameters
 newCacheSubnetGroupMessage :: CacheSubnetGroupMessage
-newCacheSubnetGroupMessage  = CacheSubnetGroupMessage { "CacheSubnetGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheSubnetGroupMessage  = CacheSubnetGroupMessage { "CacheSubnetGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs CacheSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCacheSubnetGroupMessage' :: ( { "Marker" :: NullOrUndefined (String) , "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups) } -> {"Marker" :: NullOrUndefined (String) , "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups) } ) -> CacheSubnetGroupMessage
-newCacheSubnetGroupMessage'  customize = (CacheSubnetGroupMessage <<< customize) { "CacheSubnetGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newCacheSubnetGroupMessage' :: ( { "Marker" :: Maybe (String) , "CacheSubnetGroups" :: Maybe (CacheSubnetGroups) } -> {"Marker" :: Maybe (String) , "CacheSubnetGroups" :: Maybe (CacheSubnetGroups) } ) -> CacheSubnetGroupMessage
+newCacheSubnetGroupMessage'  customize = (CacheSubnetGroupMessage <<< customize) { "CacheSubnetGroups": Nothing, "Marker": Nothing }
 
 
 
@@ -879,7 +878,7 @@ instance encodeClusterQuotaForCustomerExceededFault :: Encode ClusterQuotaForCus
 newtype CopySnapshotMessage = CopySnapshotMessage 
   { "SourceSnapshotName" :: (String)
   , "TargetSnapshotName" :: (String)
-  , "TargetBucket" :: NullOrUndefined (String)
+  , "TargetBucket" :: Maybe (String)
   }
 derive instance newtypeCopySnapshotMessage :: Newtype CopySnapshotMessage _
 derive instance repGenericCopySnapshotMessage :: Generic CopySnapshotMessage _
@@ -889,17 +888,17 @@ instance encodeCopySnapshotMessage :: Encode CopySnapshotMessage where encode = 
 
 -- | Constructs CopySnapshotMessage from required parameters
 newCopySnapshotMessage :: String -> String -> CopySnapshotMessage
-newCopySnapshotMessage _SourceSnapshotName _TargetSnapshotName = CopySnapshotMessage { "SourceSnapshotName": _SourceSnapshotName, "TargetSnapshotName": _TargetSnapshotName, "TargetBucket": (NullOrUndefined Nothing) }
+newCopySnapshotMessage _SourceSnapshotName _TargetSnapshotName = CopySnapshotMessage { "SourceSnapshotName": _SourceSnapshotName, "TargetSnapshotName": _TargetSnapshotName, "TargetBucket": Nothing }
 
 -- | Constructs CopySnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopySnapshotMessage' :: String -> String -> ( { "SourceSnapshotName" :: (String) , "TargetSnapshotName" :: (String) , "TargetBucket" :: NullOrUndefined (String) } -> {"SourceSnapshotName" :: (String) , "TargetSnapshotName" :: (String) , "TargetBucket" :: NullOrUndefined (String) } ) -> CopySnapshotMessage
-newCopySnapshotMessage' _SourceSnapshotName _TargetSnapshotName customize = (CopySnapshotMessage <<< customize) { "SourceSnapshotName": _SourceSnapshotName, "TargetSnapshotName": _TargetSnapshotName, "TargetBucket": (NullOrUndefined Nothing) }
+newCopySnapshotMessage' :: String -> String -> ( { "SourceSnapshotName" :: (String) , "TargetSnapshotName" :: (String) , "TargetBucket" :: Maybe (String) } -> {"SourceSnapshotName" :: (String) , "TargetSnapshotName" :: (String) , "TargetBucket" :: Maybe (String) } ) -> CopySnapshotMessage
+newCopySnapshotMessage' _SourceSnapshotName _TargetSnapshotName customize = (CopySnapshotMessage <<< customize) { "SourceSnapshotName": _SourceSnapshotName, "TargetSnapshotName": _TargetSnapshotName, "TargetBucket": Nothing }
 
 
 
 newtype CopySnapshotResult = CopySnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeCopySnapshotResult :: Newtype CopySnapshotResult _
 derive instance repGenericCopySnapshotResult :: Generic CopySnapshotResult _
@@ -909,40 +908,40 @@ instance encodeCopySnapshotResult :: Encode CopySnapshotResult where encode = ge
 
 -- | Constructs CopySnapshotResult from required parameters
 newCopySnapshotResult :: CopySnapshotResult
-newCopySnapshotResult  = CopySnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newCopySnapshotResult  = CopySnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs CopySnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopySnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> CopySnapshotResult
-newCopySnapshotResult'  customize = (CopySnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newCopySnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> CopySnapshotResult
+newCopySnapshotResult'  customize = (CopySnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
 -- | <p>Represents the input of a CreateCacheCluster operation.</p>
 newtype CreateCacheClusterMessage = CreateCacheClusterMessage 
   { "CacheClusterId" :: (String)
-  , "ReplicationGroupId" :: NullOrUndefined (String)
-  , "AZMode" :: NullOrUndefined (AZMode)
-  , "PreferredAvailabilityZone" :: NullOrUndefined (String)
-  , "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList)
-  , "NumCacheNodes" :: NullOrUndefined (IntegerOptional)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList)
-  , "SnapshotName" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "AuthToken" :: NullOrUndefined (String)
+  , "ReplicationGroupId" :: Maybe (String)
+  , "AZMode" :: Maybe (AZMode)
+  , "PreferredAvailabilityZone" :: Maybe (String)
+  , "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList)
+  , "NumCacheNodes" :: Maybe (IntegerOptional)
+  , "CacheNodeType" :: Maybe (String)
+  , "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheParameterGroupName" :: Maybe (String)
+  , "CacheSubnetGroupName" :: Maybe (String)
+  , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList)
+  , "Tags" :: Maybe (TagList)
+  , "SnapshotArns" :: Maybe (SnapshotArnsList)
+  , "SnapshotName" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "NotificationTopicArn" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "AuthToken" :: Maybe (String)
   }
 derive instance newtypeCreateCacheClusterMessage :: Newtype CreateCacheClusterMessage _
 derive instance repGenericCreateCacheClusterMessage :: Generic CreateCacheClusterMessage _
@@ -952,17 +951,17 @@ instance encodeCreateCacheClusterMessage :: Encode CreateCacheClusterMessage whe
 
 -- | Constructs CreateCacheClusterMessage from required parameters
 newCreateCacheClusterMessage :: String -> CreateCacheClusterMessage
-newCreateCacheClusterMessage _CacheClusterId = CreateCacheClusterMessage { "CacheClusterId": _CacheClusterId, "AZMode": (NullOrUndefined Nothing), "AuthToken": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredAvailabilityZones": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotArns": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateCacheClusterMessage _CacheClusterId = CreateCacheClusterMessage { "CacheClusterId": _CacheClusterId, "AZMode": Nothing, "AuthToken": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NotificationTopicArn": Nothing, "NumCacheNodes": Nothing, "Port": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredAvailabilityZones": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupId": Nothing, "SecurityGroupIds": Nothing, "SnapshotArns": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateCacheClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "ReplicationGroupId" :: NullOrUndefined (String) , "AZMode" :: NullOrUndefined (AZMode) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "Tags" :: NullOrUndefined (TagList) , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList) , "SnapshotName" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "NotificationTopicArn" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthToken" :: NullOrUndefined (String) } -> {"CacheClusterId" :: (String) , "ReplicationGroupId" :: NullOrUndefined (String) , "AZMode" :: NullOrUndefined (AZMode) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "Tags" :: NullOrUndefined (TagList) , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList) , "SnapshotName" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "NotificationTopicArn" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthToken" :: NullOrUndefined (String) } ) -> CreateCacheClusterMessage
-newCreateCacheClusterMessage' _CacheClusterId customize = (CreateCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "AZMode": (NullOrUndefined Nothing), "AuthToken": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredAvailabilityZones": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotArns": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "ReplicationGroupId" :: Maybe (String) , "AZMode" :: Maybe (AZMode) , "PreferredAvailabilityZone" :: Maybe (String) , "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList) , "NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "Tags" :: Maybe (TagList) , "SnapshotArns" :: Maybe (SnapshotArnsList) , "SnapshotName" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "NotificationTopicArn" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthToken" :: Maybe (String) } -> {"CacheClusterId" :: (String) , "ReplicationGroupId" :: Maybe (String) , "AZMode" :: Maybe (AZMode) , "PreferredAvailabilityZone" :: Maybe (String) , "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList) , "NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "Tags" :: Maybe (TagList) , "SnapshotArns" :: Maybe (SnapshotArnsList) , "SnapshotName" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "NotificationTopicArn" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthToken" :: Maybe (String) } ) -> CreateCacheClusterMessage
+newCreateCacheClusterMessage' _CacheClusterId customize = (CreateCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "AZMode": Nothing, "AuthToken": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NotificationTopicArn": Nothing, "NumCacheNodes": Nothing, "Port": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredAvailabilityZones": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupId": Nothing, "SecurityGroupIds": Nothing, "SnapshotArns": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "Tags": Nothing }
 
 
 
 newtype CreateCacheClusterResult = CreateCacheClusterResult 
-  { "CacheCluster" :: NullOrUndefined (CacheCluster)
+  { "CacheCluster" :: Maybe (CacheCluster)
   }
 derive instance newtypeCreateCacheClusterResult :: Newtype CreateCacheClusterResult _
 derive instance repGenericCreateCacheClusterResult :: Generic CreateCacheClusterResult _
@@ -972,12 +971,12 @@ instance encodeCreateCacheClusterResult :: Encode CreateCacheClusterResult where
 
 -- | Constructs CreateCacheClusterResult from required parameters
 newCreateCacheClusterResult :: CreateCacheClusterResult
-newCreateCacheClusterResult  = CreateCacheClusterResult { "CacheCluster": (NullOrUndefined Nothing) }
+newCreateCacheClusterResult  = CreateCacheClusterResult { "CacheCluster": Nothing }
 
 -- | Constructs CreateCacheClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCacheClusterResult' :: ( { "CacheCluster" :: NullOrUndefined (CacheCluster) } -> {"CacheCluster" :: NullOrUndefined (CacheCluster) } ) -> CreateCacheClusterResult
-newCreateCacheClusterResult'  customize = (CreateCacheClusterResult <<< customize) { "CacheCluster": (NullOrUndefined Nothing) }
+newCreateCacheClusterResult' :: ( { "CacheCluster" :: Maybe (CacheCluster) } -> {"CacheCluster" :: Maybe (CacheCluster) } ) -> CreateCacheClusterResult
+newCreateCacheClusterResult'  customize = (CreateCacheClusterResult <<< customize) { "CacheCluster": Nothing }
 
 
 
@@ -1005,7 +1004,7 @@ newCreateCacheParameterGroupMessage' _CacheParameterGroupFamily _CacheParameterG
 
 
 newtype CreateCacheParameterGroupResult = CreateCacheParameterGroupResult 
-  { "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup)
+  { "CacheParameterGroup" :: Maybe (CacheParameterGroup)
   }
 derive instance newtypeCreateCacheParameterGroupResult :: Newtype CreateCacheParameterGroupResult _
 derive instance repGenericCreateCacheParameterGroupResult :: Generic CreateCacheParameterGroupResult _
@@ -1015,12 +1014,12 @@ instance encodeCreateCacheParameterGroupResult :: Encode CreateCacheParameterGro
 
 -- | Constructs CreateCacheParameterGroupResult from required parameters
 newCreateCacheParameterGroupResult :: CreateCacheParameterGroupResult
-newCreateCacheParameterGroupResult  = CreateCacheParameterGroupResult { "CacheParameterGroup": (NullOrUndefined Nothing) }
+newCreateCacheParameterGroupResult  = CreateCacheParameterGroupResult { "CacheParameterGroup": Nothing }
 
 -- | Constructs CreateCacheParameterGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCacheParameterGroupResult' :: ( { "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup) } -> {"CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup) } ) -> CreateCacheParameterGroupResult
-newCreateCacheParameterGroupResult'  customize = (CreateCacheParameterGroupResult <<< customize) { "CacheParameterGroup": (NullOrUndefined Nothing) }
+newCreateCacheParameterGroupResult' :: ( { "CacheParameterGroup" :: Maybe (CacheParameterGroup) } -> {"CacheParameterGroup" :: Maybe (CacheParameterGroup) } ) -> CreateCacheParameterGroupResult
+newCreateCacheParameterGroupResult'  customize = (CreateCacheParameterGroupResult <<< customize) { "CacheParameterGroup": Nothing }
 
 
 
@@ -1047,7 +1046,7 @@ newCreateCacheSecurityGroupMessage' _CacheSecurityGroupName _Description customi
 
 
 newtype CreateCacheSecurityGroupResult = CreateCacheSecurityGroupResult 
-  { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup)
+  { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup)
   }
 derive instance newtypeCreateCacheSecurityGroupResult :: Newtype CreateCacheSecurityGroupResult _
 derive instance repGenericCreateCacheSecurityGroupResult :: Generic CreateCacheSecurityGroupResult _
@@ -1057,12 +1056,12 @@ instance encodeCreateCacheSecurityGroupResult :: Encode CreateCacheSecurityGroup
 
 -- | Constructs CreateCacheSecurityGroupResult from required parameters
 newCreateCacheSecurityGroupResult :: CreateCacheSecurityGroupResult
-newCreateCacheSecurityGroupResult  = CreateCacheSecurityGroupResult { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newCreateCacheSecurityGroupResult  = CreateCacheSecurityGroupResult { "CacheSecurityGroup": Nothing }
 
 -- | Constructs CreateCacheSecurityGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCacheSecurityGroupResult' :: ( { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } ) -> CreateCacheSecurityGroupResult
-newCreateCacheSecurityGroupResult'  customize = (CreateCacheSecurityGroupResult <<< customize) { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newCreateCacheSecurityGroupResult' :: ( { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } ) -> CreateCacheSecurityGroupResult
+newCreateCacheSecurityGroupResult'  customize = (CreateCacheSecurityGroupResult <<< customize) { "CacheSecurityGroup": Nothing }
 
 
 
@@ -1090,7 +1089,7 @@ newCreateCacheSubnetGroupMessage' _CacheSubnetGroupDescription _CacheSubnetGroup
 
 
 newtype CreateCacheSubnetGroupResult = CreateCacheSubnetGroupResult 
-  { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup)
+  { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup)
   }
 derive instance newtypeCreateCacheSubnetGroupResult :: Newtype CreateCacheSubnetGroupResult _
 derive instance repGenericCreateCacheSubnetGroupResult :: Generic CreateCacheSubnetGroupResult _
@@ -1100,12 +1099,12 @@ instance encodeCreateCacheSubnetGroupResult :: Encode CreateCacheSubnetGroupResu
 
 -- | Constructs CreateCacheSubnetGroupResult from required parameters
 newCreateCacheSubnetGroupResult :: CreateCacheSubnetGroupResult
-newCreateCacheSubnetGroupResult  = CreateCacheSubnetGroupResult { "CacheSubnetGroup": (NullOrUndefined Nothing) }
+newCreateCacheSubnetGroupResult  = CreateCacheSubnetGroupResult { "CacheSubnetGroup": Nothing }
 
 -- | Constructs CreateCacheSubnetGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCacheSubnetGroupResult' :: ( { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } -> {"CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } ) -> CreateCacheSubnetGroupResult
-newCreateCacheSubnetGroupResult'  customize = (CreateCacheSubnetGroupResult <<< customize) { "CacheSubnetGroup": (NullOrUndefined Nothing) }
+newCreateCacheSubnetGroupResult' :: ( { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } -> {"CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } ) -> CreateCacheSubnetGroupResult
+newCreateCacheSubnetGroupResult'  customize = (CreateCacheSubnetGroupResult <<< customize) { "CacheSubnetGroup": Nothing }
 
 
 
@@ -1113,32 +1112,32 @@ newCreateCacheSubnetGroupResult'  customize = (CreateCacheSubnetGroupResult <<< 
 newtype CreateReplicationGroupMessage = CreateReplicationGroupMessage 
   { "ReplicationGroupId" :: (String)
   , "ReplicationGroupDescription" :: (String)
-  , "PrimaryClusterId" :: NullOrUndefined (String)
-  , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional)
-  , "NumCacheClusters" :: NullOrUndefined (IntegerOptional)
-  , "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList)
-  , "NumNodeGroups" :: NullOrUndefined (IntegerOptional)
-  , "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional)
-  , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList)
-  , "SnapshotName" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "AuthToken" :: NullOrUndefined (String)
-  , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
-  , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
+  , "PrimaryClusterId" :: Maybe (String)
+  , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional)
+  , "NumCacheClusters" :: Maybe (IntegerOptional)
+  , "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList)
+  , "NumNodeGroups" :: Maybe (IntegerOptional)
+  , "ReplicasPerNodeGroup" :: Maybe (IntegerOptional)
+  , "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList)
+  , "CacheNodeType" :: Maybe (String)
+  , "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheParameterGroupName" :: Maybe (String)
+  , "CacheSubnetGroupName" :: Maybe (String)
+  , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList)
+  , "Tags" :: Maybe (TagList)
+  , "SnapshotArns" :: Maybe (SnapshotArnsList)
+  , "SnapshotName" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "NotificationTopicArn" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "AuthToken" :: Maybe (String)
+  , "TransitEncryptionEnabled" :: Maybe (BooleanOptional)
+  , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional)
   }
 derive instance newtypeCreateReplicationGroupMessage :: Newtype CreateReplicationGroupMessage _
 derive instance repGenericCreateReplicationGroupMessage :: Generic CreateReplicationGroupMessage _
@@ -1148,17 +1147,17 @@ instance encodeCreateReplicationGroupMessage :: Encode CreateReplicationGroupMes
 
 -- | Constructs CreateReplicationGroupMessage from required parameters
 newCreateReplicationGroupMessage :: String -> String -> CreateReplicationGroupMessage
-newCreateReplicationGroupMessage _ReplicationGroupDescription _ReplicationGroupId = CreateReplicationGroupMessage { "ReplicationGroupDescription": _ReplicationGroupDescription, "ReplicationGroupId": _ReplicationGroupId, "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthToken": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailoverEnabled": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeGroupConfiguration": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NumCacheClusters": (NullOrUndefined Nothing), "NumNodeGroups": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredCacheClusterAZs": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "ReplicasPerNodeGroup": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotArns": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newCreateReplicationGroupMessage _ReplicationGroupDescription _ReplicationGroupId = CreateReplicationGroupMessage { "ReplicationGroupDescription": _ReplicationGroupDescription, "ReplicationGroupId": _ReplicationGroupId, "AtRestEncryptionEnabled": Nothing, "AuthToken": Nothing, "AutoMinorVersionUpgrade": Nothing, "AutomaticFailoverEnabled": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NodeGroupConfiguration": Nothing, "NotificationTopicArn": Nothing, "NumCacheClusters": Nothing, "NumNodeGroups": Nothing, "Port": Nothing, "PreferredCacheClusterAZs": Nothing, "PreferredMaintenanceWindow": Nothing, "PrimaryClusterId": Nothing, "ReplicasPerNodeGroup": Nothing, "SecurityGroupIds": Nothing, "SnapshotArns": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "Tags": Nothing, "TransitEncryptionEnabled": Nothing }
 
 -- | Constructs CreateReplicationGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationGroupMessage' :: String -> String -> ( { "ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: (String) , "PrimaryClusterId" :: NullOrUndefined (String) , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional) , "NumCacheClusters" :: NullOrUndefined (IntegerOptional) , "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList) , "NumNodeGroups" :: NullOrUndefined (IntegerOptional) , "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional) , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "Tags" :: NullOrUndefined (TagList) , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList) , "SnapshotName" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "NotificationTopicArn" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthToken" :: NullOrUndefined (String) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> {"ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: (String) , "PrimaryClusterId" :: NullOrUndefined (String) , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional) , "NumCacheClusters" :: NullOrUndefined (IntegerOptional) , "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList) , "NumNodeGroups" :: NullOrUndefined (IntegerOptional) , "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional) , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "Tags" :: NullOrUndefined (TagList) , "SnapshotArns" :: NullOrUndefined (SnapshotArnsList) , "SnapshotName" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "NotificationTopicArn" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "AuthToken" :: NullOrUndefined (String) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } ) -> CreateReplicationGroupMessage
-newCreateReplicationGroupMessage' _ReplicationGroupDescription _ReplicationGroupId customize = (CreateReplicationGroupMessage <<< customize) { "ReplicationGroupDescription": _ReplicationGroupDescription, "ReplicationGroupId": _ReplicationGroupId, "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthToken": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailoverEnabled": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeGroupConfiguration": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NumCacheClusters": (NullOrUndefined Nothing), "NumNodeGroups": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredCacheClusterAZs": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "ReplicasPerNodeGroup": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotArns": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newCreateReplicationGroupMessage' :: String -> String -> ( { "ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: (String) , "PrimaryClusterId" :: Maybe (String) , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional) , "NumCacheClusters" :: Maybe (IntegerOptional) , "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList) , "NumNodeGroups" :: Maybe (IntegerOptional) , "ReplicasPerNodeGroup" :: Maybe (IntegerOptional) , "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "Tags" :: Maybe (TagList) , "SnapshotArns" :: Maybe (SnapshotArnsList) , "SnapshotName" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "NotificationTopicArn" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthToken" :: Maybe (String) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> {"ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: (String) , "PrimaryClusterId" :: Maybe (String) , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional) , "NumCacheClusters" :: Maybe (IntegerOptional) , "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList) , "NumNodeGroups" :: Maybe (IntegerOptional) , "ReplicasPerNodeGroup" :: Maybe (IntegerOptional) , "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "Tags" :: Maybe (TagList) , "SnapshotArns" :: Maybe (SnapshotArnsList) , "SnapshotName" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "NotificationTopicArn" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "AuthToken" :: Maybe (String) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } ) -> CreateReplicationGroupMessage
+newCreateReplicationGroupMessage' _ReplicationGroupDescription _ReplicationGroupId customize = (CreateReplicationGroupMessage <<< customize) { "ReplicationGroupDescription": _ReplicationGroupDescription, "ReplicationGroupId": _ReplicationGroupId, "AtRestEncryptionEnabled": Nothing, "AuthToken": Nothing, "AutoMinorVersionUpgrade": Nothing, "AutomaticFailoverEnabled": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NodeGroupConfiguration": Nothing, "NotificationTopicArn": Nothing, "NumCacheClusters": Nothing, "NumNodeGroups": Nothing, "Port": Nothing, "PreferredCacheClusterAZs": Nothing, "PreferredMaintenanceWindow": Nothing, "PrimaryClusterId": Nothing, "ReplicasPerNodeGroup": Nothing, "SecurityGroupIds": Nothing, "SnapshotArns": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "Tags": Nothing, "TransitEncryptionEnabled": Nothing }
 
 
 
 newtype CreateReplicationGroupResult = CreateReplicationGroupResult 
-  { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup)
+  { "ReplicationGroup" :: Maybe (ReplicationGroup)
   }
 derive instance newtypeCreateReplicationGroupResult :: Newtype CreateReplicationGroupResult _
 derive instance repGenericCreateReplicationGroupResult :: Generic CreateReplicationGroupResult _
@@ -1168,19 +1167,19 @@ instance encodeCreateReplicationGroupResult :: Encode CreateReplicationGroupResu
 
 -- | Constructs CreateReplicationGroupResult from required parameters
 newCreateReplicationGroupResult :: CreateReplicationGroupResult
-newCreateReplicationGroupResult  = CreateReplicationGroupResult { "ReplicationGroup": (NullOrUndefined Nothing) }
+newCreateReplicationGroupResult  = CreateReplicationGroupResult { "ReplicationGroup": Nothing }
 
 -- | Constructs CreateReplicationGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationGroupResult' :: ( { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> {"ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } ) -> CreateReplicationGroupResult
-newCreateReplicationGroupResult'  customize = (CreateReplicationGroupResult <<< customize) { "ReplicationGroup": (NullOrUndefined Nothing) }
+newCreateReplicationGroupResult' :: ( { "ReplicationGroup" :: Maybe (ReplicationGroup) } -> {"ReplicationGroup" :: Maybe (ReplicationGroup) } ) -> CreateReplicationGroupResult
+newCreateReplicationGroupResult'  customize = (CreateReplicationGroupResult <<< customize) { "ReplicationGroup": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>CreateSnapshot</code> operation.</p>
 newtype CreateSnapshotMessage = CreateSnapshotMessage 
-  { "ReplicationGroupId" :: NullOrUndefined (String)
-  , "CacheClusterId" :: NullOrUndefined (String)
+  { "ReplicationGroupId" :: Maybe (String)
+  , "CacheClusterId" :: Maybe (String)
   , "SnapshotName" :: (String)
   }
 derive instance newtypeCreateSnapshotMessage :: Newtype CreateSnapshotMessage _
@@ -1191,17 +1190,17 @@ instance encodeCreateSnapshotMessage :: Encode CreateSnapshotMessage where encod
 
 -- | Constructs CreateSnapshotMessage from required parameters
 newCreateSnapshotMessage :: String -> CreateSnapshotMessage
-newCreateSnapshotMessage _SnapshotName = CreateSnapshotMessage { "SnapshotName": _SnapshotName, "CacheClusterId": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newCreateSnapshotMessage _SnapshotName = CreateSnapshotMessage { "SnapshotName": _SnapshotName, "CacheClusterId": Nothing, "ReplicationGroupId": Nothing }
 
 -- | Constructs CreateSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotMessage' :: String -> ( { "ReplicationGroupId" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotName" :: (String) } -> {"ReplicationGroupId" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotName" :: (String) } ) -> CreateSnapshotMessage
-newCreateSnapshotMessage' _SnapshotName customize = (CreateSnapshotMessage <<< customize) { "SnapshotName": _SnapshotName, "CacheClusterId": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newCreateSnapshotMessage' :: String -> ( { "ReplicationGroupId" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotName" :: (String) } -> {"ReplicationGroupId" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotName" :: (String) } ) -> CreateSnapshotMessage
+newCreateSnapshotMessage' _SnapshotName customize = (CreateSnapshotMessage <<< customize) { "SnapshotName": _SnapshotName, "CacheClusterId": Nothing, "ReplicationGroupId": Nothing }
 
 
 
 newtype CreateSnapshotResult = CreateSnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeCreateSnapshotResult :: Newtype CreateSnapshotResult _
 derive instance repGenericCreateSnapshotResult :: Generic CreateSnapshotResult _
@@ -1211,19 +1210,19 @@ instance encodeCreateSnapshotResult :: Encode CreateSnapshotResult where encode 
 
 -- | Constructs CreateSnapshotResult from required parameters
 newCreateSnapshotResult :: CreateSnapshotResult
-newCreateSnapshotResult  = CreateSnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newCreateSnapshotResult  = CreateSnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs CreateSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> CreateSnapshotResult
-newCreateSnapshotResult'  customize = (CreateSnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newCreateSnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> CreateSnapshotResult
+newCreateSnapshotResult'  customize = (CreateSnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DeleteCacheCluster</code> operation.</p>
 newtype DeleteCacheClusterMessage = DeleteCacheClusterMessage 
   { "CacheClusterId" :: (String)
-  , "FinalSnapshotIdentifier" :: NullOrUndefined (String)
+  , "FinalSnapshotIdentifier" :: Maybe (String)
   }
 derive instance newtypeDeleteCacheClusterMessage :: Newtype DeleteCacheClusterMessage _
 derive instance repGenericDeleteCacheClusterMessage :: Generic DeleteCacheClusterMessage _
@@ -1233,17 +1232,17 @@ instance encodeDeleteCacheClusterMessage :: Encode DeleteCacheClusterMessage whe
 
 -- | Constructs DeleteCacheClusterMessage from required parameters
 newDeleteCacheClusterMessage :: String -> DeleteCacheClusterMessage
-newDeleteCacheClusterMessage _CacheClusterId = DeleteCacheClusterMessage { "CacheClusterId": _CacheClusterId, "FinalSnapshotIdentifier": (NullOrUndefined Nothing) }
+newDeleteCacheClusterMessage _CacheClusterId = DeleteCacheClusterMessage { "CacheClusterId": _CacheClusterId, "FinalSnapshotIdentifier": Nothing }
 
 -- | Constructs DeleteCacheClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "FinalSnapshotIdentifier" :: NullOrUndefined (String) } -> {"CacheClusterId" :: (String) , "FinalSnapshotIdentifier" :: NullOrUndefined (String) } ) -> DeleteCacheClusterMessage
-newDeleteCacheClusterMessage' _CacheClusterId customize = (DeleteCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "FinalSnapshotIdentifier": (NullOrUndefined Nothing) }
+newDeleteCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "FinalSnapshotIdentifier" :: Maybe (String) } -> {"CacheClusterId" :: (String) , "FinalSnapshotIdentifier" :: Maybe (String) } ) -> DeleteCacheClusterMessage
+newDeleteCacheClusterMessage' _CacheClusterId customize = (DeleteCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "FinalSnapshotIdentifier": Nothing }
 
 
 
 newtype DeleteCacheClusterResult = DeleteCacheClusterResult 
-  { "CacheCluster" :: NullOrUndefined (CacheCluster)
+  { "CacheCluster" :: Maybe (CacheCluster)
   }
 derive instance newtypeDeleteCacheClusterResult :: Newtype DeleteCacheClusterResult _
 derive instance repGenericDeleteCacheClusterResult :: Generic DeleteCacheClusterResult _
@@ -1253,12 +1252,12 @@ instance encodeDeleteCacheClusterResult :: Encode DeleteCacheClusterResult where
 
 -- | Constructs DeleteCacheClusterResult from required parameters
 newDeleteCacheClusterResult :: DeleteCacheClusterResult
-newDeleteCacheClusterResult  = DeleteCacheClusterResult { "CacheCluster": (NullOrUndefined Nothing) }
+newDeleteCacheClusterResult  = DeleteCacheClusterResult { "CacheCluster": Nothing }
 
 -- | Constructs DeleteCacheClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCacheClusterResult' :: ( { "CacheCluster" :: NullOrUndefined (CacheCluster) } -> {"CacheCluster" :: NullOrUndefined (CacheCluster) } ) -> DeleteCacheClusterResult
-newDeleteCacheClusterResult'  customize = (DeleteCacheClusterResult <<< customize) { "CacheCluster": (NullOrUndefined Nothing) }
+newDeleteCacheClusterResult' :: ( { "CacheCluster" :: Maybe (CacheCluster) } -> {"CacheCluster" :: Maybe (CacheCluster) } ) -> DeleteCacheClusterResult
+newDeleteCacheClusterResult'  customize = (DeleteCacheClusterResult <<< customize) { "CacheCluster": Nothing }
 
 
 
@@ -1328,8 +1327,8 @@ newDeleteCacheSubnetGroupMessage' _CacheSubnetGroupName customize = (DeleteCache
 -- | <p>Represents the input of a <code>DeleteReplicationGroup</code> operation.</p>
 newtype DeleteReplicationGroupMessage = DeleteReplicationGroupMessage 
   { "ReplicationGroupId" :: (String)
-  , "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional)
-  , "FinalSnapshotIdentifier" :: NullOrUndefined (String)
+  , "RetainPrimaryCluster" :: Maybe (BooleanOptional)
+  , "FinalSnapshotIdentifier" :: Maybe (String)
   }
 derive instance newtypeDeleteReplicationGroupMessage :: Newtype DeleteReplicationGroupMessage _
 derive instance repGenericDeleteReplicationGroupMessage :: Generic DeleteReplicationGroupMessage _
@@ -1339,17 +1338,17 @@ instance encodeDeleteReplicationGroupMessage :: Encode DeleteReplicationGroupMes
 
 -- | Constructs DeleteReplicationGroupMessage from required parameters
 newDeleteReplicationGroupMessage :: String -> DeleteReplicationGroupMessage
-newDeleteReplicationGroupMessage _ReplicationGroupId = DeleteReplicationGroupMessage { "ReplicationGroupId": _ReplicationGroupId, "FinalSnapshotIdentifier": (NullOrUndefined Nothing), "RetainPrimaryCluster": (NullOrUndefined Nothing) }
+newDeleteReplicationGroupMessage _ReplicationGroupId = DeleteReplicationGroupMessage { "ReplicationGroupId": _ReplicationGroupId, "FinalSnapshotIdentifier": Nothing, "RetainPrimaryCluster": Nothing }
 
 -- | Constructs DeleteReplicationGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReplicationGroupMessage' :: String -> ( { "ReplicationGroupId" :: (String) , "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional) , "FinalSnapshotIdentifier" :: NullOrUndefined (String) } -> {"ReplicationGroupId" :: (String) , "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional) , "FinalSnapshotIdentifier" :: NullOrUndefined (String) } ) -> DeleteReplicationGroupMessage
-newDeleteReplicationGroupMessage' _ReplicationGroupId customize = (DeleteReplicationGroupMessage <<< customize) { "ReplicationGroupId": _ReplicationGroupId, "FinalSnapshotIdentifier": (NullOrUndefined Nothing), "RetainPrimaryCluster": (NullOrUndefined Nothing) }
+newDeleteReplicationGroupMessage' :: String -> ( { "ReplicationGroupId" :: (String) , "RetainPrimaryCluster" :: Maybe (BooleanOptional) , "FinalSnapshotIdentifier" :: Maybe (String) } -> {"ReplicationGroupId" :: (String) , "RetainPrimaryCluster" :: Maybe (BooleanOptional) , "FinalSnapshotIdentifier" :: Maybe (String) } ) -> DeleteReplicationGroupMessage
+newDeleteReplicationGroupMessage' _ReplicationGroupId customize = (DeleteReplicationGroupMessage <<< customize) { "ReplicationGroupId": _ReplicationGroupId, "FinalSnapshotIdentifier": Nothing, "RetainPrimaryCluster": Nothing }
 
 
 
 newtype DeleteReplicationGroupResult = DeleteReplicationGroupResult 
-  { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup)
+  { "ReplicationGroup" :: Maybe (ReplicationGroup)
   }
 derive instance newtypeDeleteReplicationGroupResult :: Newtype DeleteReplicationGroupResult _
 derive instance repGenericDeleteReplicationGroupResult :: Generic DeleteReplicationGroupResult _
@@ -1359,12 +1358,12 @@ instance encodeDeleteReplicationGroupResult :: Encode DeleteReplicationGroupResu
 
 -- | Constructs DeleteReplicationGroupResult from required parameters
 newDeleteReplicationGroupResult :: DeleteReplicationGroupResult
-newDeleteReplicationGroupResult  = DeleteReplicationGroupResult { "ReplicationGroup": (NullOrUndefined Nothing) }
+newDeleteReplicationGroupResult  = DeleteReplicationGroupResult { "ReplicationGroup": Nothing }
 
 -- | Constructs DeleteReplicationGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReplicationGroupResult' :: ( { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> {"ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } ) -> DeleteReplicationGroupResult
-newDeleteReplicationGroupResult'  customize = (DeleteReplicationGroupResult <<< customize) { "ReplicationGroup": (NullOrUndefined Nothing) }
+newDeleteReplicationGroupResult' :: ( { "ReplicationGroup" :: Maybe (ReplicationGroup) } -> {"ReplicationGroup" :: Maybe (ReplicationGroup) } ) -> DeleteReplicationGroupResult
+newDeleteReplicationGroupResult'  customize = (DeleteReplicationGroupResult <<< customize) { "ReplicationGroup": Nothing }
 
 
 
@@ -1390,7 +1389,7 @@ newDeleteSnapshotMessage' _SnapshotName customize = (DeleteSnapshotMessage <<< c
 
 
 newtype DeleteSnapshotResult = DeleteSnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeDeleteSnapshotResult :: Newtype DeleteSnapshotResult _
 derive instance repGenericDeleteSnapshotResult :: Generic DeleteSnapshotResult _
@@ -1400,22 +1399,22 @@ instance encodeDeleteSnapshotResult :: Encode DeleteSnapshotResult where encode 
 
 -- | Constructs DeleteSnapshotResult from required parameters
 newDeleteSnapshotResult :: DeleteSnapshotResult
-newDeleteSnapshotResult  = DeleteSnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newDeleteSnapshotResult  = DeleteSnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs DeleteSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteSnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> DeleteSnapshotResult
-newDeleteSnapshotResult'  customize = (DeleteSnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newDeleteSnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> DeleteSnapshotResult
+newDeleteSnapshotResult'  customize = (DeleteSnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheClusters</code> operation.</p>
 newtype DescribeCacheClustersMessage = DescribeCacheClustersMessage 
-  { "CacheClusterId" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional)
-  , "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional)
+  { "CacheClusterId" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "ShowCacheNodeInfo" :: Maybe (BooleanOptional)
+  , "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional)
   }
 derive instance newtypeDescribeCacheClustersMessage :: Newtype DescribeCacheClustersMessage _
 derive instance repGenericDescribeCacheClustersMessage :: Generic DescribeCacheClustersMessage _
@@ -1425,23 +1424,23 @@ instance encodeDescribeCacheClustersMessage :: Encode DescribeCacheClustersMessa
 
 -- | Constructs DescribeCacheClustersMessage from required parameters
 newDescribeCacheClustersMessage :: DescribeCacheClustersMessage
-newDescribeCacheClustersMessage  = DescribeCacheClustersMessage { "CacheClusterId": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ShowCacheClustersNotInReplicationGroups": (NullOrUndefined Nothing), "ShowCacheNodeInfo": (NullOrUndefined Nothing) }
+newDescribeCacheClustersMessage  = DescribeCacheClustersMessage { "CacheClusterId": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "ShowCacheClustersNotInReplicationGroups": Nothing, "ShowCacheNodeInfo": Nothing }
 
 -- | Constructs DescribeCacheClustersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheClustersMessage' :: ( { "CacheClusterId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional) , "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional) } -> {"CacheClusterId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional) , "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional) } ) -> DescribeCacheClustersMessage
-newDescribeCacheClustersMessage'  customize = (DescribeCacheClustersMessage <<< customize) { "CacheClusterId": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ShowCacheClustersNotInReplicationGroups": (NullOrUndefined Nothing), "ShowCacheNodeInfo": (NullOrUndefined Nothing) }
+newDescribeCacheClustersMessage' :: ( { "CacheClusterId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "ShowCacheNodeInfo" :: Maybe (BooleanOptional) , "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional) } -> {"CacheClusterId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "ShowCacheNodeInfo" :: Maybe (BooleanOptional) , "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional) } ) -> DescribeCacheClustersMessage
+newDescribeCacheClustersMessage'  customize = (DescribeCacheClustersMessage <<< customize) { "CacheClusterId": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "ShowCacheClustersNotInReplicationGroups": Nothing, "ShowCacheNodeInfo": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheEngineVersions</code> operation.</p>
 newtype DescribeCacheEngineVersionsMessage = DescribeCacheEngineVersionsMessage 
-  { "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheParameterGroupFamily" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "DefaultOnly" :: NullOrUndefined (Boolean)
+  { "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheParameterGroupFamily" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "DefaultOnly" :: Maybe (Boolean)
   }
 derive instance newtypeDescribeCacheEngineVersionsMessage :: Newtype DescribeCacheEngineVersionsMessage _
 derive instance repGenericDescribeCacheEngineVersionsMessage :: Generic DescribeCacheEngineVersionsMessage _
@@ -1451,20 +1450,20 @@ instance encodeDescribeCacheEngineVersionsMessage :: Encode DescribeCacheEngineV
 
 -- | Constructs DescribeCacheEngineVersionsMessage from required parameters
 newDescribeCacheEngineVersionsMessage :: DescribeCacheEngineVersionsMessage
-newDescribeCacheEngineVersionsMessage  = DescribeCacheEngineVersionsMessage { "CacheParameterGroupFamily": (NullOrUndefined Nothing), "DefaultOnly": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheEngineVersionsMessage  = DescribeCacheEngineVersionsMessage { "CacheParameterGroupFamily": Nothing, "DefaultOnly": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeCacheEngineVersionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheEngineVersionsMessage' :: ( { "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "DefaultOnly" :: NullOrUndefined (Boolean) } -> {"Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "CacheParameterGroupFamily" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "DefaultOnly" :: NullOrUndefined (Boolean) } ) -> DescribeCacheEngineVersionsMessage
-newDescribeCacheEngineVersionsMessage'  customize = (DescribeCacheEngineVersionsMessage <<< customize) { "CacheParameterGroupFamily": (NullOrUndefined Nothing), "DefaultOnly": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheEngineVersionsMessage' :: ( { "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "DefaultOnly" :: Maybe (Boolean) } -> {"Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "CacheParameterGroupFamily" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "DefaultOnly" :: Maybe (Boolean) } ) -> DescribeCacheEngineVersionsMessage
+newDescribeCacheEngineVersionsMessage'  customize = (DescribeCacheEngineVersionsMessage <<< customize) { "CacheParameterGroupFamily": Nothing, "DefaultOnly": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheParameterGroups</code> operation.</p>
 newtype DescribeCacheParameterGroupsMessage = DescribeCacheParameterGroupsMessage 
-  { "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "CacheParameterGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeCacheParameterGroupsMessage :: Newtype DescribeCacheParameterGroupsMessage _
 derive instance repGenericDescribeCacheParameterGroupsMessage :: Generic DescribeCacheParameterGroupsMessage _
@@ -1474,21 +1473,21 @@ instance encodeDescribeCacheParameterGroupsMessage :: Encode DescribeCacheParame
 
 -- | Constructs DescribeCacheParameterGroupsMessage from required parameters
 newDescribeCacheParameterGroupsMessage :: DescribeCacheParameterGroupsMessage
-newDescribeCacheParameterGroupsMessage  = DescribeCacheParameterGroupsMessage { "CacheParameterGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheParameterGroupsMessage  = DescribeCacheParameterGroupsMessage { "CacheParameterGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeCacheParameterGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheParameterGroupsMessage' :: ( { "CacheParameterGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"CacheParameterGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeCacheParameterGroupsMessage
-newDescribeCacheParameterGroupsMessage'  customize = (DescribeCacheParameterGroupsMessage <<< customize) { "CacheParameterGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheParameterGroupsMessage' :: ( { "CacheParameterGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"CacheParameterGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeCacheParameterGroupsMessage
+newDescribeCacheParameterGroupsMessage'  customize = (DescribeCacheParameterGroupsMessage <<< customize) { "CacheParameterGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheParameters</code> operation.</p>
 newtype DescribeCacheParametersMessage = DescribeCacheParametersMessage 
   { "CacheParameterGroupName" :: (String)
-  , "Source" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "Source" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeCacheParametersMessage :: Newtype DescribeCacheParametersMessage _
 derive instance repGenericDescribeCacheParametersMessage :: Generic DescribeCacheParametersMessage _
@@ -1498,20 +1497,20 @@ instance encodeDescribeCacheParametersMessage :: Encode DescribeCacheParametersM
 
 -- | Constructs DescribeCacheParametersMessage from required parameters
 newDescribeCacheParametersMessage :: String -> DescribeCacheParametersMessage
-newDescribeCacheParametersMessage _CacheParameterGroupName = DescribeCacheParametersMessage { "CacheParameterGroupName": _CacheParameterGroupName, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeCacheParametersMessage _CacheParameterGroupName = DescribeCacheParametersMessage { "CacheParameterGroupName": _CacheParameterGroupName, "Marker": Nothing, "MaxRecords": Nothing, "Source": Nothing }
 
 -- | Constructs DescribeCacheParametersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheParametersMessage' :: String -> ( { "CacheParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"CacheParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeCacheParametersMessage
-newDescribeCacheParametersMessage' _CacheParameterGroupName customize = (DescribeCacheParametersMessage <<< customize) { "CacheParameterGroupName": _CacheParameterGroupName, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeCacheParametersMessage' :: String -> ( { "CacheParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"CacheParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeCacheParametersMessage
+newDescribeCacheParametersMessage' _CacheParameterGroupName customize = (DescribeCacheParametersMessage <<< customize) { "CacheParameterGroupName": _CacheParameterGroupName, "Marker": Nothing, "MaxRecords": Nothing, "Source": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheSecurityGroups</code> operation.</p>
 newtype DescribeCacheSecurityGroupsMessage = DescribeCacheSecurityGroupsMessage 
-  { "CacheSecurityGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "CacheSecurityGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeCacheSecurityGroupsMessage :: Newtype DescribeCacheSecurityGroupsMessage _
 derive instance repGenericDescribeCacheSecurityGroupsMessage :: Generic DescribeCacheSecurityGroupsMessage _
@@ -1521,20 +1520,20 @@ instance encodeDescribeCacheSecurityGroupsMessage :: Encode DescribeCacheSecurit
 
 -- | Constructs DescribeCacheSecurityGroupsMessage from required parameters
 newDescribeCacheSecurityGroupsMessage :: DescribeCacheSecurityGroupsMessage
-newDescribeCacheSecurityGroupsMessage  = DescribeCacheSecurityGroupsMessage { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheSecurityGroupsMessage  = DescribeCacheSecurityGroupsMessage { "CacheSecurityGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeCacheSecurityGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheSecurityGroupsMessage' :: ( { "CacheSecurityGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"CacheSecurityGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeCacheSecurityGroupsMessage
-newDescribeCacheSecurityGroupsMessage'  customize = (DescribeCacheSecurityGroupsMessage <<< customize) { "CacheSecurityGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheSecurityGroupsMessage' :: ( { "CacheSecurityGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"CacheSecurityGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeCacheSecurityGroupsMessage
+newDescribeCacheSecurityGroupsMessage'  customize = (DescribeCacheSecurityGroupsMessage <<< customize) { "CacheSecurityGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 newtype DescribeCacheSubnetGroupsMessage = DescribeCacheSubnetGroupsMessage 
-  { "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "CacheSubnetGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeCacheSubnetGroupsMessage :: Newtype DescribeCacheSubnetGroupsMessage _
 derive instance repGenericDescribeCacheSubnetGroupsMessage :: Generic DescribeCacheSubnetGroupsMessage _
@@ -1544,20 +1543,20 @@ instance encodeDescribeCacheSubnetGroupsMessage :: Encode DescribeCacheSubnetGro
 
 -- | Constructs DescribeCacheSubnetGroupsMessage from required parameters
 newDescribeCacheSubnetGroupsMessage :: DescribeCacheSubnetGroupsMessage
-newDescribeCacheSubnetGroupsMessage  = DescribeCacheSubnetGroupsMessage { "CacheSubnetGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheSubnetGroupsMessage  = DescribeCacheSubnetGroupsMessage { "CacheSubnetGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeCacheSubnetGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCacheSubnetGroupsMessage' :: ( { "CacheSubnetGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"CacheSubnetGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeCacheSubnetGroupsMessage
-newDescribeCacheSubnetGroupsMessage'  customize = (DescribeCacheSubnetGroupsMessage <<< customize) { "CacheSubnetGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCacheSubnetGroupsMessage' :: ( { "CacheSubnetGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"CacheSubnetGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeCacheSubnetGroupsMessage
+newDescribeCacheSubnetGroupsMessage'  customize = (DescribeCacheSubnetGroupsMessage <<< customize) { "CacheSubnetGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.</p>
 newtype DescribeEngineDefaultParametersMessage = DescribeEngineDefaultParametersMessage 
   { "CacheParameterGroupFamily" :: (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEngineDefaultParametersMessage :: Newtype DescribeEngineDefaultParametersMessage _
 derive instance repGenericDescribeEngineDefaultParametersMessage :: Generic DescribeEngineDefaultParametersMessage _
@@ -1567,17 +1566,17 @@ instance encodeDescribeEngineDefaultParametersMessage :: Encode DescribeEngineDe
 
 -- | Constructs DescribeEngineDefaultParametersMessage from required parameters
 newDescribeEngineDefaultParametersMessage :: String -> DescribeEngineDefaultParametersMessage
-newDescribeEngineDefaultParametersMessage _CacheParameterGroupFamily = DescribeEngineDefaultParametersMessage { "CacheParameterGroupFamily": _CacheParameterGroupFamily, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEngineDefaultParametersMessage _CacheParameterGroupFamily = DescribeEngineDefaultParametersMessage { "CacheParameterGroupFamily": _CacheParameterGroupFamily, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeEngineDefaultParametersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEngineDefaultParametersMessage' :: String -> ( { "CacheParameterGroupFamily" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"CacheParameterGroupFamily" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEngineDefaultParametersMessage
-newDescribeEngineDefaultParametersMessage' _CacheParameterGroupFamily customize = (DescribeEngineDefaultParametersMessage <<< customize) { "CacheParameterGroupFamily": _CacheParameterGroupFamily, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEngineDefaultParametersMessage' :: String -> ( { "CacheParameterGroupFamily" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"CacheParameterGroupFamily" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEngineDefaultParametersMessage
+newDescribeEngineDefaultParametersMessage' _CacheParameterGroupFamily customize = (DescribeEngineDefaultParametersMessage <<< customize) { "CacheParameterGroupFamily": _CacheParameterGroupFamily, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 newtype DescribeEngineDefaultParametersResult = DescribeEngineDefaultParametersResult 
-  { "EngineDefaults" :: NullOrUndefined (EngineDefaults)
+  { "EngineDefaults" :: Maybe (EngineDefaults)
   }
 derive instance newtypeDescribeEngineDefaultParametersResult :: Newtype DescribeEngineDefaultParametersResult _
 derive instance repGenericDescribeEngineDefaultParametersResult :: Generic DescribeEngineDefaultParametersResult _
@@ -1587,24 +1586,24 @@ instance encodeDescribeEngineDefaultParametersResult :: Encode DescribeEngineDef
 
 -- | Constructs DescribeEngineDefaultParametersResult from required parameters
 newDescribeEngineDefaultParametersResult :: DescribeEngineDefaultParametersResult
-newDescribeEngineDefaultParametersResult  = DescribeEngineDefaultParametersResult { "EngineDefaults": (NullOrUndefined Nothing) }
+newDescribeEngineDefaultParametersResult  = DescribeEngineDefaultParametersResult { "EngineDefaults": Nothing }
 
 -- | Constructs DescribeEngineDefaultParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEngineDefaultParametersResult' :: ( { "EngineDefaults" :: NullOrUndefined (EngineDefaults) } -> {"EngineDefaults" :: NullOrUndefined (EngineDefaults) } ) -> DescribeEngineDefaultParametersResult
-newDescribeEngineDefaultParametersResult'  customize = (DescribeEngineDefaultParametersResult <<< customize) { "EngineDefaults": (NullOrUndefined Nothing) }
+newDescribeEngineDefaultParametersResult' :: ( { "EngineDefaults" :: Maybe (EngineDefaults) } -> {"EngineDefaults" :: Maybe (EngineDefaults) } ) -> DescribeEngineDefaultParametersResult
+newDescribeEngineDefaultParametersResult'  customize = (DescribeEngineDefaultParametersResult <<< customize) { "EngineDefaults": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeEvents</code> operation.</p>
 newtype DescribeEventsMessage = DescribeEventsMessage 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "EndTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (IntegerOptional)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "StartTime" :: Maybe (TStamp)
+  , "EndTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (IntegerOptional)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEventsMessage :: Newtype DescribeEventsMessage _
 derive instance repGenericDescribeEventsMessage :: Generic DescribeEventsMessage _
@@ -1614,20 +1613,20 @@ instance encodeDescribeEventsMessage :: Encode DescribeEventsMessage where encod
 
 -- | Constructs DescribeEventsMessage from required parameters
 newDescribeEventsMessage :: DescribeEventsMessage
-newDescribeEventsMessage  = DescribeEventsMessage { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage  = DescribeEventsMessage { "Duration": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 -- | Constructs DescribeEventsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsMessage' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEventsMessage
-newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEventsMessage
+newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeReplicationGroups</code> operation.</p>
 newtype DescribeReplicationGroupsMessage = DescribeReplicationGroupsMessage 
-  { "ReplicationGroupId" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReplicationGroupId" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationGroupsMessage :: Newtype DescribeReplicationGroupsMessage _
 derive instance repGenericDescribeReplicationGroupsMessage :: Generic DescribeReplicationGroupsMessage _
@@ -1637,25 +1636,25 @@ instance encodeDescribeReplicationGroupsMessage :: Encode DescribeReplicationGro
 
 -- | Constructs DescribeReplicationGroupsMessage from required parameters
 newDescribeReplicationGroupsMessage :: DescribeReplicationGroupsMessage
-newDescribeReplicationGroupsMessage  = DescribeReplicationGroupsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newDescribeReplicationGroupsMessage  = DescribeReplicationGroupsMessage { "Marker": Nothing, "MaxRecords": Nothing, "ReplicationGroupId": Nothing }
 
 -- | Constructs DescribeReplicationGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationGroupsMessage' :: ( { "ReplicationGroupId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReplicationGroupId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationGroupsMessage
-newDescribeReplicationGroupsMessage'  customize = (DescribeReplicationGroupsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newDescribeReplicationGroupsMessage' :: ( { "ReplicationGroupId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReplicationGroupId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationGroupsMessage
+newDescribeReplicationGroupsMessage'  customize = (DescribeReplicationGroupsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ReplicationGroupId": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeReservedCacheNodes</code> operation.</p>
 newtype DescribeReservedCacheNodesMessage = DescribeReservedCacheNodesMessage 
-  { "ReservedCacheNodeId" :: NullOrUndefined (String)
-  , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Duration" :: NullOrUndefined (String)
-  , "ProductDescription" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReservedCacheNodeId" :: Maybe (String)
+  , "ReservedCacheNodesOfferingId" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "Duration" :: Maybe (String)
+  , "ProductDescription" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReservedCacheNodesMessage :: Newtype DescribeReservedCacheNodesMessage _
 derive instance repGenericDescribeReservedCacheNodesMessage :: Generic DescribeReservedCacheNodesMessage _
@@ -1665,24 +1664,24 @@ instance encodeDescribeReservedCacheNodesMessage :: Encode DescribeReservedCache
 
 -- | Constructs DescribeReservedCacheNodesMessage from required parameters
 newDescribeReservedCacheNodesMessage :: DescribeReservedCacheNodesMessage
-newDescribeReservedCacheNodesMessage  = DescribeReservedCacheNodesMessage { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedCacheNodesMessage  = DescribeReservedCacheNodesMessage { "CacheNodeType": Nothing, "Duration": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "ReservedCacheNodeId": Nothing, "ReservedCacheNodesOfferingId": Nothing }
 
 -- | Constructs DescribeReservedCacheNodesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReservedCacheNodesMessage' :: ( { "ReservedCacheNodeId" :: NullOrUndefined (String) , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (String) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReservedCacheNodeId" :: NullOrUndefined (String) , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (String) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReservedCacheNodesMessage
-newDescribeReservedCacheNodesMessage'  customize = (DescribeReservedCacheNodesMessage <<< customize) { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedCacheNodesMessage' :: ( { "ReservedCacheNodeId" :: Maybe (String) , "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (String) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReservedCacheNodeId" :: Maybe (String) , "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (String) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReservedCacheNodesMessage
+newDescribeReservedCacheNodesMessage'  customize = (DescribeReservedCacheNodesMessage <<< customize) { "CacheNodeType": Nothing, "Duration": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "ReservedCacheNodeId": Nothing, "ReservedCacheNodesOfferingId": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 newtype DescribeReservedCacheNodesOfferingsMessage = DescribeReservedCacheNodesOfferingsMessage 
-  { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Duration" :: NullOrUndefined (String)
-  , "ProductDescription" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReservedCacheNodesOfferingId" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "Duration" :: Maybe (String)
+  , "ProductDescription" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReservedCacheNodesOfferingsMessage :: Newtype DescribeReservedCacheNodesOfferingsMessage _
 derive instance repGenericDescribeReservedCacheNodesOfferingsMessage :: Generic DescribeReservedCacheNodesOfferingsMessage _
@@ -1692,19 +1691,19 @@ instance encodeDescribeReservedCacheNodesOfferingsMessage :: Encode DescribeRese
 
 -- | Constructs DescribeReservedCacheNodesOfferingsMessage from required parameters
 newDescribeReservedCacheNodesOfferingsMessage :: DescribeReservedCacheNodesOfferingsMessage
-newDescribeReservedCacheNodesOfferingsMessage  = DescribeReservedCacheNodesOfferingsMessage { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedCacheNodesOfferingsMessage  = DescribeReservedCacheNodesOfferingsMessage { "CacheNodeType": Nothing, "Duration": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "ReservedCacheNodesOfferingId": Nothing }
 
 -- | Constructs DescribeReservedCacheNodesOfferingsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReservedCacheNodesOfferingsMessage' :: ( { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (String) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (String) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReservedCacheNodesOfferingsMessage
-newDescribeReservedCacheNodesOfferingsMessage'  customize = (DescribeReservedCacheNodesOfferingsMessage <<< customize) { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedCacheNodesOfferingsMessage' :: ( { "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (String) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (String) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReservedCacheNodesOfferingsMessage
+newDescribeReservedCacheNodesOfferingsMessage'  customize = (DescribeReservedCacheNodesOfferingsMessage <<< customize) { "CacheNodeType": Nothing, "Duration": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "ReservedCacheNodesOfferingId": Nothing }
 
 
 
 -- | <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
 newtype DescribeSnapshotsListMessage = DescribeSnapshotsListMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "Snapshots" :: NullOrUndefined (SnapshotList)
+  { "Marker" :: Maybe (String)
+  , "Snapshots" :: Maybe (SnapshotList)
   }
 derive instance newtypeDescribeSnapshotsListMessage :: Newtype DescribeSnapshotsListMessage _
 derive instance repGenericDescribeSnapshotsListMessage :: Generic DescribeSnapshotsListMessage _
@@ -1714,24 +1713,24 @@ instance encodeDescribeSnapshotsListMessage :: Encode DescribeSnapshotsListMessa
 
 -- | Constructs DescribeSnapshotsListMessage from required parameters
 newDescribeSnapshotsListMessage :: DescribeSnapshotsListMessage
-newDescribeSnapshotsListMessage  = DescribeSnapshotsListMessage { "Marker": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newDescribeSnapshotsListMessage  = DescribeSnapshotsListMessage { "Marker": Nothing, "Snapshots": Nothing }
 
 -- | Constructs DescribeSnapshotsListMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSnapshotsListMessage' :: ( { "Marker" :: NullOrUndefined (String) , "Snapshots" :: NullOrUndefined (SnapshotList) } -> {"Marker" :: NullOrUndefined (String) , "Snapshots" :: NullOrUndefined (SnapshotList) } ) -> DescribeSnapshotsListMessage
-newDescribeSnapshotsListMessage'  customize = (DescribeSnapshotsListMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newDescribeSnapshotsListMessage' :: ( { "Marker" :: Maybe (String) , "Snapshots" :: Maybe (SnapshotList) } -> {"Marker" :: Maybe (String) , "Snapshots" :: Maybe (SnapshotList) } ) -> DescribeSnapshotsListMessage
+newDescribeSnapshotsListMessage'  customize = (DescribeSnapshotsListMessage <<< customize) { "Marker": Nothing, "Snapshots": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>DescribeSnapshotsMessage</code> operation.</p>
 newtype DescribeSnapshotsMessage = DescribeSnapshotsMessage 
-  { "ReplicationGroupId" :: NullOrUndefined (String)
-  , "CacheClusterId" :: NullOrUndefined (String)
-  , "SnapshotName" :: NullOrUndefined (String)
-  , "SnapshotSource" :: NullOrUndefined (String)
-  , "Marker" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional)
+  { "ReplicationGroupId" :: Maybe (String)
+  , "CacheClusterId" :: Maybe (String)
+  , "SnapshotName" :: Maybe (String)
+  , "SnapshotSource" :: Maybe (String)
+  , "Marker" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "ShowNodeGroupConfig" :: Maybe (BooleanOptional)
   }
 derive instance newtypeDescribeSnapshotsMessage :: Newtype DescribeSnapshotsMessage _
 derive instance repGenericDescribeSnapshotsMessage :: Generic DescribeSnapshotsMessage _
@@ -1741,20 +1740,20 @@ instance encodeDescribeSnapshotsMessage :: Encode DescribeSnapshotsMessage where
 
 -- | Constructs DescribeSnapshotsMessage from required parameters
 newDescribeSnapshotsMessage :: DescribeSnapshotsMessage
-newDescribeSnapshotsMessage  = DescribeSnapshotsMessage { "CacheClusterId": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "ShowNodeGroupConfig": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotSource": (NullOrUndefined Nothing) }
+newDescribeSnapshotsMessage  = DescribeSnapshotsMessage { "CacheClusterId": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "ReplicationGroupId": Nothing, "ShowNodeGroupConfig": Nothing, "SnapshotName": Nothing, "SnapshotSource": Nothing }
 
 -- | Constructs DescribeSnapshotsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSnapshotsMessage' :: ( { "ReplicationGroupId" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotName" :: NullOrUndefined (String) , "SnapshotSource" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional) } -> {"ReplicationGroupId" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotName" :: NullOrUndefined (String) , "SnapshotSource" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional) } ) -> DescribeSnapshotsMessage
-newDescribeSnapshotsMessage'  customize = (DescribeSnapshotsMessage <<< customize) { "CacheClusterId": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "ShowNodeGroupConfig": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotSource": (NullOrUndefined Nothing) }
+newDescribeSnapshotsMessage' :: ( { "ReplicationGroupId" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotName" :: Maybe (String) , "SnapshotSource" :: Maybe (String) , "Marker" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "ShowNodeGroupConfig" :: Maybe (BooleanOptional) } -> {"ReplicationGroupId" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotName" :: Maybe (String) , "SnapshotSource" :: Maybe (String) , "Marker" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "ShowNodeGroupConfig" :: Maybe (BooleanOptional) } ) -> DescribeSnapshotsMessage
+newDescribeSnapshotsMessage'  customize = (DescribeSnapshotsMessage <<< customize) { "CacheClusterId": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "ReplicationGroupId": Nothing, "ShowNodeGroupConfig": Nothing, "SnapshotName": Nothing, "SnapshotSource": Nothing }
 
 
 
 -- | <p>Provides ownership and status information for an Amazon EC2 security group.</p>
 newtype EC2SecurityGroup = EC2SecurityGroup 
-  { "Status" :: NullOrUndefined (String)
-  , "EC2SecurityGroupName" :: NullOrUndefined (String)
-  , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String)
+  { "Status" :: Maybe (String)
+  , "EC2SecurityGroupName" :: Maybe (String)
+  , "EC2SecurityGroupOwnerId" :: Maybe (String)
   }
 derive instance newtypeEC2SecurityGroup :: Newtype EC2SecurityGroup _
 derive instance repGenericEC2SecurityGroup :: Generic EC2SecurityGroup _
@@ -1764,12 +1763,12 @@ instance encodeEC2SecurityGroup :: Encode EC2SecurityGroup where encode = generi
 
 -- | Constructs EC2SecurityGroup from required parameters
 newEC2SecurityGroup :: EC2SecurityGroup
-newEC2SecurityGroup  = EC2SecurityGroup { "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newEC2SecurityGroup  = EC2SecurityGroup { "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing, "Status": Nothing }
 
 -- | Constructs EC2SecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEC2SecurityGroup' :: ( { "Status" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> {"Status" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } ) -> EC2SecurityGroup
-newEC2SecurityGroup'  customize = (EC2SecurityGroup <<< customize) { "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newEC2SecurityGroup' :: ( { "Status" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } -> {"Status" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } ) -> EC2SecurityGroup
+newEC2SecurityGroup'  customize = (EC2SecurityGroup <<< customize) { "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing, "Status": Nothing }
 
 
 
@@ -1784,8 +1783,8 @@ instance encodeEC2SecurityGroupList :: Encode EC2SecurityGroupList where encode 
 
 -- | <p>Represents the information required for client programs to connect to a cache node.</p>
 newtype Endpoint = Endpoint 
-  { "Address" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (Int)
+  { "Address" :: Maybe (String)
+  , "Port" :: Maybe (Int)
   }
 derive instance newtypeEndpoint :: Newtype Endpoint _
 derive instance repGenericEndpoint :: Generic Endpoint _
@@ -1795,21 +1794,21 @@ instance encodeEndpoint :: Encode Endpoint where encode = genericEncode options
 
 -- | Constructs Endpoint from required parameters
 newEndpoint :: Endpoint
-newEndpoint  = Endpoint { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint  = Endpoint { "Address": Nothing, "Port": Nothing }
 
 -- | Constructs Endpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpoint' :: ( { "Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } -> {"Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } ) -> Endpoint
-newEndpoint'  customize = (Endpoint <<< customize) { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint' :: ( { "Address" :: Maybe (String) , "Port" :: Maybe (Int) } -> {"Address" :: Maybe (String) , "Port" :: Maybe (Int) } ) -> Endpoint
+newEndpoint'  customize = (Endpoint <<< customize) { "Address": Nothing, "Port": Nothing }
 
 
 
 -- | <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
 newtype EngineDefaults = EngineDefaults 
-  { "CacheParameterGroupFamily" :: NullOrUndefined (String)
-  , "Marker" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (ParametersList)
-  , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList)
+  { "CacheParameterGroupFamily" :: Maybe (String)
+  , "Marker" :: Maybe (String)
+  , "Parameters" :: Maybe (ParametersList)
+  , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList)
   }
 derive instance newtypeEngineDefaults :: Newtype EngineDefaults _
 derive instance repGenericEngineDefaults :: Generic EngineDefaults _
@@ -1819,21 +1818,21 @@ instance encodeEngineDefaults :: Encode EngineDefaults where encode = genericEnc
 
 -- | Constructs EngineDefaults from required parameters
 newEngineDefaults :: EngineDefaults
-newEngineDefaults  = EngineDefaults { "CacheNodeTypeSpecificParameters": (NullOrUndefined Nothing), "CacheParameterGroupFamily": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newEngineDefaults  = EngineDefaults { "CacheNodeTypeSpecificParameters": Nothing, "CacheParameterGroupFamily": Nothing, "Marker": Nothing, "Parameters": Nothing }
 
 -- | Constructs EngineDefaults's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEngineDefaults' :: ( { "CacheParameterGroupFamily" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } -> {"CacheParameterGroupFamily" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) , "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } ) -> EngineDefaults
-newEngineDefaults'  customize = (EngineDefaults <<< customize) { "CacheNodeTypeSpecificParameters": (NullOrUndefined Nothing), "CacheParameterGroupFamily": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newEngineDefaults' :: ( { "CacheParameterGroupFamily" :: Maybe (String) , "Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } -> {"CacheParameterGroupFamily" :: Maybe (String) , "Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) , "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } ) -> EngineDefaults
+newEngineDefaults'  customize = (EngineDefaults <<< customize) { "CacheNodeTypeSpecificParameters": Nothing, "CacheParameterGroupFamily": Nothing, "Marker": Nothing, "Parameters": Nothing }
 
 
 
 -- | <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.</p>
 newtype Event = Event 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "Message" :: NullOrUndefined (String)
-  , "Date" :: NullOrUndefined (TStamp)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "Message" :: Maybe (String)
+  , "Date" :: Maybe (TStamp)
   }
 derive instance newtypeEvent :: Newtype Event _
 derive instance repGenericEvent :: Generic Event _
@@ -1843,12 +1842,12 @@ instance encodeEvent :: Encode Event where encode = genericEncode options
 
 -- | Constructs Event from required parameters
 newEvent :: Event
-newEvent  = Event { "Date": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent  = Event { "Date": Nothing, "Message": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 -- | Constructs Event's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEvent' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) } ) -> Event
-newEvent'  customize = (Event <<< customize) { "Date": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "Date" :: Maybe (TStamp) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "Date" :: Maybe (TStamp) } ) -> Event
+newEvent'  customize = (Event <<< customize) { "Date": Nothing, "Message": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 
 
@@ -1863,8 +1862,8 @@ instance encodeEventList :: Encode EventList where encode = genericEncode option
 
 -- | <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
 newtype EventsMessage = EventsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "Events" :: NullOrUndefined (EventList)
+  { "Marker" :: Maybe (String)
+  , "Events" :: Maybe (EventList)
   }
 derive instance newtypeEventsMessage :: Newtype EventsMessage _
 derive instance repGenericEventsMessage :: Generic EventsMessage _
@@ -1874,12 +1873,12 @@ instance encodeEventsMessage :: Encode EventsMessage where encode = genericEncod
 
 -- | Constructs EventsMessage from required parameters
 newEventsMessage :: EventsMessage
-newEventsMessage  = EventsMessage { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventsMessage  = EventsMessage { "Events": Nothing, "Marker": Nothing }
 
 -- | Constructs EventsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } -> {"Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } ) -> EventsMessage
-newEventsMessage'  customize = (EventsMessage <<< customize) { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventsMessage' :: ( { "Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } -> {"Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } ) -> EventsMessage
+newEventsMessage'  customize = (EventsMessage <<< customize) { "Events": Nothing, "Marker": Nothing }
 
 
 
@@ -1944,7 +1943,7 @@ instance encodeInvalidCacheSecurityGroupStateFault :: Encode InvalidCacheSecurit
 
 -- | <p>Two or more incompatible parameters were specified.</p>
 newtype InvalidParameterCombinationException = InvalidParameterCombinationException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterCombinationException :: Newtype InvalidParameterCombinationException _
 derive instance repGenericInvalidParameterCombinationException :: Generic InvalidParameterCombinationException _
@@ -1954,18 +1953,18 @@ instance encodeInvalidParameterCombinationException :: Encode InvalidParameterCo
 
 -- | Constructs InvalidParameterCombinationException from required parameters
 newInvalidParameterCombinationException :: InvalidParameterCombinationException
-newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": Nothing }
 
 -- | Constructs InvalidParameterCombinationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterCombinationException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
-newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The value for a parameter is invalid.</p>
 newtype InvalidParameterValueException = InvalidParameterValueException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterValueException :: Newtype InvalidParameterValueException _
 derive instance repGenericInvalidParameterValueException :: Generic InvalidParameterValueException _
@@ -1975,12 +1974,12 @@ instance encodeInvalidParameterValueException :: Encode InvalidParameterValueExc
 
 -- | Constructs InvalidParameterValueException from required parameters
 newInvalidParameterValueException :: InvalidParameterValueException
-newInvalidParameterValueException  = InvalidParameterValueException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException  = InvalidParameterValueException { "message": Nothing }
 
 -- | Constructs InvalidParameterValueException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterValueException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
-newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
+newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": Nothing }
 
 
 
@@ -2035,8 +2034,8 @@ instance encodeKeyList :: Encode KeyList where encode = genericEncode options
 
 -- | <p>The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.</p>
 newtype ListAllowedNodeTypeModificationsMessage = ListAllowedNodeTypeModificationsMessage 
-  { "CacheClusterId" :: NullOrUndefined (String)
-  , "ReplicationGroupId" :: NullOrUndefined (String)
+  { "CacheClusterId" :: Maybe (String)
+  , "ReplicationGroupId" :: Maybe (String)
   }
 derive instance newtypeListAllowedNodeTypeModificationsMessage :: Newtype ListAllowedNodeTypeModificationsMessage _
 derive instance repGenericListAllowedNodeTypeModificationsMessage :: Generic ListAllowedNodeTypeModificationsMessage _
@@ -2046,12 +2045,12 @@ instance encodeListAllowedNodeTypeModificationsMessage :: Encode ListAllowedNode
 
 -- | Constructs ListAllowedNodeTypeModificationsMessage from required parameters
 newListAllowedNodeTypeModificationsMessage :: ListAllowedNodeTypeModificationsMessage
-newListAllowedNodeTypeModificationsMessage  = ListAllowedNodeTypeModificationsMessage { "CacheClusterId": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newListAllowedNodeTypeModificationsMessage  = ListAllowedNodeTypeModificationsMessage { "CacheClusterId": Nothing, "ReplicationGroupId": Nothing }
 
 -- | Constructs ListAllowedNodeTypeModificationsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAllowedNodeTypeModificationsMessage' :: ( { "CacheClusterId" :: NullOrUndefined (String) , "ReplicationGroupId" :: NullOrUndefined (String) } -> {"CacheClusterId" :: NullOrUndefined (String) , "ReplicationGroupId" :: NullOrUndefined (String) } ) -> ListAllowedNodeTypeModificationsMessage
-newListAllowedNodeTypeModificationsMessage'  customize = (ListAllowedNodeTypeModificationsMessage <<< customize) { "CacheClusterId": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing) }
+newListAllowedNodeTypeModificationsMessage' :: ( { "CacheClusterId" :: Maybe (String) , "ReplicationGroupId" :: Maybe (String) } -> {"CacheClusterId" :: Maybe (String) , "ReplicationGroupId" :: Maybe (String) } ) -> ListAllowedNodeTypeModificationsMessage
+newListAllowedNodeTypeModificationsMessage'  customize = (ListAllowedNodeTypeModificationsMessage <<< customize) { "CacheClusterId": Nothing, "ReplicationGroupId": Nothing }
 
 
 
@@ -2079,22 +2078,22 @@ newListTagsForResourceMessage' _ResourceName customize = (ListTagsForResourceMes
 -- | <p>Represents the input of a <code>ModifyCacheCluster</code> operation.</p>
 newtype ModifyCacheClusterMessage = ModifyCacheClusterMessage 
   { "CacheClusterId" :: (String)
-  , "NumCacheNodes" :: NullOrUndefined (IntegerOptional)
-  , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList)
-  , "AZMode" :: NullOrUndefined (AZMode)
-  , "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList)
-  , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
-  , "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "NotificationTopicStatus" :: NullOrUndefined (String)
-  , "ApplyImmediately" :: NullOrUndefined (Boolean)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
+  , "NumCacheNodes" :: Maybe (IntegerOptional)
+  , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList)
+  , "AZMode" :: Maybe (AZMode)
+  , "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList)
+  , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "NotificationTopicArn" :: Maybe (String)
+  , "CacheParameterGroupName" :: Maybe (String)
+  , "NotificationTopicStatus" :: Maybe (String)
+  , "ApplyImmediately" :: Maybe (Boolean)
+  , "EngineVersion" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
   }
 derive instance newtypeModifyCacheClusterMessage :: Newtype ModifyCacheClusterMessage _
 derive instance repGenericModifyCacheClusterMessage :: Generic ModifyCacheClusterMessage _
@@ -2104,17 +2103,17 @@ instance encodeModifyCacheClusterMessage :: Encode ModifyCacheClusterMessage whe
 
 -- | Constructs ModifyCacheClusterMessage from required parameters
 newModifyCacheClusterMessage :: String -> ModifyCacheClusterMessage
-newModifyCacheClusterMessage _CacheClusterId = ModifyCacheClusterMessage { "CacheClusterId": _CacheClusterId, "AZMode": (NullOrUndefined Nothing), "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheNodeIdsToRemove": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NewAvailabilityZones": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing) }
+newModifyCacheClusterMessage _CacheClusterId = ModifyCacheClusterMessage { "CacheClusterId": _CacheClusterId, "AZMode": Nothing, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheNodeIdsToRemove": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "EngineVersion": Nothing, "NewAvailabilityZones": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "NumCacheNodes": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing }
 
 -- | Constructs ModifyCacheClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList) , "AZMode" :: NullOrUndefined (AZMode) , "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) } -> {"CacheClusterId" :: (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList) , "AZMode" :: NullOrUndefined (AZMode) , "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) } ) -> ModifyCacheClusterMessage
-newModifyCacheClusterMessage' _CacheClusterId customize = (ModifyCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "AZMode": (NullOrUndefined Nothing), "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "CacheNodeIdsToRemove": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NewAvailabilityZones": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing) }
+newModifyCacheClusterMessage' :: String -> ( { "CacheClusterId" :: (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList) , "AZMode" :: Maybe (AZMode) , "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ApplyImmediately" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "CacheNodeType" :: Maybe (String) } -> {"CacheClusterId" :: (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList) , "AZMode" :: Maybe (AZMode) , "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ApplyImmediately" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "CacheNodeType" :: Maybe (String) } ) -> ModifyCacheClusterMessage
+newModifyCacheClusterMessage' _CacheClusterId customize = (ModifyCacheClusterMessage <<< customize) { "CacheClusterId": _CacheClusterId, "AZMode": Nothing, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "CacheNodeIdsToRemove": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "EngineVersion": Nothing, "NewAvailabilityZones": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "NumCacheNodes": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing }
 
 
 
 newtype ModifyCacheClusterResult = ModifyCacheClusterResult 
-  { "CacheCluster" :: NullOrUndefined (CacheCluster)
+  { "CacheCluster" :: Maybe (CacheCluster)
   }
 derive instance newtypeModifyCacheClusterResult :: Newtype ModifyCacheClusterResult _
 derive instance repGenericModifyCacheClusterResult :: Generic ModifyCacheClusterResult _
@@ -2124,12 +2123,12 @@ instance encodeModifyCacheClusterResult :: Encode ModifyCacheClusterResult where
 
 -- | Constructs ModifyCacheClusterResult from required parameters
 newModifyCacheClusterResult :: ModifyCacheClusterResult
-newModifyCacheClusterResult  = ModifyCacheClusterResult { "CacheCluster": (NullOrUndefined Nothing) }
+newModifyCacheClusterResult  = ModifyCacheClusterResult { "CacheCluster": Nothing }
 
 -- | Constructs ModifyCacheClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyCacheClusterResult' :: ( { "CacheCluster" :: NullOrUndefined (CacheCluster) } -> {"CacheCluster" :: NullOrUndefined (CacheCluster) } ) -> ModifyCacheClusterResult
-newModifyCacheClusterResult'  customize = (ModifyCacheClusterResult <<< customize) { "CacheCluster": (NullOrUndefined Nothing) }
+newModifyCacheClusterResult' :: ( { "CacheCluster" :: Maybe (CacheCluster) } -> {"CacheCluster" :: Maybe (CacheCluster) } ) -> ModifyCacheClusterResult
+newModifyCacheClusterResult'  customize = (ModifyCacheClusterResult <<< customize) { "CacheCluster": Nothing }
 
 
 
@@ -2158,8 +2157,8 @@ newModifyCacheParameterGroupMessage' _CacheParameterGroupName _ParameterNameValu
 -- | <p>Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.</p>
 newtype ModifyCacheSubnetGroupMessage = ModifyCacheSubnetGroupMessage 
   { "CacheSubnetGroupName" :: (String)
-  , "CacheSubnetGroupDescription" :: NullOrUndefined (String)
-  , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList)
+  , "CacheSubnetGroupDescription" :: Maybe (String)
+  , "SubnetIds" :: Maybe (SubnetIdentifierList)
   }
 derive instance newtypeModifyCacheSubnetGroupMessage :: Newtype ModifyCacheSubnetGroupMessage _
 derive instance repGenericModifyCacheSubnetGroupMessage :: Generic ModifyCacheSubnetGroupMessage _
@@ -2169,17 +2168,17 @@ instance encodeModifyCacheSubnetGroupMessage :: Encode ModifyCacheSubnetGroupMes
 
 -- | Constructs ModifyCacheSubnetGroupMessage from required parameters
 newModifyCacheSubnetGroupMessage :: String -> ModifyCacheSubnetGroupMessage
-newModifyCacheSubnetGroupMessage _CacheSubnetGroupName = ModifyCacheSubnetGroupMessage { "CacheSubnetGroupName": _CacheSubnetGroupName, "CacheSubnetGroupDescription": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newModifyCacheSubnetGroupMessage _CacheSubnetGroupName = ModifyCacheSubnetGroupMessage { "CacheSubnetGroupName": _CacheSubnetGroupName, "CacheSubnetGroupDescription": Nothing, "SubnetIds": Nothing }
 
 -- | Constructs ModifyCacheSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyCacheSubnetGroupMessage' :: String -> ( { "CacheSubnetGroupName" :: (String) , "CacheSubnetGroupDescription" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } -> {"CacheSubnetGroupName" :: (String) , "CacheSubnetGroupDescription" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } ) -> ModifyCacheSubnetGroupMessage
-newModifyCacheSubnetGroupMessage' _CacheSubnetGroupName customize = (ModifyCacheSubnetGroupMessage <<< customize) { "CacheSubnetGroupName": _CacheSubnetGroupName, "CacheSubnetGroupDescription": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newModifyCacheSubnetGroupMessage' :: String -> ( { "CacheSubnetGroupName" :: (String) , "CacheSubnetGroupDescription" :: Maybe (String) , "SubnetIds" :: Maybe (SubnetIdentifierList) } -> {"CacheSubnetGroupName" :: (String) , "CacheSubnetGroupDescription" :: Maybe (String) , "SubnetIds" :: Maybe (SubnetIdentifierList) } ) -> ModifyCacheSubnetGroupMessage
+newModifyCacheSubnetGroupMessage' _CacheSubnetGroupName customize = (ModifyCacheSubnetGroupMessage <<< customize) { "CacheSubnetGroupName": _CacheSubnetGroupName, "CacheSubnetGroupDescription": Nothing, "SubnetIds": Nothing }
 
 
 
 newtype ModifyCacheSubnetGroupResult = ModifyCacheSubnetGroupResult 
-  { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup)
+  { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup)
   }
 derive instance newtypeModifyCacheSubnetGroupResult :: Newtype ModifyCacheSubnetGroupResult _
 derive instance repGenericModifyCacheSubnetGroupResult :: Generic ModifyCacheSubnetGroupResult _
@@ -2189,35 +2188,35 @@ instance encodeModifyCacheSubnetGroupResult :: Encode ModifyCacheSubnetGroupResu
 
 -- | Constructs ModifyCacheSubnetGroupResult from required parameters
 newModifyCacheSubnetGroupResult :: ModifyCacheSubnetGroupResult
-newModifyCacheSubnetGroupResult  = ModifyCacheSubnetGroupResult { "CacheSubnetGroup": (NullOrUndefined Nothing) }
+newModifyCacheSubnetGroupResult  = ModifyCacheSubnetGroupResult { "CacheSubnetGroup": Nothing }
 
 -- | Constructs ModifyCacheSubnetGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyCacheSubnetGroupResult' :: ( { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } -> {"CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } ) -> ModifyCacheSubnetGroupResult
-newModifyCacheSubnetGroupResult'  customize = (ModifyCacheSubnetGroupResult <<< customize) { "CacheSubnetGroup": (NullOrUndefined Nothing) }
+newModifyCacheSubnetGroupResult' :: ( { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } -> {"CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } ) -> ModifyCacheSubnetGroupResult
+newModifyCacheSubnetGroupResult'  customize = (ModifyCacheSubnetGroupResult <<< customize) { "CacheSubnetGroup": Nothing }
 
 
 
 -- | <p>Represents the input of a <code>ModifyReplicationGroups</code> operation.</p>
 newtype ModifyReplicationGroupMessage = ModifyReplicationGroupMessage 
   { "ReplicationGroupId" :: (String)
-  , "ReplicationGroupDescription" :: NullOrUndefined (String)
-  , "PrimaryClusterId" :: NullOrUndefined (String)
-  , "SnapshottingClusterId" :: NullOrUndefined (String)
-  , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional)
-  , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
-  , "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "NotificationTopicStatus" :: NullOrUndefined (String)
-  , "ApplyImmediately" :: NullOrUndefined (Boolean)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "NodeGroupId" :: NullOrUndefined (String)
+  , "ReplicationGroupDescription" :: Maybe (String)
+  , "PrimaryClusterId" :: Maybe (String)
+  , "SnapshottingClusterId" :: Maybe (String)
+  , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional)
+  , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "NotificationTopicArn" :: Maybe (String)
+  , "CacheParameterGroupName" :: Maybe (String)
+  , "NotificationTopicStatus" :: Maybe (String)
+  , "ApplyImmediately" :: Maybe (Boolean)
+  , "EngineVersion" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "NodeGroupId" :: Maybe (String)
   }
 derive instance newtypeModifyReplicationGroupMessage :: Newtype ModifyReplicationGroupMessage _
 derive instance repGenericModifyReplicationGroupMessage :: Generic ModifyReplicationGroupMessage _
@@ -2227,17 +2226,17 @@ instance encodeModifyReplicationGroupMessage :: Encode ModifyReplicationGroupMes
 
 -- | Constructs ModifyReplicationGroupMessage from required parameters
 newModifyReplicationGroupMessage :: String -> ModifyReplicationGroupMessage
-newModifyReplicationGroupMessage _ReplicationGroupId = ModifyReplicationGroupMessage { "ReplicationGroupId": _ReplicationGroupId, "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailoverEnabled": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeGroupId": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "ReplicationGroupDescription": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "SnapshottingClusterId": (NullOrUndefined Nothing) }
+newModifyReplicationGroupMessage _ReplicationGroupId = ModifyReplicationGroupMessage { "ReplicationGroupId": _ReplicationGroupId, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "AutomaticFailoverEnabled": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "EngineVersion": Nothing, "NodeGroupId": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "PreferredMaintenanceWindow": Nothing, "PrimaryClusterId": Nothing, "ReplicationGroupDescription": Nothing, "SecurityGroupIds": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "SnapshottingClusterId": Nothing }
 
 -- | Constructs ModifyReplicationGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationGroupMessage' :: String -> ( { "ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: NullOrUndefined (String) , "PrimaryClusterId" :: NullOrUndefined (String) , "SnapshottingClusterId" :: NullOrUndefined (String) , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "NodeGroupId" :: NullOrUndefined (String) } -> {"ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: NullOrUndefined (String) , "PrimaryClusterId" :: NullOrUndefined (String) , "SnapshottingClusterId" :: NullOrUndefined (String) , "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional) , "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "CacheParameterGroupName" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "NodeGroupId" :: NullOrUndefined (String) } ) -> ModifyReplicationGroupMessage
-newModifyReplicationGroupMessage' _ReplicationGroupId customize = (ModifyReplicationGroupMessage <<< customize) { "ReplicationGroupId": _ReplicationGroupId, "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailoverEnabled": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSecurityGroupNames": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeGroupId": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "ReplicationGroupDescription": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "SnapshottingClusterId": (NullOrUndefined Nothing) }
+newModifyReplicationGroupMessage' :: String -> ( { "ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: Maybe (String) , "PrimaryClusterId" :: Maybe (String) , "SnapshottingClusterId" :: Maybe (String) , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ApplyImmediately" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "NodeGroupId" :: Maybe (String) } -> {"ReplicationGroupId" :: (String) , "ReplicationGroupDescription" :: Maybe (String) , "PrimaryClusterId" :: Maybe (String) , "SnapshottingClusterId" :: Maybe (String) , "AutomaticFailoverEnabled" :: Maybe (BooleanOptional) , "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList) , "SecurityGroupIds" :: Maybe (SecurityGroupIdsList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "CacheParameterGroupName" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ApplyImmediately" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "NodeGroupId" :: Maybe (String) } ) -> ModifyReplicationGroupMessage
+newModifyReplicationGroupMessage' _ReplicationGroupId customize = (ModifyReplicationGroupMessage <<< customize) { "ReplicationGroupId": _ReplicationGroupId, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "AutomaticFailoverEnabled": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSecurityGroupNames": Nothing, "EngineVersion": Nothing, "NodeGroupId": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "PreferredMaintenanceWindow": Nothing, "PrimaryClusterId": Nothing, "ReplicationGroupDescription": Nothing, "SecurityGroupIds": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "SnapshottingClusterId": Nothing }
 
 
 
 newtype ModifyReplicationGroupResult = ModifyReplicationGroupResult 
-  { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup)
+  { "ReplicationGroup" :: Maybe (ReplicationGroup)
   }
 derive instance newtypeModifyReplicationGroupResult :: Newtype ModifyReplicationGroupResult _
 derive instance repGenericModifyReplicationGroupResult :: Generic ModifyReplicationGroupResult _
@@ -2247,12 +2246,12 @@ instance encodeModifyReplicationGroupResult :: Encode ModifyReplicationGroupResu
 
 -- | Constructs ModifyReplicationGroupResult from required parameters
 newModifyReplicationGroupResult :: ModifyReplicationGroupResult
-newModifyReplicationGroupResult  = ModifyReplicationGroupResult { "ReplicationGroup": (NullOrUndefined Nothing) }
+newModifyReplicationGroupResult  = ModifyReplicationGroupResult { "ReplicationGroup": Nothing }
 
 -- | Constructs ModifyReplicationGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationGroupResult' :: ( { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> {"ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } ) -> ModifyReplicationGroupResult
-newModifyReplicationGroupResult'  customize = (ModifyReplicationGroupResult <<< customize) { "ReplicationGroup": (NullOrUndefined Nothing) }
+newModifyReplicationGroupResult' :: ( { "ReplicationGroup" :: Maybe (ReplicationGroup) } -> {"ReplicationGroup" :: Maybe (ReplicationGroup) } ) -> ModifyReplicationGroupResult
+newModifyReplicationGroupResult'  customize = (ModifyReplicationGroupResult <<< customize) { "ReplicationGroup": Nothing }
 
 
 
@@ -2261,8 +2260,8 @@ newtype ModifyReplicationGroupShardConfigurationMessage = ModifyReplicationGroup
   { "ReplicationGroupId" :: (String)
   , "NodeGroupCount" :: (Int)
   , "ApplyImmediately" :: (Boolean)
-  , "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList)
-  , "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList)
+  , "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList)
+  , "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList)
   }
 derive instance newtypeModifyReplicationGroupShardConfigurationMessage :: Newtype ModifyReplicationGroupShardConfigurationMessage _
 derive instance repGenericModifyReplicationGroupShardConfigurationMessage :: Generic ModifyReplicationGroupShardConfigurationMessage _
@@ -2272,17 +2271,17 @@ instance encodeModifyReplicationGroupShardConfigurationMessage :: Encode ModifyR
 
 -- | Constructs ModifyReplicationGroupShardConfigurationMessage from required parameters
 newModifyReplicationGroupShardConfigurationMessage :: Boolean -> Int -> String -> ModifyReplicationGroupShardConfigurationMessage
-newModifyReplicationGroupShardConfigurationMessage _ApplyImmediately _NodeGroupCount _ReplicationGroupId = ModifyReplicationGroupShardConfigurationMessage { "ApplyImmediately": _ApplyImmediately, "NodeGroupCount": _NodeGroupCount, "ReplicationGroupId": _ReplicationGroupId, "NodeGroupsToRemove": (NullOrUndefined Nothing), "ReshardingConfiguration": (NullOrUndefined Nothing) }
+newModifyReplicationGroupShardConfigurationMessage _ApplyImmediately _NodeGroupCount _ReplicationGroupId = ModifyReplicationGroupShardConfigurationMessage { "ApplyImmediately": _ApplyImmediately, "NodeGroupCount": _NodeGroupCount, "ReplicationGroupId": _ReplicationGroupId, "NodeGroupsToRemove": Nothing, "ReshardingConfiguration": Nothing }
 
 -- | Constructs ModifyReplicationGroupShardConfigurationMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationGroupShardConfigurationMessage' :: Boolean -> Int -> String -> ( { "ReplicationGroupId" :: (String) , "NodeGroupCount" :: (Int) , "ApplyImmediately" :: (Boolean) , "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList) , "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList) } -> {"ReplicationGroupId" :: (String) , "NodeGroupCount" :: (Int) , "ApplyImmediately" :: (Boolean) , "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList) , "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList) } ) -> ModifyReplicationGroupShardConfigurationMessage
-newModifyReplicationGroupShardConfigurationMessage' _ApplyImmediately _NodeGroupCount _ReplicationGroupId customize = (ModifyReplicationGroupShardConfigurationMessage <<< customize) { "ApplyImmediately": _ApplyImmediately, "NodeGroupCount": _NodeGroupCount, "ReplicationGroupId": _ReplicationGroupId, "NodeGroupsToRemove": (NullOrUndefined Nothing), "ReshardingConfiguration": (NullOrUndefined Nothing) }
+newModifyReplicationGroupShardConfigurationMessage' :: Boolean -> Int -> String -> ( { "ReplicationGroupId" :: (String) , "NodeGroupCount" :: (Int) , "ApplyImmediately" :: (Boolean) , "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList) , "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList) } -> {"ReplicationGroupId" :: (String) , "NodeGroupCount" :: (Int) , "ApplyImmediately" :: (Boolean) , "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList) , "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList) } ) -> ModifyReplicationGroupShardConfigurationMessage
+newModifyReplicationGroupShardConfigurationMessage' _ApplyImmediately _NodeGroupCount _ReplicationGroupId customize = (ModifyReplicationGroupShardConfigurationMessage <<< customize) { "ApplyImmediately": _ApplyImmediately, "NodeGroupCount": _NodeGroupCount, "ReplicationGroupId": _ReplicationGroupId, "NodeGroupsToRemove": Nothing, "ReshardingConfiguration": Nothing }
 
 
 
 newtype ModifyReplicationGroupShardConfigurationResult = ModifyReplicationGroupShardConfigurationResult 
-  { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup)
+  { "ReplicationGroup" :: Maybe (ReplicationGroup)
   }
 derive instance newtypeModifyReplicationGroupShardConfigurationResult :: Newtype ModifyReplicationGroupShardConfigurationResult _
 derive instance repGenericModifyReplicationGroupShardConfigurationResult :: Generic ModifyReplicationGroupShardConfigurationResult _
@@ -2292,22 +2291,22 @@ instance encodeModifyReplicationGroupShardConfigurationResult :: Encode ModifyRe
 
 -- | Constructs ModifyReplicationGroupShardConfigurationResult from required parameters
 newModifyReplicationGroupShardConfigurationResult :: ModifyReplicationGroupShardConfigurationResult
-newModifyReplicationGroupShardConfigurationResult  = ModifyReplicationGroupShardConfigurationResult { "ReplicationGroup": (NullOrUndefined Nothing) }
+newModifyReplicationGroupShardConfigurationResult  = ModifyReplicationGroupShardConfigurationResult { "ReplicationGroup": Nothing }
 
 -- | Constructs ModifyReplicationGroupShardConfigurationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationGroupShardConfigurationResult' :: ( { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> {"ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } ) -> ModifyReplicationGroupShardConfigurationResult
-newModifyReplicationGroupShardConfigurationResult'  customize = (ModifyReplicationGroupShardConfigurationResult <<< customize) { "ReplicationGroup": (NullOrUndefined Nothing) }
+newModifyReplicationGroupShardConfigurationResult' :: ( { "ReplicationGroup" :: Maybe (ReplicationGroup) } -> {"ReplicationGroup" :: Maybe (ReplicationGroup) } ) -> ModifyReplicationGroupShardConfigurationResult
+newModifyReplicationGroupShardConfigurationResult'  customize = (ModifyReplicationGroupShardConfigurationResult <<< customize) { "ReplicationGroup": Nothing }
 
 
 
 -- | <p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 newtype NodeGroup = NodeGroup 
-  { "NodeGroupId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "PrimaryEndpoint" :: NullOrUndefined (Endpoint)
-  , "Slots" :: NullOrUndefined (String)
-  , "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList)
+  { "NodeGroupId" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "PrimaryEndpoint" :: Maybe (Endpoint)
+  , "Slots" :: Maybe (String)
+  , "NodeGroupMembers" :: Maybe (NodeGroupMemberList)
   }
 derive instance newtypeNodeGroup :: Newtype NodeGroup _
 derive instance repGenericNodeGroup :: Generic NodeGroup _
@@ -2317,21 +2316,21 @@ instance encodeNodeGroup :: Encode NodeGroup where encode = genericEncode option
 
 -- | Constructs NodeGroup from required parameters
 newNodeGroup :: NodeGroup
-newNodeGroup  = NodeGroup { "NodeGroupId": (NullOrUndefined Nothing), "NodeGroupMembers": (NullOrUndefined Nothing), "PrimaryEndpoint": (NullOrUndefined Nothing), "Slots": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newNodeGroup  = NodeGroup { "NodeGroupId": Nothing, "NodeGroupMembers": Nothing, "PrimaryEndpoint": Nothing, "Slots": Nothing, "Status": Nothing }
 
 -- | Constructs NodeGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNodeGroup' :: ( { "NodeGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "PrimaryEndpoint" :: NullOrUndefined (Endpoint) , "Slots" :: NullOrUndefined (String) , "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList) } -> {"NodeGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "PrimaryEndpoint" :: NullOrUndefined (Endpoint) , "Slots" :: NullOrUndefined (String) , "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList) } ) -> NodeGroup
-newNodeGroup'  customize = (NodeGroup <<< customize) { "NodeGroupId": (NullOrUndefined Nothing), "NodeGroupMembers": (NullOrUndefined Nothing), "PrimaryEndpoint": (NullOrUndefined Nothing), "Slots": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newNodeGroup' :: ( { "NodeGroupId" :: Maybe (String) , "Status" :: Maybe (String) , "PrimaryEndpoint" :: Maybe (Endpoint) , "Slots" :: Maybe (String) , "NodeGroupMembers" :: Maybe (NodeGroupMemberList) } -> {"NodeGroupId" :: Maybe (String) , "Status" :: Maybe (String) , "PrimaryEndpoint" :: Maybe (Endpoint) , "Slots" :: Maybe (String) , "NodeGroupMembers" :: Maybe (NodeGroupMemberList) } ) -> NodeGroup
+newNodeGroup'  customize = (NodeGroup <<< customize) { "NodeGroupId": Nothing, "NodeGroupMembers": Nothing, "PrimaryEndpoint": Nothing, "Slots": Nothing, "Status": Nothing }
 
 
 
 -- | <p>Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
 newtype NodeGroupConfiguration = NodeGroupConfiguration 
-  { "Slots" :: NullOrUndefined (String)
-  , "ReplicaCount" :: NullOrUndefined (IntegerOptional)
-  , "PrimaryAvailabilityZone" :: NullOrUndefined (String)
-  , "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList)
+  { "Slots" :: Maybe (String)
+  , "ReplicaCount" :: Maybe (IntegerOptional)
+  , "PrimaryAvailabilityZone" :: Maybe (String)
+  , "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList)
   }
 derive instance newtypeNodeGroupConfiguration :: Newtype NodeGroupConfiguration _
 derive instance repGenericNodeGroupConfiguration :: Generic NodeGroupConfiguration _
@@ -2341,12 +2340,12 @@ instance encodeNodeGroupConfiguration :: Encode NodeGroupConfiguration where enc
 
 -- | Constructs NodeGroupConfiguration from required parameters
 newNodeGroupConfiguration :: NodeGroupConfiguration
-newNodeGroupConfiguration  = NodeGroupConfiguration { "PrimaryAvailabilityZone": (NullOrUndefined Nothing), "ReplicaAvailabilityZones": (NullOrUndefined Nothing), "ReplicaCount": (NullOrUndefined Nothing), "Slots": (NullOrUndefined Nothing) }
+newNodeGroupConfiguration  = NodeGroupConfiguration { "PrimaryAvailabilityZone": Nothing, "ReplicaAvailabilityZones": Nothing, "ReplicaCount": Nothing, "Slots": Nothing }
 
 -- | Constructs NodeGroupConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNodeGroupConfiguration' :: ( { "Slots" :: NullOrUndefined (String) , "ReplicaCount" :: NullOrUndefined (IntegerOptional) , "PrimaryAvailabilityZone" :: NullOrUndefined (String) , "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } -> {"Slots" :: NullOrUndefined (String) , "ReplicaCount" :: NullOrUndefined (IntegerOptional) , "PrimaryAvailabilityZone" :: NullOrUndefined (String) , "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } ) -> NodeGroupConfiguration
-newNodeGroupConfiguration'  customize = (NodeGroupConfiguration <<< customize) { "PrimaryAvailabilityZone": (NullOrUndefined Nothing), "ReplicaAvailabilityZones": (NullOrUndefined Nothing), "ReplicaCount": (NullOrUndefined Nothing), "Slots": (NullOrUndefined Nothing) }
+newNodeGroupConfiguration' :: ( { "Slots" :: Maybe (String) , "ReplicaCount" :: Maybe (IntegerOptional) , "PrimaryAvailabilityZone" :: Maybe (String) , "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList) } -> {"Slots" :: Maybe (String) , "ReplicaCount" :: Maybe (IntegerOptional) , "PrimaryAvailabilityZone" :: Maybe (String) , "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList) } ) -> NodeGroupConfiguration
+newNodeGroupConfiguration'  customize = (NodeGroupConfiguration <<< customize) { "PrimaryAvailabilityZone": Nothing, "ReplicaAvailabilityZones": Nothing, "ReplicaCount": Nothing, "Slots": Nothing }
 
 
 
@@ -2370,11 +2369,11 @@ instance encodeNodeGroupList :: Encode NodeGroupList where encode = genericEncod
 
 -- | <p>Represents a single node within a node group (shard).</p>
 newtype NodeGroupMember = NodeGroupMember 
-  { "CacheClusterId" :: NullOrUndefined (String)
-  , "CacheNodeId" :: NullOrUndefined (String)
-  , "ReadEndpoint" :: NullOrUndefined (Endpoint)
-  , "PreferredAvailabilityZone" :: NullOrUndefined (String)
-  , "CurrentRole" :: NullOrUndefined (String)
+  { "CacheClusterId" :: Maybe (String)
+  , "CacheNodeId" :: Maybe (String)
+  , "ReadEndpoint" :: Maybe (Endpoint)
+  , "PreferredAvailabilityZone" :: Maybe (String)
+  , "CurrentRole" :: Maybe (String)
   }
 derive instance newtypeNodeGroupMember :: Newtype NodeGroupMember _
 derive instance repGenericNodeGroupMember :: Generic NodeGroupMember _
@@ -2384,12 +2383,12 @@ instance encodeNodeGroupMember :: Encode NodeGroupMember where encode = genericE
 
 -- | Constructs NodeGroupMember from required parameters
 newNodeGroupMember :: NodeGroupMember
-newNodeGroupMember  = NodeGroupMember { "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CurrentRole": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "ReadEndpoint": (NullOrUndefined Nothing) }
+newNodeGroupMember  = NodeGroupMember { "CacheClusterId": Nothing, "CacheNodeId": Nothing, "CurrentRole": Nothing, "PreferredAvailabilityZone": Nothing, "ReadEndpoint": Nothing }
 
 -- | Constructs NodeGroupMember's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNodeGroupMember' :: ( { "CacheClusterId" :: NullOrUndefined (String) , "CacheNodeId" :: NullOrUndefined (String) , "ReadEndpoint" :: NullOrUndefined (Endpoint) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CurrentRole" :: NullOrUndefined (String) } -> {"CacheClusterId" :: NullOrUndefined (String) , "CacheNodeId" :: NullOrUndefined (String) , "ReadEndpoint" :: NullOrUndefined (Endpoint) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CurrentRole" :: NullOrUndefined (String) } ) -> NodeGroupMember
-newNodeGroupMember'  customize = (NodeGroupMember <<< customize) { "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CurrentRole": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "ReadEndpoint": (NullOrUndefined Nothing) }
+newNodeGroupMember' :: ( { "CacheClusterId" :: Maybe (String) , "CacheNodeId" :: Maybe (String) , "ReadEndpoint" :: Maybe (Endpoint) , "PreferredAvailabilityZone" :: Maybe (String) , "CurrentRole" :: Maybe (String) } -> {"CacheClusterId" :: Maybe (String) , "CacheNodeId" :: Maybe (String) , "ReadEndpoint" :: Maybe (Endpoint) , "PreferredAvailabilityZone" :: Maybe (String) , "CurrentRole" :: Maybe (String) } ) -> NodeGroupMember
+newNodeGroupMember'  customize = (NodeGroupMember <<< customize) { "CacheClusterId": Nothing, "CacheNodeId": Nothing, "CurrentRole": Nothing, "PreferredAvailabilityZone": Nothing, "ReadEndpoint": Nothing }
 
 
 
@@ -2453,13 +2452,13 @@ instance encodeNodeQuotaForCustomerExceededFault :: Encode NodeQuotaForCustomerE
 
 -- | <p>Represents an individual cache node in a snapshot of a cluster.</p>
 newtype NodeSnapshot = NodeSnapshot 
-  { "CacheClusterId" :: NullOrUndefined (String)
-  , "NodeGroupId" :: NullOrUndefined (String)
-  , "CacheNodeId" :: NullOrUndefined (String)
-  , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration)
-  , "CacheSize" :: NullOrUndefined (String)
-  , "CacheNodeCreateTime" :: NullOrUndefined (TStamp)
-  , "SnapshotCreateTime" :: NullOrUndefined (TStamp)
+  { "CacheClusterId" :: Maybe (String)
+  , "NodeGroupId" :: Maybe (String)
+  , "CacheNodeId" :: Maybe (String)
+  , "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration)
+  , "CacheSize" :: Maybe (String)
+  , "CacheNodeCreateTime" :: Maybe (TStamp)
+  , "SnapshotCreateTime" :: Maybe (TStamp)
   }
 derive instance newtypeNodeSnapshot :: Newtype NodeSnapshot _
 derive instance repGenericNodeSnapshot :: Generic NodeSnapshot _
@@ -2469,12 +2468,12 @@ instance encodeNodeSnapshot :: Encode NodeSnapshot where encode = genericEncode 
 
 -- | Constructs NodeSnapshot from required parameters
 newNodeSnapshot :: NodeSnapshot
-newNodeSnapshot  = NodeSnapshot { "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeCreateTime": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CacheSize": (NullOrUndefined Nothing), "NodeGroupConfiguration": (NullOrUndefined Nothing), "NodeGroupId": (NullOrUndefined Nothing), "SnapshotCreateTime": (NullOrUndefined Nothing) }
+newNodeSnapshot  = NodeSnapshot { "CacheClusterId": Nothing, "CacheNodeCreateTime": Nothing, "CacheNodeId": Nothing, "CacheSize": Nothing, "NodeGroupConfiguration": Nothing, "NodeGroupId": Nothing, "SnapshotCreateTime": Nothing }
 
 -- | Constructs NodeSnapshot's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNodeSnapshot' :: ( { "CacheClusterId" :: NullOrUndefined (String) , "NodeGroupId" :: NullOrUndefined (String) , "CacheNodeId" :: NullOrUndefined (String) , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration) , "CacheSize" :: NullOrUndefined (String) , "CacheNodeCreateTime" :: NullOrUndefined (TStamp) , "SnapshotCreateTime" :: NullOrUndefined (TStamp) } -> {"CacheClusterId" :: NullOrUndefined (String) , "NodeGroupId" :: NullOrUndefined (String) , "CacheNodeId" :: NullOrUndefined (String) , "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration) , "CacheSize" :: NullOrUndefined (String) , "CacheNodeCreateTime" :: NullOrUndefined (TStamp) , "SnapshotCreateTime" :: NullOrUndefined (TStamp) } ) -> NodeSnapshot
-newNodeSnapshot'  customize = (NodeSnapshot <<< customize) { "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeCreateTime": (NullOrUndefined Nothing), "CacheNodeId": (NullOrUndefined Nothing), "CacheSize": (NullOrUndefined Nothing), "NodeGroupConfiguration": (NullOrUndefined Nothing), "NodeGroupId": (NullOrUndefined Nothing), "SnapshotCreateTime": (NullOrUndefined Nothing) }
+newNodeSnapshot' :: ( { "CacheClusterId" :: Maybe (String) , "NodeGroupId" :: Maybe (String) , "CacheNodeId" :: Maybe (String) , "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration) , "CacheSize" :: Maybe (String) , "CacheNodeCreateTime" :: Maybe (TStamp) , "SnapshotCreateTime" :: Maybe (TStamp) } -> {"CacheClusterId" :: Maybe (String) , "NodeGroupId" :: Maybe (String) , "CacheNodeId" :: Maybe (String) , "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration) , "CacheSize" :: Maybe (String) , "CacheNodeCreateTime" :: Maybe (TStamp) , "SnapshotCreateTime" :: Maybe (TStamp) } ) -> NodeSnapshot
+newNodeSnapshot'  customize = (NodeSnapshot <<< customize) { "CacheClusterId": Nothing, "CacheNodeCreateTime": Nothing, "CacheNodeId": Nothing, "CacheSize": Nothing, "NodeGroupConfiguration": Nothing, "NodeGroupId": Nothing, "SnapshotCreateTime": Nothing }
 
 
 
@@ -2498,8 +2497,8 @@ instance encodeNodeTypeList :: Encode NodeTypeList where encode = genericEncode 
 
 -- | <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
 newtype NotificationConfiguration = NotificationConfiguration 
-  { "TopicArn" :: NullOrUndefined (String)
-  , "TopicStatus" :: NullOrUndefined (String)
+  { "TopicArn" :: Maybe (String)
+  , "TopicStatus" :: Maybe (String)
   }
 derive instance newtypeNotificationConfiguration :: Newtype NotificationConfiguration _
 derive instance repGenericNotificationConfiguration :: Generic NotificationConfiguration _
@@ -2509,26 +2508,26 @@ instance encodeNotificationConfiguration :: Encode NotificationConfiguration whe
 
 -- | Constructs NotificationConfiguration from required parameters
 newNotificationConfiguration :: NotificationConfiguration
-newNotificationConfiguration  = NotificationConfiguration { "TopicArn": (NullOrUndefined Nothing), "TopicStatus": (NullOrUndefined Nothing) }
+newNotificationConfiguration  = NotificationConfiguration { "TopicArn": Nothing, "TopicStatus": Nothing }
 
 -- | Constructs NotificationConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfiguration' :: ( { "TopicArn" :: NullOrUndefined (String) , "TopicStatus" :: NullOrUndefined (String) } -> {"TopicArn" :: NullOrUndefined (String) , "TopicStatus" :: NullOrUndefined (String) } ) -> NotificationConfiguration
-newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "TopicArn": (NullOrUndefined Nothing), "TopicStatus": (NullOrUndefined Nothing) }
+newNotificationConfiguration' :: ( { "TopicArn" :: Maybe (String) , "TopicStatus" :: Maybe (String) } -> {"TopicArn" :: Maybe (String) , "TopicStatus" :: Maybe (String) } ) -> NotificationConfiguration
+newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "TopicArn": Nothing, "TopicStatus": Nothing }
 
 
 
 -- | <p>Describes an individual setting that controls some aspect of ElastiCache behavior.</p>
 newtype Parameter = Parameter 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterValue" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "Source" :: NullOrUndefined (String)
-  , "DataType" :: NullOrUndefined (String)
-  , "AllowedValues" :: NullOrUndefined (String)
-  , "IsModifiable" :: NullOrUndefined (Boolean)
-  , "MinimumEngineVersion" :: NullOrUndefined (String)
-  , "ChangeType" :: NullOrUndefined (ChangeType)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterValue" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "Source" :: Maybe (String)
+  , "DataType" :: Maybe (String)
+  , "AllowedValues" :: Maybe (String)
+  , "IsModifiable" :: Maybe (Boolean)
+  , "MinimumEngineVersion" :: Maybe (String)
+  , "ChangeType" :: Maybe (ChangeType)
   }
 derive instance newtypeParameter :: Newtype Parameter _
 derive instance repGenericParameter :: Generic Parameter _
@@ -2538,19 +2537,19 @@ instance encodeParameter :: Encode Parameter where encode = genericEncode option
 
 -- | Constructs Parameter from required parameters
 newParameter :: Parameter
-newParameter  = Parameter { "AllowedValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter  = Parameter { "AllowedValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 -- | Constructs Parameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameter' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) , "ChangeType" :: NullOrUndefined (ChangeType) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) , "ChangeType" :: NullOrUndefined (ChangeType) } ) -> Parameter
-newParameter'  customize = (Parameter <<< customize) { "AllowedValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter' :: ( { "ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) , "ChangeType" :: Maybe (ChangeType) } -> {"ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) , "ChangeType" :: Maybe (ChangeType) } ) -> Parameter
+newParameter'  customize = (Parameter <<< customize) { "AllowedValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 
 
 -- | <p>Describes a name-value pair that is used to update the value of a parameter.</p>
 newtype ParameterNameValue = ParameterNameValue 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterValue" :: NullOrUndefined (String)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterValue" :: Maybe (String)
   }
 derive instance newtypeParameterNameValue :: Newtype ParameterNameValue _
 derive instance repGenericParameterNameValue :: Generic ParameterNameValue _
@@ -2560,12 +2559,12 @@ instance encodeParameterNameValue :: Encode ParameterNameValue where encode = ge
 
 -- | Constructs ParameterNameValue from required parameters
 newParameterNameValue :: ParameterNameValue
-newParameterNameValue  = ParameterNameValue { "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing) }
+newParameterNameValue  = ParameterNameValue { "ParameterName": Nothing, "ParameterValue": Nothing }
 
 -- | Constructs ParameterNameValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterNameValue' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) } ) -> ParameterNameValue
-newParameterNameValue'  customize = (ParameterNameValue <<< customize) { "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing) }
+newParameterNameValue' :: ( { "ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) } -> {"ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) } ) -> ParameterNameValue
+newParameterNameValue'  customize = (ParameterNameValue <<< customize) { "ParameterName": Nothing, "ParameterValue": Nothing }
 
 
 
@@ -2598,10 +2597,10 @@ instance encodePendingAutomaticFailoverStatus :: Encode PendingAutomaticFailover
 
 -- | <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
 newtype PendingModifiedValues = PendingModifiedValues 
-  { "NumCacheNodes" :: NullOrUndefined (IntegerOptional)
-  , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
+  { "NumCacheNodes" :: Maybe (IntegerOptional)
+  , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList)
+  , "EngineVersion" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
   }
 derive instance newtypePendingModifiedValues :: Newtype PendingModifiedValues _
 derive instance repGenericPendingModifiedValues :: Generic PendingModifiedValues _
@@ -2611,12 +2610,12 @@ instance encodePendingModifiedValues :: Encode PendingModifiedValues where encod
 
 -- | Constructs PendingModifiedValues from required parameters
 newPendingModifiedValues :: PendingModifiedValues
-newPendingModifiedValues  = PendingModifiedValues { "CacheNodeIdsToRemove": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing) }
+newPendingModifiedValues  = PendingModifiedValues { "CacheNodeIdsToRemove": Nothing, "CacheNodeType": Nothing, "EngineVersion": Nothing, "NumCacheNodes": Nothing }
 
 -- | Constructs PendingModifiedValues's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPendingModifiedValues' :: ( { "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList) , "EngineVersion" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) } -> {"NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList) , "EngineVersion" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) } ) -> PendingModifiedValues
-newPendingModifiedValues'  customize = (PendingModifiedValues <<< customize) { "CacheNodeIdsToRemove": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing) }
+newPendingModifiedValues' :: ( { "NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList) , "EngineVersion" :: Maybe (String) , "CacheNodeType" :: Maybe (String) } -> {"NumCacheNodes" :: Maybe (IntegerOptional) , "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList) , "EngineVersion" :: Maybe (String) , "CacheNodeType" :: Maybe (String) } ) -> PendingModifiedValues
+newPendingModifiedValues'  customize = (PendingModifiedValues <<< customize) { "CacheNodeIdsToRemove": Nothing, "CacheNodeType": Nothing, "EngineVersion": Nothing, "NumCacheNodes": Nothing }
 
 
 
@@ -2632,8 +2631,8 @@ instance encodePreferredAvailabilityZoneList :: Encode PreferredAvailabilityZone
 -- | <p>Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
 newtype PurchaseReservedCacheNodesOfferingMessage = PurchaseReservedCacheNodesOfferingMessage 
   { "ReservedCacheNodesOfferingId" :: (String)
-  , "ReservedCacheNodeId" :: NullOrUndefined (String)
-  , "CacheNodeCount" :: NullOrUndefined (IntegerOptional)
+  , "ReservedCacheNodeId" :: Maybe (String)
+  , "CacheNodeCount" :: Maybe (IntegerOptional)
   }
 derive instance newtypePurchaseReservedCacheNodesOfferingMessage :: Newtype PurchaseReservedCacheNodesOfferingMessage _
 derive instance repGenericPurchaseReservedCacheNodesOfferingMessage :: Generic PurchaseReservedCacheNodesOfferingMessage _
@@ -2643,17 +2642,17 @@ instance encodePurchaseReservedCacheNodesOfferingMessage :: Encode PurchaseReser
 
 -- | Constructs PurchaseReservedCacheNodesOfferingMessage from required parameters
 newPurchaseReservedCacheNodesOfferingMessage :: String -> PurchaseReservedCacheNodesOfferingMessage
-newPurchaseReservedCacheNodesOfferingMessage _ReservedCacheNodesOfferingId = PurchaseReservedCacheNodesOfferingMessage { "ReservedCacheNodesOfferingId": _ReservedCacheNodesOfferingId, "CacheNodeCount": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing) }
+newPurchaseReservedCacheNodesOfferingMessage _ReservedCacheNodesOfferingId = PurchaseReservedCacheNodesOfferingMessage { "ReservedCacheNodesOfferingId": _ReservedCacheNodesOfferingId, "CacheNodeCount": Nothing, "ReservedCacheNodeId": Nothing }
 
 -- | Constructs PurchaseReservedCacheNodesOfferingMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPurchaseReservedCacheNodesOfferingMessage' :: String -> ( { "ReservedCacheNodesOfferingId" :: (String) , "ReservedCacheNodeId" :: NullOrUndefined (String) , "CacheNodeCount" :: NullOrUndefined (IntegerOptional) } -> {"ReservedCacheNodesOfferingId" :: (String) , "ReservedCacheNodeId" :: NullOrUndefined (String) , "CacheNodeCount" :: NullOrUndefined (IntegerOptional) } ) -> PurchaseReservedCacheNodesOfferingMessage
-newPurchaseReservedCacheNodesOfferingMessage' _ReservedCacheNodesOfferingId customize = (PurchaseReservedCacheNodesOfferingMessage <<< customize) { "ReservedCacheNodesOfferingId": _ReservedCacheNodesOfferingId, "CacheNodeCount": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing) }
+newPurchaseReservedCacheNodesOfferingMessage' :: String -> ( { "ReservedCacheNodesOfferingId" :: (String) , "ReservedCacheNodeId" :: Maybe (String) , "CacheNodeCount" :: Maybe (IntegerOptional) } -> {"ReservedCacheNodesOfferingId" :: (String) , "ReservedCacheNodeId" :: Maybe (String) , "CacheNodeCount" :: Maybe (IntegerOptional) } ) -> PurchaseReservedCacheNodesOfferingMessage
+newPurchaseReservedCacheNodesOfferingMessage' _ReservedCacheNodesOfferingId customize = (PurchaseReservedCacheNodesOfferingMessage <<< customize) { "ReservedCacheNodesOfferingId": _ReservedCacheNodesOfferingId, "CacheNodeCount": Nothing, "ReservedCacheNodeId": Nothing }
 
 
 
 newtype PurchaseReservedCacheNodesOfferingResult = PurchaseReservedCacheNodesOfferingResult 
-  { "ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode)
+  { "ReservedCacheNode" :: Maybe (ReservedCacheNode)
   }
 derive instance newtypePurchaseReservedCacheNodesOfferingResult :: Newtype PurchaseReservedCacheNodesOfferingResult _
 derive instance repGenericPurchaseReservedCacheNodesOfferingResult :: Generic PurchaseReservedCacheNodesOfferingResult _
@@ -2663,12 +2662,12 @@ instance encodePurchaseReservedCacheNodesOfferingResult :: Encode PurchaseReserv
 
 -- | Constructs PurchaseReservedCacheNodesOfferingResult from required parameters
 newPurchaseReservedCacheNodesOfferingResult :: PurchaseReservedCacheNodesOfferingResult
-newPurchaseReservedCacheNodesOfferingResult  = PurchaseReservedCacheNodesOfferingResult { "ReservedCacheNode": (NullOrUndefined Nothing) }
+newPurchaseReservedCacheNodesOfferingResult  = PurchaseReservedCacheNodesOfferingResult { "ReservedCacheNode": Nothing }
 
 -- | Constructs PurchaseReservedCacheNodesOfferingResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPurchaseReservedCacheNodesOfferingResult' :: ( { "ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode) } -> {"ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode) } ) -> PurchaseReservedCacheNodesOfferingResult
-newPurchaseReservedCacheNodesOfferingResult'  customize = (PurchaseReservedCacheNodesOfferingResult <<< customize) { "ReservedCacheNode": (NullOrUndefined Nothing) }
+newPurchaseReservedCacheNodesOfferingResult' :: ( { "ReservedCacheNode" :: Maybe (ReservedCacheNode) } -> {"ReservedCacheNode" :: Maybe (ReservedCacheNode) } ) -> PurchaseReservedCacheNodesOfferingResult
+newPurchaseReservedCacheNodesOfferingResult'  customize = (PurchaseReservedCacheNodesOfferingResult <<< customize) { "ReservedCacheNode": Nothing }
 
 
 
@@ -2695,7 +2694,7 @@ newRebootCacheClusterMessage' _CacheClusterId _CacheNodeIdsToReboot customize = 
 
 
 newtype RebootCacheClusterResult = RebootCacheClusterResult 
-  { "CacheCluster" :: NullOrUndefined (CacheCluster)
+  { "CacheCluster" :: Maybe (CacheCluster)
   }
 derive instance newtypeRebootCacheClusterResult :: Newtype RebootCacheClusterResult _
 derive instance repGenericRebootCacheClusterResult :: Generic RebootCacheClusterResult _
@@ -2705,19 +2704,19 @@ instance encodeRebootCacheClusterResult :: Encode RebootCacheClusterResult where
 
 -- | Constructs RebootCacheClusterResult from required parameters
 newRebootCacheClusterResult :: RebootCacheClusterResult
-newRebootCacheClusterResult  = RebootCacheClusterResult { "CacheCluster": (NullOrUndefined Nothing) }
+newRebootCacheClusterResult  = RebootCacheClusterResult { "CacheCluster": Nothing }
 
 -- | Constructs RebootCacheClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRebootCacheClusterResult' :: ( { "CacheCluster" :: NullOrUndefined (CacheCluster) } -> {"CacheCluster" :: NullOrUndefined (CacheCluster) } ) -> RebootCacheClusterResult
-newRebootCacheClusterResult'  customize = (RebootCacheClusterResult <<< customize) { "CacheCluster": (NullOrUndefined Nothing) }
+newRebootCacheClusterResult' :: ( { "CacheCluster" :: Maybe (CacheCluster) } -> {"CacheCluster" :: Maybe (CacheCluster) } ) -> RebootCacheClusterResult
+newRebootCacheClusterResult'  customize = (RebootCacheClusterResult <<< customize) { "CacheCluster": Nothing }
 
 
 
 -- | <p>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.</p>
 newtype RecurringCharge = RecurringCharge 
-  { "RecurringChargeAmount" :: NullOrUndefined (Number)
-  , "RecurringChargeFrequency" :: NullOrUndefined (String)
+  { "RecurringChargeAmount" :: Maybe (Number)
+  , "RecurringChargeFrequency" :: Maybe (String)
   }
 derive instance newtypeRecurringCharge :: Newtype RecurringCharge _
 derive instance repGenericRecurringCharge :: Generic RecurringCharge _
@@ -2727,12 +2726,12 @@ instance encodeRecurringCharge :: Encode RecurringCharge where encode = genericE
 
 -- | Constructs RecurringCharge from required parameters
 newRecurringCharge :: RecurringCharge
-newRecurringCharge  = RecurringCharge { "RecurringChargeAmount": (NullOrUndefined Nothing), "RecurringChargeFrequency": (NullOrUndefined Nothing) }
+newRecurringCharge  = RecurringCharge { "RecurringChargeAmount": Nothing, "RecurringChargeFrequency": Nothing }
 
 -- | Constructs RecurringCharge's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecurringCharge' :: ( { "RecurringChargeAmount" :: NullOrUndefined (Number) , "RecurringChargeFrequency" :: NullOrUndefined (String) } -> {"RecurringChargeAmount" :: NullOrUndefined (Number) , "RecurringChargeFrequency" :: NullOrUndefined (String) } ) -> RecurringCharge
-newRecurringCharge'  customize = (RecurringCharge <<< customize) { "RecurringChargeAmount": (NullOrUndefined Nothing), "RecurringChargeFrequency": (NullOrUndefined Nothing) }
+newRecurringCharge' :: ( { "RecurringChargeAmount" :: Maybe (Number) , "RecurringChargeFrequency" :: Maybe (String) } -> {"RecurringChargeAmount" :: Maybe (Number) , "RecurringChargeFrequency" :: Maybe (String) } ) -> RecurringCharge
+newRecurringCharge'  customize = (RecurringCharge <<< customize) { "RecurringChargeAmount": Nothing, "RecurringChargeFrequency": Nothing }
 
 
 
@@ -2769,22 +2768,22 @@ newRemoveTagsFromResourceMessage' _ResourceName _TagKeys customize = (RemoveTags
 
 -- | <p>Contains all of the attributes of a specific Redis replication group.</p>
 newtype ReplicationGroup = ReplicationGroup 
-  { "ReplicationGroupId" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues)
-  , "MemberClusters" :: NullOrUndefined (ClusterIdList)
-  , "NodeGroups" :: NullOrUndefined (NodeGroupList)
-  , "SnapshottingClusterId" :: NullOrUndefined (String)
-  , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus)
-  , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "ClusterEnabled" :: NullOrUndefined (BooleanOptional)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional)
-  , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
-  , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional)
+  { "ReplicationGroupId" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues)
+  , "MemberClusters" :: Maybe (ClusterIdList)
+  , "NodeGroups" :: Maybe (NodeGroupList)
+  , "SnapshottingClusterId" :: Maybe (String)
+  , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus)
+  , "ConfigurationEndpoint" :: Maybe (Endpoint)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "ClusterEnabled" :: Maybe (BooleanOptional)
+  , "CacheNodeType" :: Maybe (String)
+  , "AuthTokenEnabled" :: Maybe (BooleanOptional)
+  , "TransitEncryptionEnabled" :: Maybe (BooleanOptional)
+  , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional)
   }
 derive instance newtypeReplicationGroup :: Newtype ReplicationGroup _
 derive instance repGenericReplicationGroup :: Generic ReplicationGroup _
@@ -2794,12 +2793,12 @@ instance encodeReplicationGroup :: Encode ReplicationGroup where encode = generi
 
 -- | Constructs ReplicationGroup from required parameters
 newReplicationGroup :: ReplicationGroup
-newReplicationGroup  = ReplicationGroup { "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthTokenEnabled": (NullOrUndefined Nothing), "AutomaticFailover": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "ClusterEnabled": (NullOrUndefined Nothing), "ConfigurationEndpoint": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "MemberClusters": (NullOrUndefined Nothing), "NodeGroups": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "SnapshottingClusterId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newReplicationGroup  = ReplicationGroup { "AtRestEncryptionEnabled": Nothing, "AuthTokenEnabled": Nothing, "AutomaticFailover": Nothing, "CacheNodeType": Nothing, "ClusterEnabled": Nothing, "ConfigurationEndpoint": Nothing, "Description": Nothing, "MemberClusters": Nothing, "NodeGroups": Nothing, "PendingModifiedValues": Nothing, "ReplicationGroupId": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "SnapshottingClusterId": Nothing, "Status": Nothing, "TransitEncryptionEnabled": Nothing }
 
 -- | Constructs ReplicationGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationGroup' :: ( { "ReplicationGroupId" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues) , "MemberClusters" :: NullOrUndefined (ClusterIdList) , "NodeGroups" :: NullOrUndefined (NodeGroupList) , "SnapshottingClusterId" :: NullOrUndefined (String) , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus) , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "ClusterEnabled" :: NullOrUndefined (BooleanOptional) , "CacheNodeType" :: NullOrUndefined (String) , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> {"ReplicationGroupId" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues) , "MemberClusters" :: NullOrUndefined (ClusterIdList) , "NodeGroups" :: NullOrUndefined (NodeGroupList) , "SnapshottingClusterId" :: NullOrUndefined (String) , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus) , "ConfigurationEndpoint" :: NullOrUndefined (Endpoint) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "ClusterEnabled" :: NullOrUndefined (BooleanOptional) , "CacheNodeType" :: NullOrUndefined (String) , "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional) , "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional) , "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } ) -> ReplicationGroup
-newReplicationGroup'  customize = (ReplicationGroup <<< customize) { "AtRestEncryptionEnabled": (NullOrUndefined Nothing), "AuthTokenEnabled": (NullOrUndefined Nothing), "AutomaticFailover": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "ClusterEnabled": (NullOrUndefined Nothing), "ConfigurationEndpoint": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "MemberClusters": (NullOrUndefined Nothing), "NodeGroups": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "SnapshottingClusterId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TransitEncryptionEnabled": (NullOrUndefined Nothing) }
+newReplicationGroup' :: ( { "ReplicationGroupId" :: Maybe (String) , "Description" :: Maybe (String) , "Status" :: Maybe (String) , "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues) , "MemberClusters" :: Maybe (ClusterIdList) , "NodeGroups" :: Maybe (NodeGroupList) , "SnapshottingClusterId" :: Maybe (String) , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus) , "ConfigurationEndpoint" :: Maybe (Endpoint) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "ClusterEnabled" :: Maybe (BooleanOptional) , "CacheNodeType" :: Maybe (String) , "AuthTokenEnabled" :: Maybe (BooleanOptional) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> {"ReplicationGroupId" :: Maybe (String) , "Description" :: Maybe (String) , "Status" :: Maybe (String) , "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues) , "MemberClusters" :: Maybe (ClusterIdList) , "NodeGroups" :: Maybe (NodeGroupList) , "SnapshottingClusterId" :: Maybe (String) , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus) , "ConfigurationEndpoint" :: Maybe (Endpoint) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "ClusterEnabled" :: Maybe (BooleanOptional) , "CacheNodeType" :: Maybe (String) , "AuthTokenEnabled" :: Maybe (BooleanOptional) , "TransitEncryptionEnabled" :: Maybe (BooleanOptional) , "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } ) -> ReplicationGroup
+newReplicationGroup'  customize = (ReplicationGroup <<< customize) { "AtRestEncryptionEnabled": Nothing, "AuthTokenEnabled": Nothing, "AutomaticFailover": Nothing, "CacheNodeType": Nothing, "ClusterEnabled": Nothing, "ConfigurationEndpoint": Nothing, "Description": Nothing, "MemberClusters": Nothing, "NodeGroups": Nothing, "PendingModifiedValues": Nothing, "ReplicationGroupId": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotWindow": Nothing, "SnapshottingClusterId": Nothing, "Status": Nothing, "TransitEncryptionEnabled": Nothing }
 
 
 
@@ -2824,8 +2823,8 @@ instance encodeReplicationGroupList :: Encode ReplicationGroupList where encode 
 
 -- | <p>Represents the output of a <code>DescribeReplicationGroups</code> operation.</p>
 newtype ReplicationGroupMessage = ReplicationGroupMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList)
+  { "Marker" :: Maybe (String)
+  , "ReplicationGroups" :: Maybe (ReplicationGroupList)
   }
 derive instance newtypeReplicationGroupMessage :: Newtype ReplicationGroupMessage _
 derive instance repGenericReplicationGroupMessage :: Generic ReplicationGroupMessage _
@@ -2835,12 +2834,12 @@ instance encodeReplicationGroupMessage :: Encode ReplicationGroupMessage where e
 
 -- | Constructs ReplicationGroupMessage from required parameters
 newReplicationGroupMessage :: ReplicationGroupMessage
-newReplicationGroupMessage  = ReplicationGroupMessage { "Marker": (NullOrUndefined Nothing), "ReplicationGroups": (NullOrUndefined Nothing) }
+newReplicationGroupMessage  = ReplicationGroupMessage { "Marker": Nothing, "ReplicationGroups": Nothing }
 
 -- | Constructs ReplicationGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationGroupMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList) } -> {"Marker" :: NullOrUndefined (String) , "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList) } ) -> ReplicationGroupMessage
-newReplicationGroupMessage'  customize = (ReplicationGroupMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationGroups": (NullOrUndefined Nothing) }
+newReplicationGroupMessage' :: ( { "Marker" :: Maybe (String) , "ReplicationGroups" :: Maybe (ReplicationGroupList) } -> {"Marker" :: Maybe (String) , "ReplicationGroups" :: Maybe (ReplicationGroupList) } ) -> ReplicationGroupMessage
+newReplicationGroupMessage'  customize = (ReplicationGroupMessage <<< customize) { "Marker": Nothing, "ReplicationGroups": Nothing }
 
 
 
@@ -2856,9 +2855,9 @@ instance encodeReplicationGroupNotFoundFault :: Encode ReplicationGroupNotFoundF
 
 -- | <p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>
 newtype ReplicationGroupPendingModifiedValues = ReplicationGroupPendingModifiedValues 
-  { "PrimaryClusterId" :: NullOrUndefined (String)
-  , "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus)
-  , "Resharding" :: NullOrUndefined (ReshardingStatus)
+  { "PrimaryClusterId" :: Maybe (String)
+  , "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus)
+  , "Resharding" :: Maybe (ReshardingStatus)
   }
 derive instance newtypeReplicationGroupPendingModifiedValues :: Newtype ReplicationGroupPendingModifiedValues _
 derive instance repGenericReplicationGroupPendingModifiedValues :: Generic ReplicationGroupPendingModifiedValues _
@@ -2868,29 +2867,29 @@ instance encodeReplicationGroupPendingModifiedValues :: Encode ReplicationGroupP
 
 -- | Constructs ReplicationGroupPendingModifiedValues from required parameters
 newReplicationGroupPendingModifiedValues :: ReplicationGroupPendingModifiedValues
-newReplicationGroupPendingModifiedValues  = ReplicationGroupPendingModifiedValues { "AutomaticFailoverStatus": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "Resharding": (NullOrUndefined Nothing) }
+newReplicationGroupPendingModifiedValues  = ReplicationGroupPendingModifiedValues { "AutomaticFailoverStatus": Nothing, "PrimaryClusterId": Nothing, "Resharding": Nothing }
 
 -- | Constructs ReplicationGroupPendingModifiedValues's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationGroupPendingModifiedValues' :: ( { "PrimaryClusterId" :: NullOrUndefined (String) , "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus) , "Resharding" :: NullOrUndefined (ReshardingStatus) } -> {"PrimaryClusterId" :: NullOrUndefined (String) , "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus) , "Resharding" :: NullOrUndefined (ReshardingStatus) } ) -> ReplicationGroupPendingModifiedValues
-newReplicationGroupPendingModifiedValues'  customize = (ReplicationGroupPendingModifiedValues <<< customize) { "AutomaticFailoverStatus": (NullOrUndefined Nothing), "PrimaryClusterId": (NullOrUndefined Nothing), "Resharding": (NullOrUndefined Nothing) }
+newReplicationGroupPendingModifiedValues' :: ( { "PrimaryClusterId" :: Maybe (String) , "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus) , "Resharding" :: Maybe (ReshardingStatus) } -> {"PrimaryClusterId" :: Maybe (String) , "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus) , "Resharding" :: Maybe (ReshardingStatus) } ) -> ReplicationGroupPendingModifiedValues
+newReplicationGroupPendingModifiedValues'  customize = (ReplicationGroupPendingModifiedValues <<< customize) { "AutomaticFailoverStatus": Nothing, "PrimaryClusterId": Nothing, "Resharding": Nothing }
 
 
 
 -- | <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
 newtype ReservedCacheNode = ReservedCacheNode 
-  { "ReservedCacheNodeId" :: NullOrUndefined (String)
-  , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (Int)
-  , "FixedPrice" :: NullOrUndefined (Number)
-  , "UsagePrice" :: NullOrUndefined (Number)
-  , "CacheNodeCount" :: NullOrUndefined (Int)
-  , "ProductDescription" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (String)
-  , "RecurringCharges" :: NullOrUndefined (RecurringChargeList)
+  { "ReservedCacheNodeId" :: Maybe (String)
+  , "ReservedCacheNodesOfferingId" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "StartTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (Int)
+  , "FixedPrice" :: Maybe (Number)
+  , "UsagePrice" :: Maybe (Number)
+  , "CacheNodeCount" :: Maybe (Int)
+  , "ProductDescription" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "State" :: Maybe (String)
+  , "RecurringCharges" :: Maybe (RecurringChargeList)
   }
 derive instance newtypeReservedCacheNode :: Newtype ReservedCacheNode _
 derive instance repGenericReservedCacheNode :: Generic ReservedCacheNode _
@@ -2900,12 +2899,12 @@ instance encodeReservedCacheNode :: Encode ReservedCacheNode where encode = gene
 
 -- | Constructs ReservedCacheNode from required parameters
 newReservedCacheNode :: ReservedCacheNode
-newReservedCacheNode  = ReservedCacheNode { "CacheNodeCount": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedCacheNode  = ReservedCacheNode { "CacheNodeCount": Nothing, "CacheNodeType": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "RecurringCharges": Nothing, "ReservedCacheNodeId": Nothing, "ReservedCacheNodesOfferingId": Nothing, "StartTime": Nothing, "State": Nothing, "UsagePrice": Nothing }
 
 -- | Constructs ReservedCacheNode's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedCacheNode' :: ( { "ReservedCacheNodeId" :: NullOrUndefined (String) , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CacheNodeCount" :: NullOrUndefined (Int) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "State" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> {"ReservedCacheNodeId" :: NullOrUndefined (String) , "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CacheNodeCount" :: NullOrUndefined (Int) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "State" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } ) -> ReservedCacheNode
-newReservedCacheNode'  customize = (ReservedCacheNode <<< customize) { "CacheNodeCount": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedCacheNodeId": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedCacheNode' :: ( { "ReservedCacheNodeId" :: Maybe (String) , "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CacheNodeCount" :: Maybe (Int) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "State" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } -> {"ReservedCacheNodeId" :: Maybe (String) , "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CacheNodeCount" :: Maybe (Int) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "State" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } ) -> ReservedCacheNode
+newReservedCacheNode'  customize = (ReservedCacheNode <<< customize) { "CacheNodeCount": Nothing, "CacheNodeType": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "RecurringCharges": Nothing, "ReservedCacheNodeId": Nothing, "ReservedCacheNodesOfferingId": Nothing, "StartTime": Nothing, "State": Nothing, "UsagePrice": Nothing }
 
 
 
@@ -2930,8 +2929,8 @@ instance encodeReservedCacheNodeList :: Encode ReservedCacheNodeList where encod
 
 -- | <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
 newtype ReservedCacheNodeMessage = ReservedCacheNodeMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList)
+  { "Marker" :: Maybe (String)
+  , "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList)
   }
 derive instance newtypeReservedCacheNodeMessage :: Newtype ReservedCacheNodeMessage _
 derive instance repGenericReservedCacheNodeMessage :: Generic ReservedCacheNodeMessage _
@@ -2941,12 +2940,12 @@ instance encodeReservedCacheNodeMessage :: Encode ReservedCacheNodeMessage where
 
 -- | Constructs ReservedCacheNodeMessage from required parameters
 newReservedCacheNodeMessage :: ReservedCacheNodeMessage
-newReservedCacheNodeMessage  = ReservedCacheNodeMessage { "Marker": (NullOrUndefined Nothing), "ReservedCacheNodes": (NullOrUndefined Nothing) }
+newReservedCacheNodeMessage  = ReservedCacheNodeMessage { "Marker": Nothing, "ReservedCacheNodes": Nothing }
 
 -- | Constructs ReservedCacheNodeMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedCacheNodeMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList) } -> {"Marker" :: NullOrUndefined (String) , "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList) } ) -> ReservedCacheNodeMessage
-newReservedCacheNodeMessage'  customize = (ReservedCacheNodeMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ReservedCacheNodes": (NullOrUndefined Nothing) }
+newReservedCacheNodeMessage' :: ( { "Marker" :: Maybe (String) , "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList) } -> {"Marker" :: Maybe (String) , "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList) } ) -> ReservedCacheNodeMessage
+newReservedCacheNodeMessage'  customize = (ReservedCacheNodeMessage <<< customize) { "Marker": Nothing, "ReservedCacheNodes": Nothing }
 
 
 
@@ -2972,14 +2971,14 @@ instance encodeReservedCacheNodeQuotaExceededFault :: Encode ReservedCacheNodeQu
 
 -- | <p>Describes all of the attributes of a reserved cache node offering.</p>
 newtype ReservedCacheNodesOffering = ReservedCacheNodesOffering 
-  { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Duration" :: NullOrUndefined (Int)
-  , "FixedPrice" :: NullOrUndefined (Number)
-  , "UsagePrice" :: NullOrUndefined (Number)
-  , "ProductDescription" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "RecurringCharges" :: NullOrUndefined (RecurringChargeList)
+  { "ReservedCacheNodesOfferingId" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "Duration" :: Maybe (Int)
+  , "FixedPrice" :: Maybe (Number)
+  , "UsagePrice" :: Maybe (Number)
+  , "ProductDescription" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "RecurringCharges" :: Maybe (RecurringChargeList)
   }
 derive instance newtypeReservedCacheNodesOffering :: Newtype ReservedCacheNodesOffering _
 derive instance repGenericReservedCacheNodesOffering :: Generic ReservedCacheNodesOffering _
@@ -2989,12 +2988,12 @@ instance encodeReservedCacheNodesOffering :: Encode ReservedCacheNodesOffering w
 
 -- | Constructs ReservedCacheNodesOffering from required parameters
 newReservedCacheNodesOffering :: ReservedCacheNodesOffering
-newReservedCacheNodesOffering  = ReservedCacheNodesOffering { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedCacheNodesOffering  = ReservedCacheNodesOffering { "CacheNodeType": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "RecurringCharges": Nothing, "ReservedCacheNodesOfferingId": Nothing, "UsagePrice": Nothing }
 
 -- | Constructs ReservedCacheNodesOffering's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedCacheNodesOffering' :: ( { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> {"ReservedCacheNodesOfferingId" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "ProductDescription" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } ) -> ReservedCacheNodesOffering
-newReservedCacheNodesOffering'  customize = (ReservedCacheNodesOffering <<< customize) { "CacheNodeType": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "ProductDescription": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedCacheNodesOfferingId": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedCacheNodesOffering' :: ( { "ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } -> {"ReservedCacheNodesOfferingId" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "ProductDescription" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } ) -> ReservedCacheNodesOffering
+newReservedCacheNodesOffering'  customize = (ReservedCacheNodesOffering <<< customize) { "CacheNodeType": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "OfferingType": Nothing, "ProductDescription": Nothing, "RecurringCharges": Nothing, "ReservedCacheNodesOfferingId": Nothing, "UsagePrice": Nothing }
 
 
 
@@ -3009,8 +3008,8 @@ instance encodeReservedCacheNodesOfferingList :: Encode ReservedCacheNodesOfferi
 
 -- | <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 newtype ReservedCacheNodesOfferingMessage = ReservedCacheNodesOfferingMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList)
+  { "Marker" :: Maybe (String)
+  , "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList)
   }
 derive instance newtypeReservedCacheNodesOfferingMessage :: Newtype ReservedCacheNodesOfferingMessage _
 derive instance repGenericReservedCacheNodesOfferingMessage :: Generic ReservedCacheNodesOfferingMessage _
@@ -3020,12 +3019,12 @@ instance encodeReservedCacheNodesOfferingMessage :: Encode ReservedCacheNodesOff
 
 -- | Constructs ReservedCacheNodesOfferingMessage from required parameters
 newReservedCacheNodesOfferingMessage :: ReservedCacheNodesOfferingMessage
-newReservedCacheNodesOfferingMessage  = ReservedCacheNodesOfferingMessage { "Marker": (NullOrUndefined Nothing), "ReservedCacheNodesOfferings": (NullOrUndefined Nothing) }
+newReservedCacheNodesOfferingMessage  = ReservedCacheNodesOfferingMessage { "Marker": Nothing, "ReservedCacheNodesOfferings": Nothing }
 
 -- | Constructs ReservedCacheNodesOfferingMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedCacheNodesOfferingMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList) } -> {"Marker" :: NullOrUndefined (String) , "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList) } ) -> ReservedCacheNodesOfferingMessage
-newReservedCacheNodesOfferingMessage'  customize = (ReservedCacheNodesOfferingMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ReservedCacheNodesOfferings": (NullOrUndefined Nothing) }
+newReservedCacheNodesOfferingMessage' :: ( { "Marker" :: Maybe (String) , "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList) } -> {"Marker" :: Maybe (String) , "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList) } ) -> ReservedCacheNodesOfferingMessage
+newReservedCacheNodesOfferingMessage'  customize = (ReservedCacheNodesOfferingMessage <<< customize) { "Marker": Nothing, "ReservedCacheNodesOfferings": Nothing }
 
 
 
@@ -3042,8 +3041,8 @@ instance encodeReservedCacheNodesOfferingNotFoundFault :: Encode ReservedCacheNo
 -- | <p>Represents the input of a <code>ResetCacheParameterGroup</code> operation.</p>
 newtype ResetCacheParameterGroupMessage = ResetCacheParameterGroupMessage 
   { "CacheParameterGroupName" :: (String)
-  , "ResetAllParameters" :: NullOrUndefined (Boolean)
-  , "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList)
+  , "ResetAllParameters" :: Maybe (Boolean)
+  , "ParameterNameValues" :: Maybe (ParameterNameValueList)
   }
 derive instance newtypeResetCacheParameterGroupMessage :: Newtype ResetCacheParameterGroupMessage _
 derive instance repGenericResetCacheParameterGroupMessage :: Generic ResetCacheParameterGroupMessage _
@@ -3053,18 +3052,18 @@ instance encodeResetCacheParameterGroupMessage :: Encode ResetCacheParameterGrou
 
 -- | Constructs ResetCacheParameterGroupMessage from required parameters
 newResetCacheParameterGroupMessage :: String -> ResetCacheParameterGroupMessage
-newResetCacheParameterGroupMessage _CacheParameterGroupName = ResetCacheParameterGroupMessage { "CacheParameterGroupName": _CacheParameterGroupName, "ParameterNameValues": (NullOrUndefined Nothing), "ResetAllParameters": (NullOrUndefined Nothing) }
+newResetCacheParameterGroupMessage _CacheParameterGroupName = ResetCacheParameterGroupMessage { "CacheParameterGroupName": _CacheParameterGroupName, "ParameterNameValues": Nothing, "ResetAllParameters": Nothing }
 
 -- | Constructs ResetCacheParameterGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResetCacheParameterGroupMessage' :: String -> ( { "CacheParameterGroupName" :: (String) , "ResetAllParameters" :: NullOrUndefined (Boolean) , "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList) } -> {"CacheParameterGroupName" :: (String) , "ResetAllParameters" :: NullOrUndefined (Boolean) , "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList) } ) -> ResetCacheParameterGroupMessage
-newResetCacheParameterGroupMessage' _CacheParameterGroupName customize = (ResetCacheParameterGroupMessage <<< customize) { "CacheParameterGroupName": _CacheParameterGroupName, "ParameterNameValues": (NullOrUndefined Nothing), "ResetAllParameters": (NullOrUndefined Nothing) }
+newResetCacheParameterGroupMessage' :: String -> ( { "CacheParameterGroupName" :: (String) , "ResetAllParameters" :: Maybe (Boolean) , "ParameterNameValues" :: Maybe (ParameterNameValueList) } -> {"CacheParameterGroupName" :: (String) , "ResetAllParameters" :: Maybe (Boolean) , "ParameterNameValues" :: Maybe (ParameterNameValueList) } ) -> ResetCacheParameterGroupMessage
+newResetCacheParameterGroupMessage' _CacheParameterGroupName customize = (ResetCacheParameterGroupMessage <<< customize) { "CacheParameterGroupName": _CacheParameterGroupName, "ParameterNameValues": Nothing, "ResetAllParameters": Nothing }
 
 
 
 -- | <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
 newtype ReshardingConfiguration = ReshardingConfiguration 
-  { "PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList)
+  { "PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList)
   }
 derive instance newtypeReshardingConfiguration :: Newtype ReshardingConfiguration _
 derive instance repGenericReshardingConfiguration :: Generic ReshardingConfiguration _
@@ -3074,12 +3073,12 @@ instance encodeReshardingConfiguration :: Encode ReshardingConfiguration where e
 
 -- | Constructs ReshardingConfiguration from required parameters
 newReshardingConfiguration :: ReshardingConfiguration
-newReshardingConfiguration  = ReshardingConfiguration { "PreferredAvailabilityZones": (NullOrUndefined Nothing) }
+newReshardingConfiguration  = ReshardingConfiguration { "PreferredAvailabilityZones": Nothing }
 
 -- | Constructs ReshardingConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReshardingConfiguration' :: ( { "PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } -> {"PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } ) -> ReshardingConfiguration
-newReshardingConfiguration'  customize = (ReshardingConfiguration <<< customize) { "PreferredAvailabilityZones": (NullOrUndefined Nothing) }
+newReshardingConfiguration' :: ( { "PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList) } -> {"PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList) } ) -> ReshardingConfiguration
+newReshardingConfiguration'  customize = (ReshardingConfiguration <<< customize) { "PreferredAvailabilityZones": Nothing }
 
 
 
@@ -3094,7 +3093,7 @@ instance encodeReshardingConfigurationList :: Encode ReshardingConfigurationList
 
 -- | <p>The status of an online resharding operation.</p>
 newtype ReshardingStatus = ReshardingStatus 
-  { "SlotMigration" :: NullOrUndefined (SlotMigration)
+  { "SlotMigration" :: Maybe (SlotMigration)
   }
 derive instance newtypeReshardingStatus :: Newtype ReshardingStatus _
 derive instance repGenericReshardingStatus :: Generic ReshardingStatus _
@@ -3104,12 +3103,12 @@ instance encodeReshardingStatus :: Encode ReshardingStatus where encode = generi
 
 -- | Constructs ReshardingStatus from required parameters
 newReshardingStatus :: ReshardingStatus
-newReshardingStatus  = ReshardingStatus { "SlotMigration": (NullOrUndefined Nothing) }
+newReshardingStatus  = ReshardingStatus { "SlotMigration": Nothing }
 
 -- | Constructs ReshardingStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReshardingStatus' :: ( { "SlotMigration" :: NullOrUndefined (SlotMigration) } -> {"SlotMigration" :: NullOrUndefined (SlotMigration) } ) -> ReshardingStatus
-newReshardingStatus'  customize = (ReshardingStatus <<< customize) { "SlotMigration": (NullOrUndefined Nothing) }
+newReshardingStatus' :: ( { "SlotMigration" :: Maybe (SlotMigration) } -> {"SlotMigration" :: Maybe (SlotMigration) } ) -> ReshardingStatus
+newReshardingStatus'  customize = (ReshardingStatus <<< customize) { "SlotMigration": Nothing }
 
 
 
@@ -3137,7 +3136,7 @@ newRevokeCacheSecurityGroupIngressMessage' _CacheSecurityGroupName _EC2SecurityG
 
 
 newtype RevokeCacheSecurityGroupIngressResult = RevokeCacheSecurityGroupIngressResult 
-  { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup)
+  { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup)
   }
 derive instance newtypeRevokeCacheSecurityGroupIngressResult :: Newtype RevokeCacheSecurityGroupIngressResult _
 derive instance repGenericRevokeCacheSecurityGroupIngressResult :: Generic RevokeCacheSecurityGroupIngressResult _
@@ -3147,12 +3146,12 @@ instance encodeRevokeCacheSecurityGroupIngressResult :: Encode RevokeCacheSecuri
 
 -- | Constructs RevokeCacheSecurityGroupIngressResult from required parameters
 newRevokeCacheSecurityGroupIngressResult :: RevokeCacheSecurityGroupIngressResult
-newRevokeCacheSecurityGroupIngressResult  = RevokeCacheSecurityGroupIngressResult { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newRevokeCacheSecurityGroupIngressResult  = RevokeCacheSecurityGroupIngressResult { "CacheSecurityGroup": Nothing }
 
 -- | Constructs RevokeCacheSecurityGroupIngressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevokeCacheSecurityGroupIngressResult' :: ( { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } ) -> RevokeCacheSecurityGroupIngressResult
-newRevokeCacheSecurityGroupIngressResult'  customize = (RevokeCacheSecurityGroupIngressResult <<< customize) { "CacheSecurityGroup": (NullOrUndefined Nothing) }
+newRevokeCacheSecurityGroupIngressResult' :: ( { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> {"CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } ) -> RevokeCacheSecurityGroupIngressResult
+newRevokeCacheSecurityGroupIngressResult'  customize = (RevokeCacheSecurityGroupIngressResult <<< customize) { "CacheSecurityGroup": Nothing }
 
 
 
@@ -3167,8 +3166,8 @@ instance encodeSecurityGroupIdsList :: Encode SecurityGroupIdsList where encode 
 
 -- | <p>Represents a single cache security group and its status.</p>
 newtype SecurityGroupMembership = SecurityGroupMembership 
-  { "SecurityGroupId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "SecurityGroupId" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeSecurityGroupMembership :: Newtype SecurityGroupMembership _
 derive instance repGenericSecurityGroupMembership :: Generic SecurityGroupMembership _
@@ -3178,12 +3177,12 @@ instance encodeSecurityGroupMembership :: Encode SecurityGroupMembership where e
 
 -- | Constructs SecurityGroupMembership from required parameters
 newSecurityGroupMembership :: SecurityGroupMembership
-newSecurityGroupMembership  = SecurityGroupMembership { "SecurityGroupId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newSecurityGroupMembership  = SecurityGroupMembership { "SecurityGroupId": Nothing, "Status": Nothing }
 
 -- | Constructs SecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSecurityGroupMembership' :: ( { "SecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"SecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> SecurityGroupMembership
-newSecurityGroupMembership'  customize = (SecurityGroupMembership <<< customize) { "SecurityGroupId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newSecurityGroupMembership' :: ( { "SecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } -> {"SecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } ) -> SecurityGroupMembership
+newSecurityGroupMembership'  customize = (SecurityGroupMembership <<< customize) { "SecurityGroupId": Nothing, "Status": Nothing }
 
 
 
@@ -3198,7 +3197,7 @@ instance encodeSecurityGroupMembershipList :: Encode SecurityGroupMembershipList
 
 -- | <p>Represents the progress of an online resharding operation.</p>
 newtype SlotMigration = SlotMigration 
-  { "ProgressPercentage" :: NullOrUndefined (Number)
+  { "ProgressPercentage" :: Maybe (Number)
   }
 derive instance newtypeSlotMigration :: Newtype SlotMigration _
 derive instance repGenericSlotMigration :: Generic SlotMigration _
@@ -3208,41 +3207,41 @@ instance encodeSlotMigration :: Encode SlotMigration where encode = genericEncod
 
 -- | Constructs SlotMigration from required parameters
 newSlotMigration :: SlotMigration
-newSlotMigration  = SlotMigration { "ProgressPercentage": (NullOrUndefined Nothing) }
+newSlotMigration  = SlotMigration { "ProgressPercentage": Nothing }
 
 -- | Constructs SlotMigration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSlotMigration' :: ( { "ProgressPercentage" :: NullOrUndefined (Number) } -> {"ProgressPercentage" :: NullOrUndefined (Number) } ) -> SlotMigration
-newSlotMigration'  customize = (SlotMigration <<< customize) { "ProgressPercentage": (NullOrUndefined Nothing) }
+newSlotMigration' :: ( { "ProgressPercentage" :: Maybe (Number) } -> {"ProgressPercentage" :: Maybe (Number) } ) -> SlotMigration
+newSlotMigration'  customize = (SlotMigration <<< customize) { "ProgressPercentage": Nothing }
 
 
 
 -- | <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
 newtype Snapshot = Snapshot 
-  { "SnapshotName" :: NullOrUndefined (String)
-  , "ReplicationGroupId" :: NullOrUndefined (String)
-  , "ReplicationGroupDescription" :: NullOrUndefined (String)
-  , "CacheClusterId" :: NullOrUndefined (String)
-  , "SnapshotStatus" :: NullOrUndefined (String)
-  , "SnapshotSource" :: NullOrUndefined (String)
-  , "CacheNodeType" :: NullOrUndefined (String)
-  , "Engine" :: NullOrUndefined (String)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "NumCacheNodes" :: NullOrUndefined (IntegerOptional)
-  , "PreferredAvailabilityZone" :: NullOrUndefined (String)
-  , "CacheClusterCreateTime" :: NullOrUndefined (TStamp)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "TopicArn" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "CacheParameterGroupName" :: NullOrUndefined (String)
-  , "CacheSubnetGroupName" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotWindow" :: NullOrUndefined (String)
-  , "NumNodeGroups" :: NullOrUndefined (IntegerOptional)
-  , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus)
-  , "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList)
+  { "SnapshotName" :: Maybe (String)
+  , "ReplicationGroupId" :: Maybe (String)
+  , "ReplicationGroupDescription" :: Maybe (String)
+  , "CacheClusterId" :: Maybe (String)
+  , "SnapshotStatus" :: Maybe (String)
+  , "SnapshotSource" :: Maybe (String)
+  , "CacheNodeType" :: Maybe (String)
+  , "Engine" :: Maybe (String)
+  , "EngineVersion" :: Maybe (String)
+  , "NumCacheNodes" :: Maybe (IntegerOptional)
+  , "PreferredAvailabilityZone" :: Maybe (String)
+  , "CacheClusterCreateTime" :: Maybe (TStamp)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "TopicArn" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "CacheParameterGroupName" :: Maybe (String)
+  , "CacheSubnetGroupName" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "SnapshotRetentionLimit" :: Maybe (IntegerOptional)
+  , "SnapshotWindow" :: Maybe (String)
+  , "NumNodeGroups" :: Maybe (IntegerOptional)
+  , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus)
+  , "NodeSnapshots" :: Maybe (NodeSnapshotList)
   }
 derive instance newtypeSnapshot :: Newtype Snapshot _
 derive instance repGenericSnapshot :: Generic Snapshot _
@@ -3252,12 +3251,12 @@ instance encodeSnapshot :: Encode Snapshot where encode = genericEncode options
 
 -- | Constructs Snapshot from required parameters
 newSnapshot :: Snapshot
-newSnapshot  = Snapshot { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailover": (NullOrUndefined Nothing), "CacheClusterCreateTime": (NullOrUndefined Nothing), "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeSnapshots": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "NumNodeGroups": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupDescription": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotSource": (NullOrUndefined Nothing), "SnapshotStatus": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSnapshot  = Snapshot { "AutoMinorVersionUpgrade": Nothing, "AutomaticFailover": Nothing, "CacheClusterCreateTime": Nothing, "CacheClusterId": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NodeSnapshots": Nothing, "NumCacheNodes": Nothing, "NumNodeGroups": Nothing, "Port": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupDescription": Nothing, "ReplicationGroupId": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotSource": Nothing, "SnapshotStatus": Nothing, "SnapshotWindow": Nothing, "TopicArn": Nothing, "VpcId": Nothing }
 
 -- | Constructs Snapshot's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshot' :: ( { "SnapshotName" :: NullOrUndefined (String) , "ReplicationGroupId" :: NullOrUndefined (String) , "ReplicationGroupDescription" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotStatus" :: NullOrUndefined (String) , "SnapshotSource" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CacheClusterCreateTime" :: NullOrUndefined (TStamp) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "TopicArn" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "NumNodeGroups" :: NullOrUndefined (IntegerOptional) , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus) , "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList) } -> {"SnapshotName" :: NullOrUndefined (String) , "ReplicationGroupId" :: NullOrUndefined (String) , "ReplicationGroupDescription" :: NullOrUndefined (String) , "CacheClusterId" :: NullOrUndefined (String) , "SnapshotStatus" :: NullOrUndefined (String) , "SnapshotSource" :: NullOrUndefined (String) , "CacheNodeType" :: NullOrUndefined (String) , "Engine" :: NullOrUndefined (String) , "EngineVersion" :: NullOrUndefined (String) , "NumCacheNodes" :: NullOrUndefined (IntegerOptional) , "PreferredAvailabilityZone" :: NullOrUndefined (String) , "CacheClusterCreateTime" :: NullOrUndefined (TStamp) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "TopicArn" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "CacheParameterGroupName" :: NullOrUndefined (String) , "CacheSubnetGroupName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional) , "SnapshotWindow" :: NullOrUndefined (String) , "NumNodeGroups" :: NullOrUndefined (IntegerOptional) , "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus) , "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList) } ) -> Snapshot
-newSnapshot'  customize = (Snapshot <<< customize) { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AutomaticFailover": (NullOrUndefined Nothing), "CacheClusterCreateTime": (NullOrUndefined Nothing), "CacheClusterId": (NullOrUndefined Nothing), "CacheNodeType": (NullOrUndefined Nothing), "CacheParameterGroupName": (NullOrUndefined Nothing), "CacheSubnetGroupName": (NullOrUndefined Nothing), "Engine": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "NodeSnapshots": (NullOrUndefined Nothing), "NumCacheNodes": (NullOrUndefined Nothing), "NumNodeGroups": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredAvailabilityZone": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationGroupDescription": (NullOrUndefined Nothing), "ReplicationGroupId": (NullOrUndefined Nothing), "SnapshotName": (NullOrUndefined Nothing), "SnapshotRetentionLimit": (NullOrUndefined Nothing), "SnapshotSource": (NullOrUndefined Nothing), "SnapshotStatus": (NullOrUndefined Nothing), "SnapshotWindow": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSnapshot' :: ( { "SnapshotName" :: Maybe (String) , "ReplicationGroupId" :: Maybe (String) , "ReplicationGroupDescription" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotStatus" :: Maybe (String) , "SnapshotSource" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "PreferredAvailabilityZone" :: Maybe (String) , "CacheClusterCreateTime" :: Maybe (TStamp) , "PreferredMaintenanceWindow" :: Maybe (String) , "TopicArn" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "VpcId" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "NumNodeGroups" :: Maybe (IntegerOptional) , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus) , "NodeSnapshots" :: Maybe (NodeSnapshotList) } -> {"SnapshotName" :: Maybe (String) , "ReplicationGroupId" :: Maybe (String) , "ReplicationGroupDescription" :: Maybe (String) , "CacheClusterId" :: Maybe (String) , "SnapshotStatus" :: Maybe (String) , "SnapshotSource" :: Maybe (String) , "CacheNodeType" :: Maybe (String) , "Engine" :: Maybe (String) , "EngineVersion" :: Maybe (String) , "NumCacheNodes" :: Maybe (IntegerOptional) , "PreferredAvailabilityZone" :: Maybe (String) , "CacheClusterCreateTime" :: Maybe (TStamp) , "PreferredMaintenanceWindow" :: Maybe (String) , "TopicArn" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "CacheParameterGroupName" :: Maybe (String) , "CacheSubnetGroupName" :: Maybe (String) , "VpcId" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "SnapshotRetentionLimit" :: Maybe (IntegerOptional) , "SnapshotWindow" :: Maybe (String) , "NumNodeGroups" :: Maybe (IntegerOptional) , "AutomaticFailover" :: Maybe (AutomaticFailoverStatus) , "NodeSnapshots" :: Maybe (NodeSnapshotList) } ) -> Snapshot
+newSnapshot'  customize = (Snapshot <<< customize) { "AutoMinorVersionUpgrade": Nothing, "AutomaticFailover": Nothing, "CacheClusterCreateTime": Nothing, "CacheClusterId": Nothing, "CacheNodeType": Nothing, "CacheParameterGroupName": Nothing, "CacheSubnetGroupName": Nothing, "Engine": Nothing, "EngineVersion": Nothing, "NodeSnapshots": Nothing, "NumCacheNodes": Nothing, "NumNodeGroups": Nothing, "Port": Nothing, "PreferredAvailabilityZone": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationGroupDescription": Nothing, "ReplicationGroupId": Nothing, "SnapshotName": Nothing, "SnapshotRetentionLimit": Nothing, "SnapshotSource": Nothing, "SnapshotStatus": Nothing, "SnapshotWindow": Nothing, "TopicArn": Nothing, "VpcId": Nothing }
 
 
 
@@ -3330,8 +3329,8 @@ instance encodeSourceType :: Encode SourceType where encode = genericEncode opti
 
 -- | <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
 newtype Subnet = Subnet 
-  { "SubnetIdentifier" :: NullOrUndefined (String)
-  , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone)
+  { "SubnetIdentifier" :: Maybe (String)
+  , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone)
   }
 derive instance newtypeSubnet :: Newtype Subnet _
 derive instance repGenericSubnet :: Generic Subnet _
@@ -3341,12 +3340,12 @@ instance encodeSubnet :: Encode Subnet where encode = genericEncode options
 
 -- | Constructs Subnet from required parameters
 newSubnet :: Subnet
-newSubnet  = Subnet { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing) }
+newSubnet  = Subnet { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing }
 
 -- | Constructs Subnet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnet' :: ( { "SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) } -> {"SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) } ) -> Subnet
-newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing) }
+newSubnet' :: ( { "SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) } -> {"SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) } ) -> Subnet
+newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing }
 
 
 
@@ -3389,8 +3388,8 @@ instance encodeTStamp :: Encode TStamp where encode = genericEncode options
 
 -- | <p>A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.</p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -3400,12 +3399,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -3420,7 +3419,7 @@ instance encodeTagList :: Encode TagList where encode = genericEncode options
 
 -- | <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 newtype TagListMessage = TagListMessage 
-  { "TagList" :: NullOrUndefined (TagList)
+  { "TagList" :: Maybe (TagList)
   }
 derive instance newtypeTagListMessage :: Newtype TagListMessage _
 derive instance repGenericTagListMessage :: Generic TagListMessage _
@@ -3430,12 +3429,12 @@ instance encodeTagListMessage :: Encode TagListMessage where encode = genericEnc
 
 -- | Constructs TagListMessage from required parameters
 newTagListMessage :: TagListMessage
-newTagListMessage  = TagListMessage { "TagList": (NullOrUndefined Nothing) }
+newTagListMessage  = TagListMessage { "TagList": Nothing }
 
 -- | Constructs TagListMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTagListMessage' :: ( { "TagList" :: NullOrUndefined (TagList) } -> {"TagList" :: NullOrUndefined (TagList) } ) -> TagListMessage
-newTagListMessage'  customize = (TagListMessage <<< customize) { "TagList": (NullOrUndefined Nothing) }
+newTagListMessage' :: ( { "TagList" :: Maybe (TagList) } -> {"TagList" :: Maybe (TagList) } ) -> TagListMessage
+newTagListMessage'  customize = (TagListMessage <<< customize) { "TagList": Nothing }
 
 
 
@@ -3490,7 +3489,7 @@ instance encodeTestFailoverNotAvailableFault :: Encode TestFailoverNotAvailableF
 
 
 newtype TestFailoverResult = TestFailoverResult 
-  { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup)
+  { "ReplicationGroup" :: Maybe (ReplicationGroup)
   }
 derive instance newtypeTestFailoverResult :: Newtype TestFailoverResult _
 derive instance repGenericTestFailoverResult :: Generic TestFailoverResult _
@@ -3500,10 +3499,10 @@ instance encodeTestFailoverResult :: Encode TestFailoverResult where encode = ge
 
 -- | Constructs TestFailoverResult from required parameters
 newTestFailoverResult :: TestFailoverResult
-newTestFailoverResult  = TestFailoverResult { "ReplicationGroup": (NullOrUndefined Nothing) }
+newTestFailoverResult  = TestFailoverResult { "ReplicationGroup": Nothing }
 
 -- | Constructs TestFailoverResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTestFailoverResult' :: ( { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> {"ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } ) -> TestFailoverResult
-newTestFailoverResult'  customize = (TestFailoverResult <<< customize) { "ReplicationGroup": (NullOrUndefined Nothing) }
+newTestFailoverResult' :: ( { "ReplicationGroup" :: Maybe (ReplicationGroup) } -> {"ReplicationGroup" :: Maybe (ReplicationGroup) } ) -> TestFailoverResult
+newTestFailoverResult'  customize = (TestFailoverResult <<< customize) { "ReplicationGroup": Nothing }
 

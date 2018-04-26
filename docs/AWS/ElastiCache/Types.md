@@ -78,7 +78,7 @@ Constructs AddTagsToResourceMessage's fields from required parameters
 
 ``` purescript
 newtype AllowedNodeTypeModificationsMessage
-  = AllowedNodeTypeModificationsMessage { "ScaleUpModifications" :: NullOrUndefined (NodeTypeList) }
+  = AllowedNodeTypeModificationsMessage { "ScaleUpModifications" :: Maybe (NodeTypeList) }
 ```
 
 <p>Represents the allowed node types you can use to modify your cluster or replication group.</p>
@@ -103,7 +103,7 @@ Constructs AllowedNodeTypeModificationsMessage from required parameters
 #### `newAllowedNodeTypeModificationsMessage'`
 
 ``` purescript
-newAllowedNodeTypeModificationsMessage' :: ({ "ScaleUpModifications" :: NullOrUndefined (NodeTypeList) } -> { "ScaleUpModifications" :: NullOrUndefined (NodeTypeList) }) -> AllowedNodeTypeModificationsMessage
+newAllowedNodeTypeModificationsMessage' :: ({ "ScaleUpModifications" :: Maybe (NodeTypeList) } -> { "ScaleUpModifications" :: Maybe (NodeTypeList) }) -> AllowedNodeTypeModificationsMessage
 ```
 
 Constructs AllowedNodeTypeModificationsMessage's fields from required parameters
@@ -182,7 +182,7 @@ Constructs AuthorizeCacheSecurityGroupIngressMessage's fields from required para
 
 ``` purescript
 newtype AuthorizeCacheSecurityGroupIngressResult
-  = AuthorizeCacheSecurityGroupIngressResult { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }
+  = AuthorizeCacheSecurityGroupIngressResult { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }
 ```
 
 ##### Instances
@@ -205,7 +205,7 @@ Constructs AuthorizeCacheSecurityGroupIngressResult from required parameters
 #### `newAuthorizeCacheSecurityGroupIngressResult'`
 
 ``` purescript
-newAuthorizeCacheSecurityGroupIngressResult' :: ({ "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }) -> AuthorizeCacheSecurityGroupIngressResult
+newAuthorizeCacheSecurityGroupIngressResult' :: ({ "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }) -> AuthorizeCacheSecurityGroupIngressResult
 ```
 
 Constructs AuthorizeCacheSecurityGroupIngressResult's fields from required parameters
@@ -230,7 +230,7 @@ Encode AutomaticFailoverStatus
 
 ``` purescript
 newtype AvailabilityZone
-  = AvailabilityZone { "Name" :: NullOrUndefined (String) }
+  = AvailabilityZone { "Name" :: Maybe (String) }
 ```
 
 <p>Describes an Availability Zone in which the cluster is launched.</p>
@@ -255,7 +255,7 @@ Constructs AvailabilityZone from required parameters
 #### `newAvailabilityZone'`
 
 ``` purescript
-newAvailabilityZone' :: ({ "Name" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String) }) -> AvailabilityZone
+newAvailabilityZone' :: ({ "Name" :: Maybe (String) } -> { "Name" :: Maybe (String) }) -> AvailabilityZone
 ```
 
 Constructs AvailabilityZone's fields from required parameters
@@ -312,7 +312,7 @@ Encode BooleanOptional
 
 ``` purescript
 newtype CacheCluster
-  = CacheCluster { "CacheClusterId" :: NullOrUndefined (String), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "ClientDownloadLandingPage" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheClusterStatus" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheNodes" :: NullOrUndefined (CacheNodeList), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "ReplicationGroupId" :: NullOrUndefined (String), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }
+  = CacheCluster { "CacheClusterId" :: Maybe (String), "ConfigurationEndpoint" :: Maybe (Endpoint), "ClientDownloadLandingPage" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheClusterStatus" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus), "CacheSubnetGroupName" :: Maybe (String), "CacheNodes" :: Maybe (CacheNodeList), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "ReplicationGroupId" :: Maybe (String), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }
 ```
 
 <p>Contains all of the attributes of a specific cluster.</p>
@@ -337,7 +337,7 @@ Constructs CacheCluster from required parameters
 #### `newCacheCluster'`
 
 ``` purescript
-newCacheCluster' :: ({ "CacheClusterId" :: NullOrUndefined (String), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "ClientDownloadLandingPage" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheClusterStatus" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheNodes" :: NullOrUndefined (CacheNodeList), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "ReplicationGroupId" :: NullOrUndefined (String), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> { "CacheClusterId" :: NullOrUndefined (String), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "ClientDownloadLandingPage" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheClusterStatus" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroupStatus), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheNodes" :: NullOrUndefined (CacheNodeList), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "ReplicationGroupId" :: NullOrUndefined (String), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }) -> CacheCluster
+newCacheCluster' :: ({ "CacheClusterId" :: Maybe (String), "ConfigurationEndpoint" :: Maybe (Endpoint), "ClientDownloadLandingPage" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheClusterStatus" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus), "CacheSubnetGroupName" :: Maybe (String), "CacheNodes" :: Maybe (CacheNodeList), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "ReplicationGroupId" :: Maybe (String), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> { "CacheClusterId" :: Maybe (String), "ConfigurationEndpoint" :: Maybe (Endpoint), "ClientDownloadLandingPage" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheClusterStatus" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "CacheSecurityGroups" :: Maybe (CacheSecurityGroupMembershipList), "CacheParameterGroup" :: Maybe (CacheParameterGroupStatus), "CacheSubnetGroupName" :: Maybe (String), "CacheNodes" :: Maybe (CacheNodeList), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "ReplicationGroupId" :: Maybe (String), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }) -> CacheCluster
 ```
 
 Constructs CacheCluster's fields from required parameters
@@ -380,7 +380,7 @@ Encode CacheClusterList
 
 ``` purescript
 newtype CacheClusterMessage
-  = CacheClusterMessage { "Marker" :: NullOrUndefined (String), "CacheClusters" :: NullOrUndefined (CacheClusterList) }
+  = CacheClusterMessage { "Marker" :: Maybe (String), "CacheClusters" :: Maybe (CacheClusterList) }
 ```
 
 <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
@@ -405,7 +405,7 @@ Constructs CacheClusterMessage from required parameters
 #### `newCacheClusterMessage'`
 
 ``` purescript
-newCacheClusterMessage' :: ({ "Marker" :: NullOrUndefined (String), "CacheClusters" :: NullOrUndefined (CacheClusterList) } -> { "Marker" :: NullOrUndefined (String), "CacheClusters" :: NullOrUndefined (CacheClusterList) }) -> CacheClusterMessage
+newCacheClusterMessage' :: ({ "Marker" :: Maybe (String), "CacheClusters" :: Maybe (CacheClusterList) } -> { "Marker" :: Maybe (String), "CacheClusters" :: Maybe (CacheClusterList) }) -> CacheClusterMessage
 ```
 
 Constructs CacheClusterMessage's fields from required parameters
@@ -432,7 +432,7 @@ Encode CacheClusterNotFoundFault
 
 ``` purescript
 newtype CacheEngineVersion
-  = CacheEngineVersion { "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "CacheEngineDescription" :: NullOrUndefined (String), "CacheEngineVersionDescription" :: NullOrUndefined (String) }
+  = CacheEngineVersion { "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "CacheEngineDescription" :: Maybe (String), "CacheEngineVersionDescription" :: Maybe (String) }
 ```
 
 <p>Provides all of the details about a particular cache engine version.</p>
@@ -457,7 +457,7 @@ Constructs CacheEngineVersion from required parameters
 #### `newCacheEngineVersion'`
 
 ``` purescript
-newCacheEngineVersion' :: ({ "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "CacheEngineDescription" :: NullOrUndefined (String), "CacheEngineVersionDescription" :: NullOrUndefined (String) } -> { "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "CacheEngineDescription" :: NullOrUndefined (String), "CacheEngineVersionDescription" :: NullOrUndefined (String) }) -> CacheEngineVersion
+newCacheEngineVersion' :: ({ "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "CacheEngineDescription" :: Maybe (String), "CacheEngineVersionDescription" :: Maybe (String) } -> { "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "CacheEngineDescription" :: Maybe (String), "CacheEngineVersionDescription" :: Maybe (String) }) -> CacheEngineVersion
 ```
 
 Constructs CacheEngineVersion's fields from required parameters
@@ -482,7 +482,7 @@ Encode CacheEngineVersionList
 
 ``` purescript
 newtype CacheEngineVersionMessage
-  = CacheEngineVersionMessage { "Marker" :: NullOrUndefined (String), "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList) }
+  = CacheEngineVersionMessage { "Marker" :: Maybe (String), "CacheEngineVersions" :: Maybe (CacheEngineVersionList) }
 ```
 
 <p>Represents the output of a <a>DescribeCacheEngineVersions</a> operation.</p>
@@ -507,7 +507,7 @@ Constructs CacheEngineVersionMessage from required parameters
 #### `newCacheEngineVersionMessage'`
 
 ``` purescript
-newCacheEngineVersionMessage' :: ({ "Marker" :: NullOrUndefined (String), "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList) } -> { "Marker" :: NullOrUndefined (String), "CacheEngineVersions" :: NullOrUndefined (CacheEngineVersionList) }) -> CacheEngineVersionMessage
+newCacheEngineVersionMessage' :: ({ "Marker" :: Maybe (String), "CacheEngineVersions" :: Maybe (CacheEngineVersionList) } -> { "Marker" :: Maybe (String), "CacheEngineVersions" :: Maybe (CacheEngineVersionList) }) -> CacheEngineVersionMessage
 ```
 
 Constructs CacheEngineVersionMessage's fields from required parameters
@@ -516,7 +516,7 @@ Constructs CacheEngineVersionMessage's fields from required parameters
 
 ``` purescript
 newtype CacheNode
-  = CacheNode { "CacheNodeId" :: NullOrUndefined (String), "CacheNodeStatus" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "Endpoint" :: NullOrUndefined (Endpoint), "ParameterGroupStatus" :: NullOrUndefined (String), "SourceCacheNodeId" :: NullOrUndefined (String), "CustomerAvailabilityZone" :: NullOrUndefined (String) }
+  = CacheNode { "CacheNodeId" :: Maybe (String), "CacheNodeStatus" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "Endpoint" :: Maybe (Endpoint), "ParameterGroupStatus" :: Maybe (String), "SourceCacheNodeId" :: Maybe (String), "CustomerAvailabilityZone" :: Maybe (String) }
 ```
 
 <p>Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p> <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</p>
@@ -541,7 +541,7 @@ Constructs CacheNode from required parameters
 #### `newCacheNode'`
 
 ``` purescript
-newCacheNode' :: ({ "CacheNodeId" :: NullOrUndefined (String), "CacheNodeStatus" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "Endpoint" :: NullOrUndefined (Endpoint), "ParameterGroupStatus" :: NullOrUndefined (String), "SourceCacheNodeId" :: NullOrUndefined (String), "CustomerAvailabilityZone" :: NullOrUndefined (String) } -> { "CacheNodeId" :: NullOrUndefined (String), "CacheNodeStatus" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "Endpoint" :: NullOrUndefined (Endpoint), "ParameterGroupStatus" :: NullOrUndefined (String), "SourceCacheNodeId" :: NullOrUndefined (String), "CustomerAvailabilityZone" :: NullOrUndefined (String) }) -> CacheNode
+newCacheNode' :: ({ "CacheNodeId" :: Maybe (String), "CacheNodeStatus" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "Endpoint" :: Maybe (Endpoint), "ParameterGroupStatus" :: Maybe (String), "SourceCacheNodeId" :: Maybe (String), "CustomerAvailabilityZone" :: Maybe (String) } -> { "CacheNodeId" :: Maybe (String), "CacheNodeStatus" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "Endpoint" :: Maybe (Endpoint), "ParameterGroupStatus" :: Maybe (String), "SourceCacheNodeId" :: Maybe (String), "CustomerAvailabilityZone" :: Maybe (String) }) -> CacheNode
 ```
 
 Constructs CacheNode's fields from required parameters
@@ -582,7 +582,7 @@ Encode CacheNodeList
 
 ``` purescript
 newtype CacheNodeTypeSpecificParameter
-  = CacheNodeTypeSpecificParameter { "ParameterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList), "ChangeType" :: NullOrUndefined (ChangeType) }
+  = CacheNodeTypeSpecificParameter { "ParameterName" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList), "ChangeType" :: Maybe (ChangeType) }
 ```
 
 <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.</p>
@@ -607,7 +607,7 @@ Constructs CacheNodeTypeSpecificParameter from required parameters
 #### `newCacheNodeTypeSpecificParameter'`
 
 ``` purescript
-newCacheNodeTypeSpecificParameter' :: ({ "ParameterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList), "ChangeType" :: NullOrUndefined (ChangeType) } -> { "ParameterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "CacheNodeTypeSpecificValues" :: NullOrUndefined (CacheNodeTypeSpecificValueList), "ChangeType" :: NullOrUndefined (ChangeType) }) -> CacheNodeTypeSpecificParameter
+newCacheNodeTypeSpecificParameter' :: ({ "ParameterName" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList), "ChangeType" :: Maybe (ChangeType) } -> { "ParameterName" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "CacheNodeTypeSpecificValues" :: Maybe (CacheNodeTypeSpecificValueList), "ChangeType" :: Maybe (ChangeType) }) -> CacheNodeTypeSpecificParameter
 ```
 
 Constructs CacheNodeTypeSpecificParameter's fields from required parameters
@@ -632,7 +632,7 @@ Encode CacheNodeTypeSpecificParametersList
 
 ``` purescript
 newtype CacheNodeTypeSpecificValue
-  = CacheNodeTypeSpecificValue { "CacheNodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = CacheNodeTypeSpecificValue { "CacheNodeType" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A value that applies only to a certain cache node type.</p>
@@ -657,7 +657,7 @@ Constructs CacheNodeTypeSpecificValue from required parameters
 #### `newCacheNodeTypeSpecificValue'`
 
 ``` purescript
-newCacheNodeTypeSpecificValue' :: ({ "CacheNodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "CacheNodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> CacheNodeTypeSpecificValue
+newCacheNodeTypeSpecificValue' :: ({ "CacheNodeType" :: Maybe (String), "Value" :: Maybe (String) } -> { "CacheNodeType" :: Maybe (String), "Value" :: Maybe (String) }) -> CacheNodeTypeSpecificValue
 ```
 
 Constructs CacheNodeTypeSpecificValue's fields from required parameters
@@ -682,7 +682,7 @@ Encode CacheNodeTypeSpecificValueList
 
 ``` purescript
 newtype CacheParameterGroup
-  = CacheParameterGroup { "CacheParameterGroupName" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = CacheParameterGroup { "CacheParameterGroupName" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
@@ -707,7 +707,7 @@ Constructs CacheParameterGroup from required parameters
 #### `newCacheParameterGroup'`
 
 ``` purescript
-newCacheParameterGroup' :: ({ "CacheParameterGroupName" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "CacheParameterGroupName" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> CacheParameterGroup
+newCacheParameterGroup' :: ({ "CacheParameterGroupName" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) } -> { "CacheParameterGroupName" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) }) -> CacheParameterGroup
 ```
 
 Constructs CacheParameterGroup's fields from required parameters
@@ -734,7 +734,7 @@ Encode CacheParameterGroupAlreadyExistsFault
 
 ``` purescript
 newtype CacheParameterGroupDetails
-  = CacheParameterGroupDetails { "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) }
+  = CacheParameterGroupDetails { "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) }
 ```
 
 <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
@@ -759,7 +759,7 @@ Constructs CacheParameterGroupDetails from required parameters
 #### `newCacheParameterGroupDetails'`
 
 ``` purescript
-newCacheParameterGroupDetails' :: ({ "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } -> { "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) }) -> CacheParameterGroupDetails
+newCacheParameterGroupDetails' :: ({ "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } -> { "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) }) -> CacheParameterGroupDetails
 ```
 
 Constructs CacheParameterGroupDetails's fields from required parameters
@@ -784,7 +784,7 @@ Encode CacheParameterGroupList
 
 ``` purescript
 newtype CacheParameterGroupNameMessage
-  = CacheParameterGroupNameMessage { "CacheParameterGroupName" :: NullOrUndefined (String) }
+  = CacheParameterGroupNameMessage { "CacheParameterGroupName" :: Maybe (String) }
 ```
 
 <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li> <li> <p> <code>ResetCacheParameterGroup</code> </p> </li> </ul>
@@ -809,7 +809,7 @@ Constructs CacheParameterGroupNameMessage from required parameters
 #### `newCacheParameterGroupNameMessage'`
 
 ``` purescript
-newCacheParameterGroupNameMessage' :: ({ "CacheParameterGroupName" :: NullOrUndefined (String) } -> { "CacheParameterGroupName" :: NullOrUndefined (String) }) -> CacheParameterGroupNameMessage
+newCacheParameterGroupNameMessage' :: ({ "CacheParameterGroupName" :: Maybe (String) } -> { "CacheParameterGroupName" :: Maybe (String) }) -> CacheParameterGroupNameMessage
 ```
 
 Constructs CacheParameterGroupNameMessage's fields from required parameters
@@ -854,7 +854,7 @@ Encode CacheParameterGroupQuotaExceededFault
 
 ``` purescript
 newtype CacheParameterGroupStatus
-  = CacheParameterGroupStatus { "CacheParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList) }
+  = CacheParameterGroupStatus { "CacheParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList) }
 ```
 
 <p>Status of the cache parameter group.</p>
@@ -879,7 +879,7 @@ Constructs CacheParameterGroupStatus from required parameters
 #### `newCacheParameterGroupStatus'`
 
 ``` purescript
-newCacheParameterGroupStatus' :: ({ "CacheParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList) } -> { "CacheParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "CacheNodeIdsToReboot" :: NullOrUndefined (CacheNodeIdsList) }) -> CacheParameterGroupStatus
+newCacheParameterGroupStatus' :: ({ "CacheParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList) } -> { "CacheParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "CacheNodeIdsToReboot" :: Maybe (CacheNodeIdsList) }) -> CacheParameterGroupStatus
 ```
 
 Constructs CacheParameterGroupStatus's fields from required parameters
@@ -888,7 +888,7 @@ Constructs CacheParameterGroupStatus's fields from required parameters
 
 ``` purescript
 newtype CacheParameterGroupsMessage
-  = CacheParameterGroupsMessage { "Marker" :: NullOrUndefined (String), "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList) }
+  = CacheParameterGroupsMessage { "Marker" :: Maybe (String), "CacheParameterGroups" :: Maybe (CacheParameterGroupList) }
 ```
 
 <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
@@ -913,7 +913,7 @@ Constructs CacheParameterGroupsMessage from required parameters
 #### `newCacheParameterGroupsMessage'`
 
 ``` purescript
-newCacheParameterGroupsMessage' :: ({ "Marker" :: NullOrUndefined (String), "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList) } -> { "Marker" :: NullOrUndefined (String), "CacheParameterGroups" :: NullOrUndefined (CacheParameterGroupList) }) -> CacheParameterGroupsMessage
+newCacheParameterGroupsMessage' :: ({ "Marker" :: Maybe (String), "CacheParameterGroups" :: Maybe (CacheParameterGroupList) } -> { "Marker" :: Maybe (String), "CacheParameterGroups" :: Maybe (CacheParameterGroupList) }) -> CacheParameterGroupsMessage
 ```
 
 Constructs CacheParameterGroupsMessage's fields from required parameters
@@ -922,7 +922,7 @@ Constructs CacheParameterGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype CacheSecurityGroup
-  = CacheSecurityGroup { "OwnerId" :: NullOrUndefined (String), "CacheSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) }
+  = CacheSecurityGroup { "OwnerId" :: Maybe (String), "CacheSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) }
 ```
 
 <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> </ul>
@@ -947,7 +947,7 @@ Constructs CacheSecurityGroup from required parameters
 #### `newCacheSecurityGroup'`
 
 ``` purescript
-newCacheSecurityGroup' :: ({ "OwnerId" :: NullOrUndefined (String), "CacheSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) } -> { "OwnerId" :: NullOrUndefined (String), "CacheSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) }) -> CacheSecurityGroup
+newCacheSecurityGroup' :: ({ "OwnerId" :: Maybe (String), "CacheSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) } -> { "OwnerId" :: Maybe (String), "CacheSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) }) -> CacheSecurityGroup
 ```
 
 Constructs CacheSecurityGroup's fields from required parameters
@@ -974,7 +974,7 @@ Encode CacheSecurityGroupAlreadyExistsFault
 
 ``` purescript
 newtype CacheSecurityGroupMembership
-  = CacheSecurityGroupMembership { "CacheSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = CacheSecurityGroupMembership { "CacheSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Represents a cluster's status within a particular cache security group.</p>
@@ -999,7 +999,7 @@ Constructs CacheSecurityGroupMembership from required parameters
 #### `newCacheSecurityGroupMembership'`
 
 ``` purescript
-newCacheSecurityGroupMembership' :: ({ "CacheSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "CacheSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> CacheSecurityGroupMembership
+newCacheSecurityGroupMembership' :: ({ "CacheSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) } -> { "CacheSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) }) -> CacheSecurityGroupMembership
 ```
 
 Constructs CacheSecurityGroupMembership's fields from required parameters
@@ -1024,7 +1024,7 @@ Encode CacheSecurityGroupMembershipList
 
 ``` purescript
 newtype CacheSecurityGroupMessage
-  = CacheSecurityGroupMessage { "Marker" :: NullOrUndefined (String), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups) }
+  = CacheSecurityGroupMessage { "Marker" :: Maybe (String), "CacheSecurityGroups" :: Maybe (CacheSecurityGroups) }
 ```
 
 <p>Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.</p>
@@ -1049,7 +1049,7 @@ Constructs CacheSecurityGroupMessage from required parameters
 #### `newCacheSecurityGroupMessage'`
 
 ``` purescript
-newCacheSecurityGroupMessage' :: ({ "Marker" :: NullOrUndefined (String), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups) } -> { "Marker" :: NullOrUndefined (String), "CacheSecurityGroups" :: NullOrUndefined (CacheSecurityGroups) }) -> CacheSecurityGroupMessage
+newCacheSecurityGroupMessage' :: ({ "Marker" :: Maybe (String), "CacheSecurityGroups" :: Maybe (CacheSecurityGroups) } -> { "Marker" :: Maybe (String), "CacheSecurityGroups" :: Maybe (CacheSecurityGroups) }) -> CacheSecurityGroupMessage
 ```
 
 Constructs CacheSecurityGroupMessage's fields from required parameters
@@ -1126,7 +1126,7 @@ Encode CacheSecurityGroups
 
 ``` purescript
 newtype CacheSubnetGroup
-  = CacheSubnetGroup { "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }
+  = CacheSubnetGroup { "CacheSubnetGroupName" :: Maybe (String), "CacheSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }
 ```
 
 <p>Represents the output of one of the following operations:</p> <ul> <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li> <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li> </ul>
@@ -1151,7 +1151,7 @@ Constructs CacheSubnetGroup from required parameters
 #### `newCacheSubnetGroup'`
 
 ``` purescript
-newCacheSubnetGroup' :: ({ "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) } -> { "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }) -> CacheSubnetGroup
+newCacheSubnetGroup' :: ({ "CacheSubnetGroupName" :: Maybe (String), "CacheSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) } -> { "CacheSubnetGroupName" :: Maybe (String), "CacheSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }) -> CacheSubnetGroup
 ```
 
 Constructs CacheSubnetGroup's fields from required parameters
@@ -1196,7 +1196,7 @@ Encode CacheSubnetGroupInUse
 
 ``` purescript
 newtype CacheSubnetGroupMessage
-  = CacheSubnetGroupMessage { "Marker" :: NullOrUndefined (String), "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups) }
+  = CacheSubnetGroupMessage { "Marker" :: Maybe (String), "CacheSubnetGroups" :: Maybe (CacheSubnetGroups) }
 ```
 
 <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
@@ -1221,7 +1221,7 @@ Constructs CacheSubnetGroupMessage from required parameters
 #### `newCacheSubnetGroupMessage'`
 
 ``` purescript
-newCacheSubnetGroupMessage' :: ({ "Marker" :: NullOrUndefined (String), "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups) } -> { "Marker" :: NullOrUndefined (String), "CacheSubnetGroups" :: NullOrUndefined (CacheSubnetGroups) }) -> CacheSubnetGroupMessage
+newCacheSubnetGroupMessage' :: ({ "Marker" :: Maybe (String), "CacheSubnetGroups" :: Maybe (CacheSubnetGroups) } -> { "Marker" :: Maybe (String), "CacheSubnetGroups" :: Maybe (CacheSubnetGroups) }) -> CacheSubnetGroupMessage
 ```
 
 Constructs CacheSubnetGroupMessage's fields from required parameters
@@ -1350,7 +1350,7 @@ Encode ClusterQuotaForCustomerExceededFault
 
 ``` purescript
 newtype CopySnapshotMessage
-  = CopySnapshotMessage { "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: NullOrUndefined (String) }
+  = CopySnapshotMessage { "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>CopySnapshotMessage</code> operation.</p>
@@ -1375,7 +1375,7 @@ Constructs CopySnapshotMessage from required parameters
 #### `newCopySnapshotMessage'`
 
 ``` purescript
-newCopySnapshotMessage' :: String -> String -> ({ "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: NullOrUndefined (String) } -> { "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: NullOrUndefined (String) }) -> CopySnapshotMessage
+newCopySnapshotMessage' :: String -> String -> ({ "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: Maybe (String) } -> { "SourceSnapshotName" :: String, "TargetSnapshotName" :: String, "TargetBucket" :: Maybe (String) }) -> CopySnapshotMessage
 ```
 
 Constructs CopySnapshotMessage's fields from required parameters
@@ -1384,7 +1384,7 @@ Constructs CopySnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype CopySnapshotResult
-  = CopySnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = CopySnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -1407,7 +1407,7 @@ Constructs CopySnapshotResult from required parameters
 #### `newCopySnapshotResult'`
 
 ``` purescript
-newCopySnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> CopySnapshotResult
+newCopySnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> CopySnapshotResult
 ```
 
 Constructs CopySnapshotResult's fields from required parameters
@@ -1416,7 +1416,7 @@ Constructs CopySnapshotResult's fields from required parameters
 
 ``` purescript
 newtype CreateCacheClusterMessage
-  = CreateCacheClusterMessage { "CacheClusterId" :: String, "ReplicationGroupId" :: NullOrUndefined (String), "AZMode" :: NullOrUndefined (AZMode), "PreferredAvailabilityZone" :: NullOrUndefined (String), "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String) }
+  = CreateCacheClusterMessage { "CacheClusterId" :: String, "ReplicationGroupId" :: Maybe (String), "AZMode" :: Maybe (AZMode), "PreferredAvailabilityZone" :: Maybe (String), "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String) }
 ```
 
 <p>Represents the input of a CreateCacheCluster operation.</p>
@@ -1441,7 +1441,7 @@ Constructs CreateCacheClusterMessage from required parameters
 #### `newCreateCacheClusterMessage'`
 
 ``` purescript
-newCreateCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "ReplicationGroupId" :: NullOrUndefined (String), "AZMode" :: NullOrUndefined (AZMode), "PreferredAvailabilityZone" :: NullOrUndefined (String), "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String) } -> { "CacheClusterId" :: String, "ReplicationGroupId" :: NullOrUndefined (String), "AZMode" :: NullOrUndefined (AZMode), "PreferredAvailabilityZone" :: NullOrUndefined (String), "PreferredAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String) }) -> CreateCacheClusterMessage
+newCreateCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "ReplicationGroupId" :: Maybe (String), "AZMode" :: Maybe (AZMode), "PreferredAvailabilityZone" :: Maybe (String), "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String) } -> { "CacheClusterId" :: String, "ReplicationGroupId" :: Maybe (String), "AZMode" :: Maybe (AZMode), "PreferredAvailabilityZone" :: Maybe (String), "PreferredAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String) }) -> CreateCacheClusterMessage
 ```
 
 Constructs CreateCacheClusterMessage's fields from required parameters
@@ -1450,7 +1450,7 @@ Constructs CreateCacheClusterMessage's fields from required parameters
 
 ``` purescript
 newtype CreateCacheClusterResult
-  = CreateCacheClusterResult { "CacheCluster" :: NullOrUndefined (CacheCluster) }
+  = CreateCacheClusterResult { "CacheCluster" :: Maybe (CacheCluster) }
 ```
 
 ##### Instances
@@ -1473,7 +1473,7 @@ Constructs CreateCacheClusterResult from required parameters
 #### `newCreateCacheClusterResult'`
 
 ``` purescript
-newCreateCacheClusterResult' :: ({ "CacheCluster" :: NullOrUndefined (CacheCluster) } -> { "CacheCluster" :: NullOrUndefined (CacheCluster) }) -> CreateCacheClusterResult
+newCreateCacheClusterResult' :: ({ "CacheCluster" :: Maybe (CacheCluster) } -> { "CacheCluster" :: Maybe (CacheCluster) }) -> CreateCacheClusterResult
 ```
 
 Constructs CreateCacheClusterResult's fields from required parameters
@@ -1516,7 +1516,7 @@ Constructs CreateCacheParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateCacheParameterGroupResult
-  = CreateCacheParameterGroupResult { "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup) }
+  = CreateCacheParameterGroupResult { "CacheParameterGroup" :: Maybe (CacheParameterGroup) }
 ```
 
 ##### Instances
@@ -1539,7 +1539,7 @@ Constructs CreateCacheParameterGroupResult from required parameters
 #### `newCreateCacheParameterGroupResult'`
 
 ``` purescript
-newCreateCacheParameterGroupResult' :: ({ "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup) } -> { "CacheParameterGroup" :: NullOrUndefined (CacheParameterGroup) }) -> CreateCacheParameterGroupResult
+newCreateCacheParameterGroupResult' :: ({ "CacheParameterGroup" :: Maybe (CacheParameterGroup) } -> { "CacheParameterGroup" :: Maybe (CacheParameterGroup) }) -> CreateCacheParameterGroupResult
 ```
 
 Constructs CreateCacheParameterGroupResult's fields from required parameters
@@ -1582,7 +1582,7 @@ Constructs CreateCacheSecurityGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateCacheSecurityGroupResult
-  = CreateCacheSecurityGroupResult { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }
+  = CreateCacheSecurityGroupResult { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }
 ```
 
 ##### Instances
@@ -1605,7 +1605,7 @@ Constructs CreateCacheSecurityGroupResult from required parameters
 #### `newCreateCacheSecurityGroupResult'`
 
 ``` purescript
-newCreateCacheSecurityGroupResult' :: ({ "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }) -> CreateCacheSecurityGroupResult
+newCreateCacheSecurityGroupResult' :: ({ "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }) -> CreateCacheSecurityGroupResult
 ```
 
 Constructs CreateCacheSecurityGroupResult's fields from required parameters
@@ -1648,7 +1648,7 @@ Constructs CreateCacheSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateCacheSubnetGroupResult
-  = CreateCacheSubnetGroupResult { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) }
+  = CreateCacheSubnetGroupResult { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) }
 ```
 
 ##### Instances
@@ -1671,7 +1671,7 @@ Constructs CreateCacheSubnetGroupResult from required parameters
 #### `newCreateCacheSubnetGroupResult'`
 
 ``` purescript
-newCreateCacheSubnetGroupResult' :: ({ "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } -> { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) }) -> CreateCacheSubnetGroupResult
+newCreateCacheSubnetGroupResult' :: ({ "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } -> { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) }) -> CreateCacheSubnetGroupResult
 ```
 
 Constructs CreateCacheSubnetGroupResult's fields from required parameters
@@ -1680,7 +1680,7 @@ Constructs CreateCacheSubnetGroupResult's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationGroupMessage
-  = CreateReplicationGroupMessage { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "NumCacheClusters" :: NullOrUndefined (IntegerOptional), "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }
+  = CreateReplicationGroupMessage { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "NumCacheClusters" :: Maybe (IntegerOptional), "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList), "NumNodeGroups" :: Maybe (IntegerOptional), "ReplicasPerNodeGroup" :: Maybe (IntegerOptional), "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }
 ```
 
 <p>Represents the input of a <code>CreateReplicationGroup</code> operation.</p>
@@ -1705,7 +1705,7 @@ Constructs CreateReplicationGroupMessage from required parameters
 #### `newCreateReplicationGroupMessage'`
 
 ``` purescript
-newCreateReplicationGroupMessage' :: String -> String -> ({ "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "NumCacheClusters" :: NullOrUndefined (IntegerOptional), "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "NumCacheClusters" :: NullOrUndefined (IntegerOptional), "PreferredCacheClusterAZs" :: NullOrUndefined (AvailabilityZonesList), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "ReplicasPerNodeGroup" :: NullOrUndefined (IntegerOptional), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfigurationList), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "Tags" :: NullOrUndefined (TagList), "SnapshotArns" :: NullOrUndefined (SnapshotArnsList), "SnapshotName" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "NotificationTopicArn" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "AuthToken" :: NullOrUndefined (String), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }) -> CreateReplicationGroupMessage
+newCreateReplicationGroupMessage' :: String -> String -> ({ "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "NumCacheClusters" :: Maybe (IntegerOptional), "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList), "NumNodeGroups" :: Maybe (IntegerOptional), "ReplicasPerNodeGroup" :: Maybe (IntegerOptional), "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: String, "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "NumCacheClusters" :: Maybe (IntegerOptional), "PreferredCacheClusterAZs" :: Maybe (AvailabilityZonesList), "NumNodeGroups" :: Maybe (IntegerOptional), "ReplicasPerNodeGroup" :: Maybe (IntegerOptional), "NodeGroupConfiguration" :: Maybe (NodeGroupConfigurationList), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "Tags" :: Maybe (TagList), "SnapshotArns" :: Maybe (SnapshotArnsList), "SnapshotName" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "NotificationTopicArn" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "AuthToken" :: Maybe (String), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }) -> CreateReplicationGroupMessage
 ```
 
 Constructs CreateReplicationGroupMessage's fields from required parameters
@@ -1714,7 +1714,7 @@ Constructs CreateReplicationGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationGroupResult
-  = CreateReplicationGroupResult { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }
+  = CreateReplicationGroupResult { "ReplicationGroup" :: Maybe (ReplicationGroup) }
 ```
 
 ##### Instances
@@ -1737,7 +1737,7 @@ Constructs CreateReplicationGroupResult from required parameters
 #### `newCreateReplicationGroupResult'`
 
 ``` purescript
-newCreateReplicationGroupResult' :: ({ "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }) -> CreateReplicationGroupResult
+newCreateReplicationGroupResult' :: ({ "ReplicationGroup" :: Maybe (ReplicationGroup) } -> { "ReplicationGroup" :: Maybe (ReplicationGroup) }) -> CreateReplicationGroupResult
 ```
 
 Constructs CreateReplicationGroupResult's fields from required parameters
@@ -1746,7 +1746,7 @@ Constructs CreateReplicationGroupResult's fields from required parameters
 
 ``` purescript
 newtype CreateSnapshotMessage
-  = CreateSnapshotMessage { "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: String }
+  = CreateSnapshotMessage { "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: String }
 ```
 
 <p>Represents the input of a <code>CreateSnapshot</code> operation.</p>
@@ -1771,7 +1771,7 @@ Constructs CreateSnapshotMessage from required parameters
 #### `newCreateSnapshotMessage'`
 
 ``` purescript
-newCreateSnapshotMessage' :: String -> ({ "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: String } -> { "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: String }) -> CreateSnapshotMessage
+newCreateSnapshotMessage' :: String -> ({ "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: String } -> { "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: String }) -> CreateSnapshotMessage
 ```
 
 Constructs CreateSnapshotMessage's fields from required parameters
@@ -1780,7 +1780,7 @@ Constructs CreateSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype CreateSnapshotResult
-  = CreateSnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = CreateSnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -1803,7 +1803,7 @@ Constructs CreateSnapshotResult from required parameters
 #### `newCreateSnapshotResult'`
 
 ``` purescript
-newCreateSnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> CreateSnapshotResult
+newCreateSnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> CreateSnapshotResult
 ```
 
 Constructs CreateSnapshotResult's fields from required parameters
@@ -1812,7 +1812,7 @@ Constructs CreateSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype DeleteCacheClusterMessage
-  = DeleteCacheClusterMessage { "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: NullOrUndefined (String) }
+  = DeleteCacheClusterMessage { "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DeleteCacheCluster</code> operation.</p>
@@ -1837,7 +1837,7 @@ Constructs DeleteCacheClusterMessage from required parameters
 #### `newDeleteCacheClusterMessage'`
 
 ``` purescript
-newDeleteCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: NullOrUndefined (String) } -> { "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: NullOrUndefined (String) }) -> DeleteCacheClusterMessage
+newDeleteCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: Maybe (String) } -> { "CacheClusterId" :: String, "FinalSnapshotIdentifier" :: Maybe (String) }) -> DeleteCacheClusterMessage
 ```
 
 Constructs DeleteCacheClusterMessage's fields from required parameters
@@ -1846,7 +1846,7 @@ Constructs DeleteCacheClusterMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteCacheClusterResult
-  = DeleteCacheClusterResult { "CacheCluster" :: NullOrUndefined (CacheCluster) }
+  = DeleteCacheClusterResult { "CacheCluster" :: Maybe (CacheCluster) }
 ```
 
 ##### Instances
@@ -1869,7 +1869,7 @@ Constructs DeleteCacheClusterResult from required parameters
 #### `newDeleteCacheClusterResult'`
 
 ``` purescript
-newDeleteCacheClusterResult' :: ({ "CacheCluster" :: NullOrUndefined (CacheCluster) } -> { "CacheCluster" :: NullOrUndefined (CacheCluster) }) -> DeleteCacheClusterResult
+newDeleteCacheClusterResult' :: ({ "CacheCluster" :: Maybe (CacheCluster) } -> { "CacheCluster" :: Maybe (CacheCluster) }) -> DeleteCacheClusterResult
 ```
 
 Constructs DeleteCacheClusterResult's fields from required parameters
@@ -1980,7 +1980,7 @@ Constructs DeleteCacheSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteReplicationGroupMessage
-  = DeleteReplicationGroupMessage { "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional), "FinalSnapshotIdentifier" :: NullOrUndefined (String) }
+  = DeleteReplicationGroupMessage { "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: Maybe (BooleanOptional), "FinalSnapshotIdentifier" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DeleteReplicationGroup</code> operation.</p>
@@ -2005,7 +2005,7 @@ Constructs DeleteReplicationGroupMessage from required parameters
 #### `newDeleteReplicationGroupMessage'`
 
 ``` purescript
-newDeleteReplicationGroupMessage' :: String -> ({ "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional), "FinalSnapshotIdentifier" :: NullOrUndefined (String) } -> { "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: NullOrUndefined (BooleanOptional), "FinalSnapshotIdentifier" :: NullOrUndefined (String) }) -> DeleteReplicationGroupMessage
+newDeleteReplicationGroupMessage' :: String -> ({ "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: Maybe (BooleanOptional), "FinalSnapshotIdentifier" :: Maybe (String) } -> { "ReplicationGroupId" :: String, "RetainPrimaryCluster" :: Maybe (BooleanOptional), "FinalSnapshotIdentifier" :: Maybe (String) }) -> DeleteReplicationGroupMessage
 ```
 
 Constructs DeleteReplicationGroupMessage's fields from required parameters
@@ -2014,7 +2014,7 @@ Constructs DeleteReplicationGroupMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteReplicationGroupResult
-  = DeleteReplicationGroupResult { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }
+  = DeleteReplicationGroupResult { "ReplicationGroup" :: Maybe (ReplicationGroup) }
 ```
 
 ##### Instances
@@ -2037,7 +2037,7 @@ Constructs DeleteReplicationGroupResult from required parameters
 #### `newDeleteReplicationGroupResult'`
 
 ``` purescript
-newDeleteReplicationGroupResult' :: ({ "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }) -> DeleteReplicationGroupResult
+newDeleteReplicationGroupResult' :: ({ "ReplicationGroup" :: Maybe (ReplicationGroup) } -> { "ReplicationGroup" :: Maybe (ReplicationGroup) }) -> DeleteReplicationGroupResult
 ```
 
 Constructs DeleteReplicationGroupResult's fields from required parameters
@@ -2080,7 +2080,7 @@ Constructs DeleteSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteSnapshotResult
-  = DeleteSnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = DeleteSnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -2103,7 +2103,7 @@ Constructs DeleteSnapshotResult from required parameters
 #### `newDeleteSnapshotResult'`
 
 ``` purescript
-newDeleteSnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> DeleteSnapshotResult
+newDeleteSnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> DeleteSnapshotResult
 ```
 
 Constructs DeleteSnapshotResult's fields from required parameters
@@ -2112,7 +2112,7 @@ Constructs DeleteSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheClustersMessage
-  = DescribeCacheClustersMessage { "CacheClusterId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional) }
+  = DescribeCacheClustersMessage { "CacheClusterId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "ShowCacheNodeInfo" :: Maybe (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheClusters</code> operation.</p>
@@ -2137,7 +2137,7 @@ Constructs DescribeCacheClustersMessage from required parameters
 #### `newDescribeCacheClustersMessage'`
 
 ``` purescript
-newDescribeCacheClustersMessage' :: ({ "CacheClusterId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional) } -> { "CacheClusterId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "ShowCacheNodeInfo" :: NullOrUndefined (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: NullOrUndefined (BooleanOptional) }) -> DescribeCacheClustersMessage
+newDescribeCacheClustersMessage' :: ({ "CacheClusterId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "ShowCacheNodeInfo" :: Maybe (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional) } -> { "CacheClusterId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "ShowCacheNodeInfo" :: Maybe (BooleanOptional), "ShowCacheClustersNotInReplicationGroups" :: Maybe (BooleanOptional) }) -> DescribeCacheClustersMessage
 ```
 
 Constructs DescribeCacheClustersMessage's fields from required parameters
@@ -2146,7 +2146,7 @@ Constructs DescribeCacheClustersMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheEngineVersionsMessage
-  = DescribeCacheEngineVersionsMessage { "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "DefaultOnly" :: NullOrUndefined (Boolean) }
+  = DescribeCacheEngineVersionsMessage { "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "DefaultOnly" :: Maybe (Boolean) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheEngineVersions</code> operation.</p>
@@ -2171,7 +2171,7 @@ Constructs DescribeCacheEngineVersionsMessage from required parameters
 #### `newDescribeCacheEngineVersionsMessage'`
 
 ``` purescript
-newDescribeCacheEngineVersionsMessage' :: ({ "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "DefaultOnly" :: NullOrUndefined (Boolean) } -> { "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "CacheParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "DefaultOnly" :: NullOrUndefined (Boolean) }) -> DescribeCacheEngineVersionsMessage
+newDescribeCacheEngineVersionsMessage' :: ({ "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "DefaultOnly" :: Maybe (Boolean) } -> { "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "CacheParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "DefaultOnly" :: Maybe (Boolean) }) -> DescribeCacheEngineVersionsMessage
 ```
 
 Constructs DescribeCacheEngineVersionsMessage's fields from required parameters
@@ -2180,7 +2180,7 @@ Constructs DescribeCacheEngineVersionsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheParameterGroupsMessage
-  = DescribeCacheParameterGroupsMessage { "CacheParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeCacheParameterGroupsMessage { "CacheParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheParameterGroups</code> operation.</p>
@@ -2205,7 +2205,7 @@ Constructs DescribeCacheParameterGroupsMessage from required parameters
 #### `newDescribeCacheParameterGroupsMessage'`
 
 ``` purescript
-newDescribeCacheParameterGroupsMessage' :: ({ "CacheParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "CacheParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeCacheParameterGroupsMessage
+newDescribeCacheParameterGroupsMessage' :: ({ "CacheParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "CacheParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeCacheParameterGroupsMessage
 ```
 
 Constructs DescribeCacheParameterGroupsMessage's fields from required parameters
@@ -2214,7 +2214,7 @@ Constructs DescribeCacheParameterGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheParametersMessage
-  = DescribeCacheParametersMessage { "CacheParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeCacheParametersMessage { "CacheParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheParameters</code> operation.</p>
@@ -2239,7 +2239,7 @@ Constructs DescribeCacheParametersMessage from required parameters
 #### `newDescribeCacheParametersMessage'`
 
 ``` purescript
-newDescribeCacheParametersMessage' :: String -> ({ "CacheParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "CacheParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeCacheParametersMessage
+newDescribeCacheParametersMessage' :: String -> ({ "CacheParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "CacheParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeCacheParametersMessage
 ```
 
 Constructs DescribeCacheParametersMessage's fields from required parameters
@@ -2248,7 +2248,7 @@ Constructs DescribeCacheParametersMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheSecurityGroupsMessage
-  = DescribeCacheSecurityGroupsMessage { "CacheSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeCacheSecurityGroupsMessage { "CacheSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheSecurityGroups</code> operation.</p>
@@ -2273,7 +2273,7 @@ Constructs DescribeCacheSecurityGroupsMessage from required parameters
 #### `newDescribeCacheSecurityGroupsMessage'`
 
 ``` purescript
-newDescribeCacheSecurityGroupsMessage' :: ({ "CacheSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "CacheSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeCacheSecurityGroupsMessage
+newDescribeCacheSecurityGroupsMessage' :: ({ "CacheSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "CacheSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeCacheSecurityGroupsMessage
 ```
 
 Constructs DescribeCacheSecurityGroupsMessage's fields from required parameters
@@ -2282,7 +2282,7 @@ Constructs DescribeCacheSecurityGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCacheSubnetGroupsMessage
-  = DescribeCacheSubnetGroupsMessage { "CacheSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeCacheSubnetGroupsMessage { "CacheSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.</p>
@@ -2307,7 +2307,7 @@ Constructs DescribeCacheSubnetGroupsMessage from required parameters
 #### `newDescribeCacheSubnetGroupsMessage'`
 
 ``` purescript
-newDescribeCacheSubnetGroupsMessage' :: ({ "CacheSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "CacheSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeCacheSubnetGroupsMessage
+newDescribeCacheSubnetGroupsMessage' :: ({ "CacheSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "CacheSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeCacheSubnetGroupsMessage
 ```
 
 Constructs DescribeCacheSubnetGroupsMessage's fields from required parameters
@@ -2316,7 +2316,7 @@ Constructs DescribeCacheSubnetGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEngineDefaultParametersMessage
-  = DescribeEngineDefaultParametersMessage { "CacheParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEngineDefaultParametersMessage { "CacheParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.</p>
@@ -2341,7 +2341,7 @@ Constructs DescribeEngineDefaultParametersMessage from required parameters
 #### `newDescribeEngineDefaultParametersMessage'`
 
 ``` purescript
-newDescribeEngineDefaultParametersMessage' :: String -> ({ "CacheParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "CacheParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEngineDefaultParametersMessage
+newDescribeEngineDefaultParametersMessage' :: String -> ({ "CacheParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "CacheParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEngineDefaultParametersMessage
 ```
 
 Constructs DescribeEngineDefaultParametersMessage's fields from required parameters
@@ -2350,7 +2350,7 @@ Constructs DescribeEngineDefaultParametersMessage's fields from required paramet
 
 ``` purescript
 newtype DescribeEngineDefaultParametersResult
-  = DescribeEngineDefaultParametersResult { "EngineDefaults" :: NullOrUndefined (EngineDefaults) }
+  = DescribeEngineDefaultParametersResult { "EngineDefaults" :: Maybe (EngineDefaults) }
 ```
 
 ##### Instances
@@ -2373,7 +2373,7 @@ Constructs DescribeEngineDefaultParametersResult from required parameters
 #### `newDescribeEngineDefaultParametersResult'`
 
 ``` purescript
-newDescribeEngineDefaultParametersResult' :: ({ "EngineDefaults" :: NullOrUndefined (EngineDefaults) } -> { "EngineDefaults" :: NullOrUndefined (EngineDefaults) }) -> DescribeEngineDefaultParametersResult
+newDescribeEngineDefaultParametersResult' :: ({ "EngineDefaults" :: Maybe (EngineDefaults) } -> { "EngineDefaults" :: Maybe (EngineDefaults) }) -> DescribeEngineDefaultParametersResult
 ```
 
 Constructs DescribeEngineDefaultParametersResult's fields from required parameters
@@ -2382,7 +2382,7 @@ Constructs DescribeEngineDefaultParametersResult's fields from required paramete
 
 ``` purescript
 newtype DescribeEventsMessage
-  = DescribeEventsMessage { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEventsMessage { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeEvents</code> operation.</p>
@@ -2407,7 +2407,7 @@ Constructs DescribeEventsMessage from required parameters
 #### `newDescribeEventsMessage'`
 
 ``` purescript
-newDescribeEventsMessage' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEventsMessage
+newDescribeEventsMessage' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEventsMessage
 ```
 
 Constructs DescribeEventsMessage's fields from required parameters
@@ -2416,7 +2416,7 @@ Constructs DescribeEventsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeReplicationGroupsMessage
-  = DescribeReplicationGroupsMessage { "ReplicationGroupId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationGroupsMessage { "ReplicationGroupId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeReplicationGroups</code> operation.</p>
@@ -2441,7 +2441,7 @@ Constructs DescribeReplicationGroupsMessage from required parameters
 #### `newDescribeReplicationGroupsMessage'`
 
 ``` purescript
-newDescribeReplicationGroupsMessage' :: ({ "ReplicationGroupId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReplicationGroupId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationGroupsMessage
+newDescribeReplicationGroupsMessage' :: ({ "ReplicationGroupId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReplicationGroupId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationGroupsMessage
 ```
 
 Constructs DescribeReplicationGroupsMessage's fields from required parameters
@@ -2450,7 +2450,7 @@ Constructs DescribeReplicationGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeReservedCacheNodesMessage
-  = DescribeReservedCacheNodesMessage { "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReservedCacheNodesMessage { "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeReservedCacheNodes</code> operation.</p>
@@ -2475,7 +2475,7 @@ Constructs DescribeReservedCacheNodesMessage from required parameters
 #### `newDescribeReservedCacheNodesMessage'`
 
 ``` purescript
-newDescribeReservedCacheNodesMessage' :: ({ "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReservedCacheNodesMessage
+newDescribeReservedCacheNodesMessage' :: ({ "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReservedCacheNodesMessage
 ```
 
 Constructs DescribeReservedCacheNodesMessage's fields from required parameters
@@ -2484,7 +2484,7 @@ Constructs DescribeReservedCacheNodesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeReservedCacheNodesOfferingsMessage
-  = DescribeReservedCacheNodesOfferingsMessage { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReservedCacheNodesOfferingsMessage { "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
@@ -2509,7 +2509,7 @@ Constructs DescribeReservedCacheNodesOfferingsMessage from required parameters
 #### `newDescribeReservedCacheNodesOfferingsMessage'`
 
 ``` purescript
-newDescribeReservedCacheNodesOfferingsMessage' :: ({ "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (String), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReservedCacheNodesOfferingsMessage
+newDescribeReservedCacheNodesOfferingsMessage' :: ({ "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (String), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReservedCacheNodesOfferingsMessage
 ```
 
 Constructs DescribeReservedCacheNodesOfferingsMessage's fields from required parameters
@@ -2518,7 +2518,7 @@ Constructs DescribeReservedCacheNodesOfferingsMessage's fields from required par
 
 ``` purescript
 newtype DescribeSnapshotsListMessage
-  = DescribeSnapshotsListMessage { "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) }
+  = DescribeSnapshotsListMessage { "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) }
 ```
 
 <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
@@ -2543,7 +2543,7 @@ Constructs DescribeSnapshotsListMessage from required parameters
 #### `newDescribeSnapshotsListMessage'`
 
 ``` purescript
-newDescribeSnapshotsListMessage' :: ({ "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) } -> { "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) }) -> DescribeSnapshotsListMessage
+newDescribeSnapshotsListMessage' :: ({ "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) } -> { "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) }) -> DescribeSnapshotsListMessage
 ```
 
 Constructs DescribeSnapshotsListMessage's fields from required parameters
@@ -2552,7 +2552,7 @@ Constructs DescribeSnapshotsListMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeSnapshotsMessage
-  = DescribeSnapshotsMessage { "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional) }
+  = DescribeSnapshotsMessage { "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: Maybe (String), "SnapshotSource" :: Maybe (String), "Marker" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "ShowNodeGroupConfig" :: Maybe (BooleanOptional) }
 ```
 
 <p>Represents the input of a <code>DescribeSnapshotsMessage</code> operation.</p>
@@ -2577,7 +2577,7 @@ Constructs DescribeSnapshotsMessage from required parameters
 #### `newDescribeSnapshotsMessage'`
 
 ``` purescript
-newDescribeSnapshotsMessage' :: ({ "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional) } -> { "ReplicationGroupId" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotName" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "ShowNodeGroupConfig" :: NullOrUndefined (BooleanOptional) }) -> DescribeSnapshotsMessage
+newDescribeSnapshotsMessage' :: ({ "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: Maybe (String), "SnapshotSource" :: Maybe (String), "Marker" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "ShowNodeGroupConfig" :: Maybe (BooleanOptional) } -> { "ReplicationGroupId" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotName" :: Maybe (String), "SnapshotSource" :: Maybe (String), "Marker" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "ShowNodeGroupConfig" :: Maybe (BooleanOptional) }) -> DescribeSnapshotsMessage
 ```
 
 Constructs DescribeSnapshotsMessage's fields from required parameters
@@ -2586,7 +2586,7 @@ Constructs DescribeSnapshotsMessage's fields from required parameters
 
 ``` purescript
 newtype EC2SecurityGroup
-  = EC2SecurityGroup { "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }
+  = EC2SecurityGroup { "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }
 ```
 
 <p>Provides ownership and status information for an Amazon EC2 security group.</p>
@@ -2611,7 +2611,7 @@ Constructs EC2SecurityGroup from required parameters
 #### `newEC2SecurityGroup'`
 
 ``` purescript
-newEC2SecurityGroup' :: ({ "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> { "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }) -> EC2SecurityGroup
+newEC2SecurityGroup' :: ({ "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) } -> { "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }) -> EC2SecurityGroup
 ```
 
 Constructs EC2SecurityGroup's fields from required parameters
@@ -2636,7 +2636,7 @@ Encode EC2SecurityGroupList
 
 ``` purescript
 newtype Endpoint
-  = Endpoint { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }
+  = Endpoint { "Address" :: Maybe (String), "Port" :: Maybe (Int) }
 ```
 
 <p>Represents the information required for client programs to connect to a cache node.</p>
@@ -2661,7 +2661,7 @@ Constructs Endpoint from required parameters
 #### `newEndpoint'`
 
 ``` purescript
-newEndpoint' :: ({ "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) } -> { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }) -> Endpoint
+newEndpoint' :: ({ "Address" :: Maybe (String), "Port" :: Maybe (Int) } -> { "Address" :: Maybe (String), "Port" :: Maybe (Int) }) -> Endpoint
 ```
 
 Constructs Endpoint's fields from required parameters
@@ -2670,7 +2670,7 @@ Constructs Endpoint's fields from required parameters
 
 ``` purescript
 newtype EngineDefaults
-  = EngineDefaults { "CacheParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) }
+  = EngineDefaults { "CacheParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) }
 ```
 
 <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
@@ -2695,7 +2695,7 @@ Constructs EngineDefaults from required parameters
 #### `newEngineDefaults'`
 
 ``` purescript
-newEngineDefaults' :: ({ "CacheParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) } -> { "CacheParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList), "CacheNodeTypeSpecificParameters" :: NullOrUndefined (CacheNodeTypeSpecificParametersList) }) -> EngineDefaults
+newEngineDefaults' :: ({ "CacheParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) } -> { "CacheParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList), "CacheNodeTypeSpecificParameters" :: Maybe (CacheNodeTypeSpecificParametersList) }) -> EngineDefaults
 ```
 
 Constructs EngineDefaults's fields from required parameters
@@ -2704,7 +2704,7 @@ Constructs EngineDefaults's fields from required parameters
 
 ``` purescript
 newtype Event
-  = Event { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) }
+  = Event { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) }
 ```
 
 <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.</p>
@@ -2729,7 +2729,7 @@ Constructs Event from required parameters
 #### `newEvent'`
 
 ``` purescript
-newEvent' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) }) -> Event
+newEvent' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) }) -> Event
 ```
 
 Constructs Event's fields from required parameters
@@ -2754,7 +2754,7 @@ Encode EventList
 
 ``` purescript
 newtype EventsMessage
-  = EventsMessage { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }
+  = EventsMessage { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }
 ```
 
 <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
@@ -2779,7 +2779,7 @@ Constructs EventsMessage from required parameters
 #### `newEventsMessage'`
 
 ``` purescript
-newEventsMessage' :: ({ "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) } -> { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }) -> EventsMessage
+newEventsMessage' :: ({ "Marker" :: Maybe (String), "Events" :: Maybe (EventList) } -> { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }) -> EventsMessage
 ```
 
 Constructs EventsMessage's fields from required parameters
@@ -2894,7 +2894,7 @@ Encode InvalidCacheSecurityGroupStateFault
 
 ``` purescript
 newtype InvalidParameterCombinationException
-  = InvalidParameterCombinationException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterCombinationException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>Two or more incompatible parameters were specified.</p>
@@ -2919,7 +2919,7 @@ Constructs InvalidParameterCombinationException from required parameters
 #### `newInvalidParameterCombinationException'`
 
 ``` purescript
-newInvalidParameterCombinationException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
 ```
 
 Constructs InvalidParameterCombinationException's fields from required parameters
@@ -2928,7 +2928,7 @@ Constructs InvalidParameterCombinationException's fields from required parameter
 
 ``` purescript
 newtype InvalidParameterValueException
-  = InvalidParameterValueException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterValueException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>The value for a parameter is invalid.</p>
@@ -2953,7 +2953,7 @@ Constructs InvalidParameterValueException from required parameters
 #### `newInvalidParameterValueException'`
 
 ``` purescript
-newInvalidParameterValueException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterValueException
+newInvalidParameterValueException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterValueException
 ```
 
 Constructs InvalidParameterValueException's fields from required parameters
@@ -3050,7 +3050,7 @@ Encode KeyList
 
 ``` purescript
 newtype ListAllowedNodeTypeModificationsMessage
-  = ListAllowedNodeTypeModificationsMessage { "CacheClusterId" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String) }
+  = ListAllowedNodeTypeModificationsMessage { "CacheClusterId" :: Maybe (String), "ReplicationGroupId" :: Maybe (String) }
 ```
 
 <p>The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.</p>
@@ -3075,7 +3075,7 @@ Constructs ListAllowedNodeTypeModificationsMessage from required parameters
 #### `newListAllowedNodeTypeModificationsMessage'`
 
 ``` purescript
-newListAllowedNodeTypeModificationsMessage' :: ({ "CacheClusterId" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String) } -> { "CacheClusterId" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String) }) -> ListAllowedNodeTypeModificationsMessage
+newListAllowedNodeTypeModificationsMessage' :: ({ "CacheClusterId" :: Maybe (String), "ReplicationGroupId" :: Maybe (String) } -> { "CacheClusterId" :: Maybe (String), "ReplicationGroupId" :: Maybe (String) }) -> ListAllowedNodeTypeModificationsMessage
 ```
 
 Constructs ListAllowedNodeTypeModificationsMessage's fields from required parameters
@@ -3118,7 +3118,7 @@ Constructs ListTagsForResourceMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyCacheClusterMessage
-  = ModifyCacheClusterMessage { "CacheClusterId" :: String, "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "AZMode" :: NullOrUndefined (AZMode), "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) }
+  = ModifyCacheClusterMessage { "CacheClusterId" :: String, "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "AZMode" :: Maybe (AZMode), "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>ModifyCacheCluster</code> operation.</p>
@@ -3143,7 +3143,7 @@ Constructs ModifyCacheClusterMessage from required parameters
 #### `newModifyCacheClusterMessage'`
 
 ``` purescript
-newModifyCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "AZMode" :: NullOrUndefined (AZMode), "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) } -> { "CacheClusterId" :: String, "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "AZMode" :: NullOrUndefined (AZMode), "NewAvailabilityZones" :: NullOrUndefined (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) }) -> ModifyCacheClusterMessage
+newModifyCacheClusterMessage' :: String -> ({ "CacheClusterId" :: String, "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "AZMode" :: Maybe (AZMode), "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String) } -> { "CacheClusterId" :: String, "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "AZMode" :: Maybe (AZMode), "NewAvailabilityZones" :: Maybe (PreferredAvailabilityZoneList), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String) }) -> ModifyCacheClusterMessage
 ```
 
 Constructs ModifyCacheClusterMessage's fields from required parameters
@@ -3152,7 +3152,7 @@ Constructs ModifyCacheClusterMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyCacheClusterResult
-  = ModifyCacheClusterResult { "CacheCluster" :: NullOrUndefined (CacheCluster) }
+  = ModifyCacheClusterResult { "CacheCluster" :: Maybe (CacheCluster) }
 ```
 
 ##### Instances
@@ -3175,7 +3175,7 @@ Constructs ModifyCacheClusterResult from required parameters
 #### `newModifyCacheClusterResult'`
 
 ``` purescript
-newModifyCacheClusterResult' :: ({ "CacheCluster" :: NullOrUndefined (CacheCluster) } -> { "CacheCluster" :: NullOrUndefined (CacheCluster) }) -> ModifyCacheClusterResult
+newModifyCacheClusterResult' :: ({ "CacheCluster" :: Maybe (CacheCluster) } -> { "CacheCluster" :: Maybe (CacheCluster) }) -> ModifyCacheClusterResult
 ```
 
 Constructs ModifyCacheClusterResult's fields from required parameters
@@ -3218,7 +3218,7 @@ Constructs ModifyCacheParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyCacheSubnetGroupMessage
-  = ModifyCacheSubnetGroupMessage { "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) }
+  = ModifyCacheSubnetGroupMessage { "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) }
 ```
 
 <p>Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.</p>
@@ -3243,7 +3243,7 @@ Constructs ModifyCacheSubnetGroupMessage from required parameters
 #### `newModifyCacheSubnetGroupMessage'`
 
 ``` purescript
-newModifyCacheSubnetGroupMessage' :: String -> ({ "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } -> { "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) }) -> ModifyCacheSubnetGroupMessage
+newModifyCacheSubnetGroupMessage' :: String -> ({ "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) } -> { "CacheSubnetGroupName" :: String, "CacheSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) }) -> ModifyCacheSubnetGroupMessage
 ```
 
 Constructs ModifyCacheSubnetGroupMessage's fields from required parameters
@@ -3252,7 +3252,7 @@ Constructs ModifyCacheSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyCacheSubnetGroupResult
-  = ModifyCacheSubnetGroupResult { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) }
+  = ModifyCacheSubnetGroupResult { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) }
 ```
 
 ##### Instances
@@ -3275,7 +3275,7 @@ Constructs ModifyCacheSubnetGroupResult from required parameters
 #### `newModifyCacheSubnetGroupResult'`
 
 ``` purescript
-newModifyCacheSubnetGroupResult' :: ({ "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) } -> { "CacheSubnetGroup" :: NullOrUndefined (CacheSubnetGroup) }) -> ModifyCacheSubnetGroupResult
+newModifyCacheSubnetGroupResult' :: ({ "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) } -> { "CacheSubnetGroup" :: Maybe (CacheSubnetGroup) }) -> ModifyCacheSubnetGroupResult
 ```
 
 Constructs ModifyCacheSubnetGroupResult's fields from required parameters
@@ -3284,7 +3284,7 @@ Constructs ModifyCacheSubnetGroupResult's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationGroupMessage
-  = ModifyReplicationGroupMessage { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: NullOrUndefined (String), "PrimaryClusterId" :: NullOrUndefined (String), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String) }
+  = ModifyReplicationGroupMessage { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: Maybe (String), "PrimaryClusterId" :: Maybe (String), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String), "NodeGroupId" :: Maybe (String) }
 ```
 
 <p>Represents the input of a <code>ModifyReplicationGroups</code> operation.</p>
@@ -3309,7 +3309,7 @@ Constructs ModifyReplicationGroupMessage from required parameters
 #### `newModifyReplicationGroupMessage'`
 
 ``` purescript
-newModifyReplicationGroupMessage' :: String -> ({ "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: NullOrUndefined (String), "PrimaryClusterId" :: NullOrUndefined (String), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String) } -> { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: NullOrUndefined (String), "PrimaryClusterId" :: NullOrUndefined (String), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailoverEnabled" :: NullOrUndefined (BooleanOptional), "CacheSecurityGroupNames" :: NullOrUndefined (CacheSecurityGroupNameList), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "CacheParameterGroupName" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ApplyImmediately" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String) }) -> ModifyReplicationGroupMessage
+newModifyReplicationGroupMessage' :: String -> ({ "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: Maybe (String), "PrimaryClusterId" :: Maybe (String), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String), "NodeGroupId" :: Maybe (String) } -> { "ReplicationGroupId" :: String, "ReplicationGroupDescription" :: Maybe (String), "PrimaryClusterId" :: Maybe (String), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailoverEnabled" :: Maybe (BooleanOptional), "CacheSecurityGroupNames" :: Maybe (CacheSecurityGroupNameList), "SecurityGroupIds" :: Maybe (SecurityGroupIdsList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "CacheParameterGroupName" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ApplyImmediately" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "CacheNodeType" :: Maybe (String), "NodeGroupId" :: Maybe (String) }) -> ModifyReplicationGroupMessage
 ```
 
 Constructs ModifyReplicationGroupMessage's fields from required parameters
@@ -3318,7 +3318,7 @@ Constructs ModifyReplicationGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationGroupResult
-  = ModifyReplicationGroupResult { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }
+  = ModifyReplicationGroupResult { "ReplicationGroup" :: Maybe (ReplicationGroup) }
 ```
 
 ##### Instances
@@ -3341,7 +3341,7 @@ Constructs ModifyReplicationGroupResult from required parameters
 #### `newModifyReplicationGroupResult'`
 
 ``` purescript
-newModifyReplicationGroupResult' :: ({ "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }) -> ModifyReplicationGroupResult
+newModifyReplicationGroupResult' :: ({ "ReplicationGroup" :: Maybe (ReplicationGroup) } -> { "ReplicationGroup" :: Maybe (ReplicationGroup) }) -> ModifyReplicationGroupResult
 ```
 
 Constructs ModifyReplicationGroupResult's fields from required parameters
@@ -3350,7 +3350,7 @@ Constructs ModifyReplicationGroupResult's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationGroupShardConfigurationMessage
-  = ModifyReplicationGroupShardConfigurationMessage { "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList), "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList) }
+  = ModifyReplicationGroupShardConfigurationMessage { "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList), "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList) }
 ```
 
 <p>Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation.</p>
@@ -3375,7 +3375,7 @@ Constructs ModifyReplicationGroupShardConfigurationMessage from required paramet
 #### `newModifyReplicationGroupShardConfigurationMessage'`
 
 ``` purescript
-newModifyReplicationGroupShardConfigurationMessage' :: Boolean -> Int -> String -> ({ "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList), "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList) } -> { "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: NullOrUndefined (ReshardingConfigurationList), "NodeGroupsToRemove" :: NullOrUndefined (NodeGroupsToRemoveList) }) -> ModifyReplicationGroupShardConfigurationMessage
+newModifyReplicationGroupShardConfigurationMessage' :: Boolean -> Int -> String -> ({ "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList), "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList) } -> { "ReplicationGroupId" :: String, "NodeGroupCount" :: Int, "ApplyImmediately" :: Boolean, "ReshardingConfiguration" :: Maybe (ReshardingConfigurationList), "NodeGroupsToRemove" :: Maybe (NodeGroupsToRemoveList) }) -> ModifyReplicationGroupShardConfigurationMessage
 ```
 
 Constructs ModifyReplicationGroupShardConfigurationMessage's fields from required parameters
@@ -3384,7 +3384,7 @@ Constructs ModifyReplicationGroupShardConfigurationMessage's fields from require
 
 ``` purescript
 newtype ModifyReplicationGroupShardConfigurationResult
-  = ModifyReplicationGroupShardConfigurationResult { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }
+  = ModifyReplicationGroupShardConfigurationResult { "ReplicationGroup" :: Maybe (ReplicationGroup) }
 ```
 
 ##### Instances
@@ -3407,7 +3407,7 @@ Constructs ModifyReplicationGroupShardConfigurationResult from required paramete
 #### `newModifyReplicationGroupShardConfigurationResult'`
 
 ``` purescript
-newModifyReplicationGroupShardConfigurationResult' :: ({ "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }) -> ModifyReplicationGroupShardConfigurationResult
+newModifyReplicationGroupShardConfigurationResult' :: ({ "ReplicationGroup" :: Maybe (ReplicationGroup) } -> { "ReplicationGroup" :: Maybe (ReplicationGroup) }) -> ModifyReplicationGroupShardConfigurationResult
 ```
 
 Constructs ModifyReplicationGroupShardConfigurationResult's fields from required parameters
@@ -3416,7 +3416,7 @@ Constructs ModifyReplicationGroupShardConfigurationResult's fields from required
 
 ``` purescript
 newtype NodeGroup
-  = NodeGroup { "NodeGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PrimaryEndpoint" :: NullOrUndefined (Endpoint), "Slots" :: NullOrUndefined (String), "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList) }
+  = NodeGroup { "NodeGroupId" :: Maybe (String), "Status" :: Maybe (String), "PrimaryEndpoint" :: Maybe (Endpoint), "Slots" :: Maybe (String), "NodeGroupMembers" :: Maybe (NodeGroupMemberList) }
 ```
 
 <p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
@@ -3441,7 +3441,7 @@ Constructs NodeGroup from required parameters
 #### `newNodeGroup'`
 
 ``` purescript
-newNodeGroup' :: ({ "NodeGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PrimaryEndpoint" :: NullOrUndefined (Endpoint), "Slots" :: NullOrUndefined (String), "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList) } -> { "NodeGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PrimaryEndpoint" :: NullOrUndefined (Endpoint), "Slots" :: NullOrUndefined (String), "NodeGroupMembers" :: NullOrUndefined (NodeGroupMemberList) }) -> NodeGroup
+newNodeGroup' :: ({ "NodeGroupId" :: Maybe (String), "Status" :: Maybe (String), "PrimaryEndpoint" :: Maybe (Endpoint), "Slots" :: Maybe (String), "NodeGroupMembers" :: Maybe (NodeGroupMemberList) } -> { "NodeGroupId" :: Maybe (String), "Status" :: Maybe (String), "PrimaryEndpoint" :: Maybe (Endpoint), "Slots" :: Maybe (String), "NodeGroupMembers" :: Maybe (NodeGroupMemberList) }) -> NodeGroup
 ```
 
 Constructs NodeGroup's fields from required parameters
@@ -3450,7 +3450,7 @@ Constructs NodeGroup's fields from required parameters
 
 ``` purescript
 newtype NodeGroupConfiguration
-  = NodeGroupConfiguration { "Slots" :: NullOrUndefined (String), "ReplicaCount" :: NullOrUndefined (IntegerOptional), "PrimaryAvailabilityZone" :: NullOrUndefined (String), "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) }
+  = NodeGroupConfiguration { "Slots" :: Maybe (String), "ReplicaCount" :: Maybe (IntegerOptional), "PrimaryAvailabilityZone" :: Maybe (String), "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList) }
 ```
 
 <p>Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
@@ -3475,7 +3475,7 @@ Constructs NodeGroupConfiguration from required parameters
 #### `newNodeGroupConfiguration'`
 
 ``` purescript
-newNodeGroupConfiguration' :: ({ "Slots" :: NullOrUndefined (String), "ReplicaCount" :: NullOrUndefined (IntegerOptional), "PrimaryAvailabilityZone" :: NullOrUndefined (String), "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } -> { "Slots" :: NullOrUndefined (String), "ReplicaCount" :: NullOrUndefined (IntegerOptional), "PrimaryAvailabilityZone" :: NullOrUndefined (String), "ReplicaAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) }) -> NodeGroupConfiguration
+newNodeGroupConfiguration' :: ({ "Slots" :: Maybe (String), "ReplicaCount" :: Maybe (IntegerOptional), "PrimaryAvailabilityZone" :: Maybe (String), "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList) } -> { "Slots" :: Maybe (String), "ReplicaCount" :: Maybe (IntegerOptional), "PrimaryAvailabilityZone" :: Maybe (String), "ReplicaAvailabilityZones" :: Maybe (AvailabilityZonesList) }) -> NodeGroupConfiguration
 ```
 
 Constructs NodeGroupConfiguration's fields from required parameters
@@ -3516,7 +3516,7 @@ Encode NodeGroupList
 
 ``` purescript
 newtype NodeGroupMember
-  = NodeGroupMember { "CacheClusterId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "ReadEndpoint" :: NullOrUndefined (Endpoint), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CurrentRole" :: NullOrUndefined (String) }
+  = NodeGroupMember { "CacheClusterId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "ReadEndpoint" :: Maybe (Endpoint), "PreferredAvailabilityZone" :: Maybe (String), "CurrentRole" :: Maybe (String) }
 ```
 
 <p>Represents a single node within a node group (shard).</p>
@@ -3541,7 +3541,7 @@ Constructs NodeGroupMember from required parameters
 #### `newNodeGroupMember'`
 
 ``` purescript
-newNodeGroupMember' :: ({ "CacheClusterId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "ReadEndpoint" :: NullOrUndefined (Endpoint), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CurrentRole" :: NullOrUndefined (String) } -> { "CacheClusterId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "ReadEndpoint" :: NullOrUndefined (Endpoint), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CurrentRole" :: NullOrUndefined (String) }) -> NodeGroupMember
+newNodeGroupMember' :: ({ "CacheClusterId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "ReadEndpoint" :: Maybe (Endpoint), "PreferredAvailabilityZone" :: Maybe (String), "CurrentRole" :: Maybe (String) } -> { "CacheClusterId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "ReadEndpoint" :: Maybe (Endpoint), "PreferredAvailabilityZone" :: Maybe (String), "CurrentRole" :: Maybe (String) }) -> NodeGroupMember
 ```
 
 Constructs NodeGroupMember's fields from required parameters
@@ -3654,7 +3654,7 @@ Encode NodeQuotaForCustomerExceededFault
 
 ``` purescript
 newtype NodeSnapshot
-  = NodeSnapshot { "CacheClusterId" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration), "CacheSize" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "SnapshotCreateTime" :: NullOrUndefined (TStamp) }
+  = NodeSnapshot { "CacheClusterId" :: Maybe (String), "NodeGroupId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration), "CacheSize" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "SnapshotCreateTime" :: Maybe (TStamp) }
 ```
 
 <p>Represents an individual cache node in a snapshot of a cluster.</p>
@@ -3679,7 +3679,7 @@ Constructs NodeSnapshot from required parameters
 #### `newNodeSnapshot'`
 
 ``` purescript
-newNodeSnapshot' :: ({ "CacheClusterId" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration), "CacheSize" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "SnapshotCreateTime" :: NullOrUndefined (TStamp) } -> { "CacheClusterId" :: NullOrUndefined (String), "NodeGroupId" :: NullOrUndefined (String), "CacheNodeId" :: NullOrUndefined (String), "NodeGroupConfiguration" :: NullOrUndefined (NodeGroupConfiguration), "CacheSize" :: NullOrUndefined (String), "CacheNodeCreateTime" :: NullOrUndefined (TStamp), "SnapshotCreateTime" :: NullOrUndefined (TStamp) }) -> NodeSnapshot
+newNodeSnapshot' :: ({ "CacheClusterId" :: Maybe (String), "NodeGroupId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration), "CacheSize" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "SnapshotCreateTime" :: Maybe (TStamp) } -> { "CacheClusterId" :: Maybe (String), "NodeGroupId" :: Maybe (String), "CacheNodeId" :: Maybe (String), "NodeGroupConfiguration" :: Maybe (NodeGroupConfiguration), "CacheSize" :: Maybe (String), "CacheNodeCreateTime" :: Maybe (TStamp), "SnapshotCreateTime" :: Maybe (TStamp) }) -> NodeSnapshot
 ```
 
 Constructs NodeSnapshot's fields from required parameters
@@ -3720,7 +3720,7 @@ Encode NodeTypeList
 
 ``` purescript
 newtype NotificationConfiguration
-  = NotificationConfiguration { "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) }
+  = NotificationConfiguration { "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) }
 ```
 
 <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
@@ -3745,7 +3745,7 @@ Constructs NotificationConfiguration from required parameters
 #### `newNotificationConfiguration'`
 
 ``` purescript
-newNotificationConfiguration' :: ({ "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) } -> { "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) }) -> NotificationConfiguration
+newNotificationConfiguration' :: ({ "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) } -> { "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) }) -> NotificationConfiguration
 ```
 
 Constructs NotificationConfiguration's fields from required parameters
@@ -3754,7 +3754,7 @@ Constructs NotificationConfiguration's fields from required parameters
 
 ``` purescript
 newtype Parameter
-  = Parameter { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "ChangeType" :: NullOrUndefined (ChangeType) }
+  = Parameter { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "ChangeType" :: Maybe (ChangeType) }
 ```
 
 <p>Describes an individual setting that controls some aspect of ElastiCache behavior.</p>
@@ -3779,7 +3779,7 @@ Constructs Parameter from required parameters
 #### `newParameter'`
 
 ``` purescript
-newParameter' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "ChangeType" :: NullOrUndefined (ChangeType) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String), "ChangeType" :: NullOrUndefined (ChangeType) }) -> Parameter
+newParameter' :: ({ "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "ChangeType" :: Maybe (ChangeType) } -> { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String), "ChangeType" :: Maybe (ChangeType) }) -> Parameter
 ```
 
 Constructs Parameter's fields from required parameters
@@ -3788,7 +3788,7 @@ Constructs Parameter's fields from required parameters
 
 ``` purescript
 newtype ParameterNameValue
-  = ParameterNameValue { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) }
+  = ParameterNameValue { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) }
 ```
 
 <p>Describes a name-value pair that is used to update the value of a parameter.</p>
@@ -3813,7 +3813,7 @@ Constructs ParameterNameValue from required parameters
 #### `newParameterNameValue'`
 
 ``` purescript
-newParameterNameValue' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) }) -> ParameterNameValue
+newParameterNameValue' :: ({ "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) } -> { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) }) -> ParameterNameValue
 ```
 
 Constructs ParameterNameValue's fields from required parameters
@@ -3870,7 +3870,7 @@ Encode PendingAutomaticFailoverStatus
 
 ``` purescript
 newtype PendingModifiedValues
-  = PendingModifiedValues { "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "EngineVersion" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) }
+  = PendingModifiedValues { "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "EngineVersion" :: Maybe (String), "CacheNodeType" :: Maybe (String) }
 ```
 
 <p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>
@@ -3895,7 +3895,7 @@ Constructs PendingModifiedValues from required parameters
 #### `newPendingModifiedValues'`
 
 ``` purescript
-newPendingModifiedValues' :: ({ "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "EngineVersion" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) } -> { "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "CacheNodeIdsToRemove" :: NullOrUndefined (CacheNodeIdsList), "EngineVersion" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String) }) -> PendingModifiedValues
+newPendingModifiedValues' :: ({ "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "EngineVersion" :: Maybe (String), "CacheNodeType" :: Maybe (String) } -> { "NumCacheNodes" :: Maybe (IntegerOptional), "CacheNodeIdsToRemove" :: Maybe (CacheNodeIdsList), "EngineVersion" :: Maybe (String), "CacheNodeType" :: Maybe (String) }) -> PendingModifiedValues
 ```
 
 Constructs PendingModifiedValues's fields from required parameters
@@ -3920,7 +3920,7 @@ Encode PreferredAvailabilityZoneList
 
 ``` purescript
 newtype PurchaseReservedCacheNodesOfferingMessage
-  = PurchaseReservedCacheNodesOfferingMessage { "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: NullOrUndefined (String), "CacheNodeCount" :: NullOrUndefined (IntegerOptional) }
+  = PurchaseReservedCacheNodesOfferingMessage { "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: Maybe (String), "CacheNodeCount" :: Maybe (IntegerOptional) }
 ```
 
 <p>Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
@@ -3945,7 +3945,7 @@ Constructs PurchaseReservedCacheNodesOfferingMessage from required parameters
 #### `newPurchaseReservedCacheNodesOfferingMessage'`
 
 ``` purescript
-newPurchaseReservedCacheNodesOfferingMessage' :: String -> ({ "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: NullOrUndefined (String), "CacheNodeCount" :: NullOrUndefined (IntegerOptional) } -> { "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: NullOrUndefined (String), "CacheNodeCount" :: NullOrUndefined (IntegerOptional) }) -> PurchaseReservedCacheNodesOfferingMessage
+newPurchaseReservedCacheNodesOfferingMessage' :: String -> ({ "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: Maybe (String), "CacheNodeCount" :: Maybe (IntegerOptional) } -> { "ReservedCacheNodesOfferingId" :: String, "ReservedCacheNodeId" :: Maybe (String), "CacheNodeCount" :: Maybe (IntegerOptional) }) -> PurchaseReservedCacheNodesOfferingMessage
 ```
 
 Constructs PurchaseReservedCacheNodesOfferingMessage's fields from required parameters
@@ -3954,7 +3954,7 @@ Constructs PurchaseReservedCacheNodesOfferingMessage's fields from required para
 
 ``` purescript
 newtype PurchaseReservedCacheNodesOfferingResult
-  = PurchaseReservedCacheNodesOfferingResult { "ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode) }
+  = PurchaseReservedCacheNodesOfferingResult { "ReservedCacheNode" :: Maybe (ReservedCacheNode) }
 ```
 
 ##### Instances
@@ -3977,7 +3977,7 @@ Constructs PurchaseReservedCacheNodesOfferingResult from required parameters
 #### `newPurchaseReservedCacheNodesOfferingResult'`
 
 ``` purescript
-newPurchaseReservedCacheNodesOfferingResult' :: ({ "ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode) } -> { "ReservedCacheNode" :: NullOrUndefined (ReservedCacheNode) }) -> PurchaseReservedCacheNodesOfferingResult
+newPurchaseReservedCacheNodesOfferingResult' :: ({ "ReservedCacheNode" :: Maybe (ReservedCacheNode) } -> { "ReservedCacheNode" :: Maybe (ReservedCacheNode) }) -> PurchaseReservedCacheNodesOfferingResult
 ```
 
 Constructs PurchaseReservedCacheNodesOfferingResult's fields from required parameters
@@ -4020,7 +4020,7 @@ Constructs RebootCacheClusterMessage's fields from required parameters
 
 ``` purescript
 newtype RebootCacheClusterResult
-  = RebootCacheClusterResult { "CacheCluster" :: NullOrUndefined (CacheCluster) }
+  = RebootCacheClusterResult { "CacheCluster" :: Maybe (CacheCluster) }
 ```
 
 ##### Instances
@@ -4043,7 +4043,7 @@ Constructs RebootCacheClusterResult from required parameters
 #### `newRebootCacheClusterResult'`
 
 ``` purescript
-newRebootCacheClusterResult' :: ({ "CacheCluster" :: NullOrUndefined (CacheCluster) } -> { "CacheCluster" :: NullOrUndefined (CacheCluster) }) -> RebootCacheClusterResult
+newRebootCacheClusterResult' :: ({ "CacheCluster" :: Maybe (CacheCluster) } -> { "CacheCluster" :: Maybe (CacheCluster) }) -> RebootCacheClusterResult
 ```
 
 Constructs RebootCacheClusterResult's fields from required parameters
@@ -4052,7 +4052,7 @@ Constructs RebootCacheClusterResult's fields from required parameters
 
 ``` purescript
 newtype RecurringCharge
-  = RecurringCharge { "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) }
+  = RecurringCharge { "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) }
 ```
 
 <p>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.</p>
@@ -4077,7 +4077,7 @@ Constructs RecurringCharge from required parameters
 #### `newRecurringCharge'`
 
 ``` purescript
-newRecurringCharge' :: ({ "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) } -> { "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) }) -> RecurringCharge
+newRecurringCharge' :: ({ "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) } -> { "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) }) -> RecurringCharge
 ```
 
 Constructs RecurringCharge's fields from required parameters
@@ -4136,7 +4136,7 @@ Constructs RemoveTagsFromResourceMessage's fields from required parameters
 
 ``` purescript
 newtype ReplicationGroup
-  = ReplicationGroup { "ReplicationGroupId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues), "MemberClusters" :: NullOrUndefined (ClusterIdList), "NodeGroups" :: NullOrUndefined (NodeGroupList), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "ClusterEnabled" :: NullOrUndefined (BooleanOptional), "CacheNodeType" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }
+  = ReplicationGroup { "ReplicationGroupId" :: Maybe (String), "Description" :: Maybe (String), "Status" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues), "MemberClusters" :: Maybe (ClusterIdList), "NodeGroups" :: Maybe (NodeGroupList), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "ConfigurationEndpoint" :: Maybe (Endpoint), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "ClusterEnabled" :: Maybe (BooleanOptional), "CacheNodeType" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }
 ```
 
 <p>Contains all of the attributes of a specific Redis replication group.</p>
@@ -4161,7 +4161,7 @@ Constructs ReplicationGroup from required parameters
 #### `newReplicationGroup'`
 
 ``` purescript
-newReplicationGroup' :: ({ "ReplicationGroupId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues), "MemberClusters" :: NullOrUndefined (ClusterIdList), "NodeGroups" :: NullOrUndefined (NodeGroupList), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "ClusterEnabled" :: NullOrUndefined (BooleanOptional), "CacheNodeType" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) } -> { "ReplicationGroupId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationGroupPendingModifiedValues), "MemberClusters" :: NullOrUndefined (ClusterIdList), "NodeGroups" :: NullOrUndefined (NodeGroupList), "SnapshottingClusterId" :: NullOrUndefined (String), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "ConfigurationEndpoint" :: NullOrUndefined (Endpoint), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "ClusterEnabled" :: NullOrUndefined (BooleanOptional), "CacheNodeType" :: NullOrUndefined (String), "AuthTokenEnabled" :: NullOrUndefined (BooleanOptional), "TransitEncryptionEnabled" :: NullOrUndefined (BooleanOptional), "AtRestEncryptionEnabled" :: NullOrUndefined (BooleanOptional) }) -> ReplicationGroup
+newReplicationGroup' :: ({ "ReplicationGroupId" :: Maybe (String), "Description" :: Maybe (String), "Status" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues), "MemberClusters" :: Maybe (ClusterIdList), "NodeGroups" :: Maybe (NodeGroupList), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "ConfigurationEndpoint" :: Maybe (Endpoint), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "ClusterEnabled" :: Maybe (BooleanOptional), "CacheNodeType" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) } -> { "ReplicationGroupId" :: Maybe (String), "Description" :: Maybe (String), "Status" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationGroupPendingModifiedValues), "MemberClusters" :: Maybe (ClusterIdList), "NodeGroups" :: Maybe (NodeGroupList), "SnapshottingClusterId" :: Maybe (String), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "ConfigurationEndpoint" :: Maybe (Endpoint), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "ClusterEnabled" :: Maybe (BooleanOptional), "CacheNodeType" :: Maybe (String), "AuthTokenEnabled" :: Maybe (BooleanOptional), "TransitEncryptionEnabled" :: Maybe (BooleanOptional), "AtRestEncryptionEnabled" :: Maybe (BooleanOptional) }) -> ReplicationGroup
 ```
 
 Constructs ReplicationGroup's fields from required parameters
@@ -4204,7 +4204,7 @@ Encode ReplicationGroupList
 
 ``` purescript
 newtype ReplicationGroupMessage
-  = ReplicationGroupMessage { "Marker" :: NullOrUndefined (String), "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList) }
+  = ReplicationGroupMessage { "Marker" :: Maybe (String), "ReplicationGroups" :: Maybe (ReplicationGroupList) }
 ```
 
 <p>Represents the output of a <code>DescribeReplicationGroups</code> operation.</p>
@@ -4229,7 +4229,7 @@ Constructs ReplicationGroupMessage from required parameters
 #### `newReplicationGroupMessage'`
 
 ``` purescript
-newReplicationGroupMessage' :: ({ "Marker" :: NullOrUndefined (String), "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList) } -> { "Marker" :: NullOrUndefined (String), "ReplicationGroups" :: NullOrUndefined (ReplicationGroupList) }) -> ReplicationGroupMessage
+newReplicationGroupMessage' :: ({ "Marker" :: Maybe (String), "ReplicationGroups" :: Maybe (ReplicationGroupList) } -> { "Marker" :: Maybe (String), "ReplicationGroups" :: Maybe (ReplicationGroupList) }) -> ReplicationGroupMessage
 ```
 
 Constructs ReplicationGroupMessage's fields from required parameters
@@ -4256,7 +4256,7 @@ Encode ReplicationGroupNotFoundFault
 
 ``` purescript
 newtype ReplicationGroupPendingModifiedValues
-  = ReplicationGroupPendingModifiedValues { "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus), "Resharding" :: NullOrUndefined (ReshardingStatus) }
+  = ReplicationGroupPendingModifiedValues { "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus), "Resharding" :: Maybe (ReshardingStatus) }
 ```
 
 <p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>
@@ -4281,7 +4281,7 @@ Constructs ReplicationGroupPendingModifiedValues from required parameters
 #### `newReplicationGroupPendingModifiedValues'`
 
 ``` purescript
-newReplicationGroupPendingModifiedValues' :: ({ "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus), "Resharding" :: NullOrUndefined (ReshardingStatus) } -> { "PrimaryClusterId" :: NullOrUndefined (String), "AutomaticFailoverStatus" :: NullOrUndefined (PendingAutomaticFailoverStatus), "Resharding" :: NullOrUndefined (ReshardingStatus) }) -> ReplicationGroupPendingModifiedValues
+newReplicationGroupPendingModifiedValues' :: ({ "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus), "Resharding" :: Maybe (ReshardingStatus) } -> { "PrimaryClusterId" :: Maybe (String), "AutomaticFailoverStatus" :: Maybe (PendingAutomaticFailoverStatus), "Resharding" :: Maybe (ReshardingStatus) }) -> ReplicationGroupPendingModifiedValues
 ```
 
 Constructs ReplicationGroupPendingModifiedValues's fields from required parameters
@@ -4290,7 +4290,7 @@ Constructs ReplicationGroupPendingModifiedValues's fields from required paramete
 
 ``` purescript
 newtype ReservedCacheNode
-  = ReservedCacheNode { "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CacheNodeCount" :: NullOrUndefined (Int), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }
+  = ReservedCacheNode { "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CacheNodeCount" :: Maybe (Int), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "State" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }
 ```
 
 <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
@@ -4315,7 +4315,7 @@ Constructs ReservedCacheNode from required parameters
 #### `newReservedCacheNode'`
 
 ``` purescript
-newReservedCacheNode' :: ({ "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CacheNodeCount" :: NullOrUndefined (Int), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> { "ReservedCacheNodeId" :: NullOrUndefined (String), "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CacheNodeCount" :: NullOrUndefined (Int), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "State" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }) -> ReservedCacheNode
+newReservedCacheNode' :: ({ "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CacheNodeCount" :: Maybe (Int), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "State" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) } -> { "ReservedCacheNodeId" :: Maybe (String), "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CacheNodeCount" :: Maybe (Int), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "State" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }) -> ReservedCacheNode
 ```
 
 Constructs ReservedCacheNode's fields from required parameters
@@ -4358,7 +4358,7 @@ Encode ReservedCacheNodeList
 
 ``` purescript
 newtype ReservedCacheNodeMessage
-  = ReservedCacheNodeMessage { "Marker" :: NullOrUndefined (String), "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList) }
+  = ReservedCacheNodeMessage { "Marker" :: Maybe (String), "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList) }
 ```
 
 <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
@@ -4383,7 +4383,7 @@ Constructs ReservedCacheNodeMessage from required parameters
 #### `newReservedCacheNodeMessage'`
 
 ``` purescript
-newReservedCacheNodeMessage' :: ({ "Marker" :: NullOrUndefined (String), "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList) } -> { "Marker" :: NullOrUndefined (String), "ReservedCacheNodes" :: NullOrUndefined (ReservedCacheNodeList) }) -> ReservedCacheNodeMessage
+newReservedCacheNodeMessage' :: ({ "Marker" :: Maybe (String), "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList) } -> { "Marker" :: Maybe (String), "ReservedCacheNodes" :: Maybe (ReservedCacheNodeList) }) -> ReservedCacheNodeMessage
 ```
 
 Constructs ReservedCacheNodeMessage's fields from required parameters
@@ -4428,7 +4428,7 @@ Encode ReservedCacheNodeQuotaExceededFault
 
 ``` purescript
 newtype ReservedCacheNodesOffering
-  = ReservedCacheNodesOffering { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }
+  = ReservedCacheNodesOffering { "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }
 ```
 
 <p>Describes all of the attributes of a reserved cache node offering.</p>
@@ -4453,7 +4453,7 @@ Constructs ReservedCacheNodesOffering from required parameters
 #### `newReservedCacheNodesOffering'`
 
 ``` purescript
-newReservedCacheNodesOffering' :: ({ "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> { "ReservedCacheNodesOfferingId" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "ProductDescription" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }) -> ReservedCacheNodesOffering
+newReservedCacheNodesOffering' :: ({ "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) } -> { "ReservedCacheNodesOfferingId" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "ProductDescription" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }) -> ReservedCacheNodesOffering
 ```
 
 Constructs ReservedCacheNodesOffering's fields from required parameters
@@ -4478,7 +4478,7 @@ Encode ReservedCacheNodesOfferingList
 
 ``` purescript
 newtype ReservedCacheNodesOfferingMessage
-  = ReservedCacheNodesOfferingMessage { "Marker" :: NullOrUndefined (String), "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList) }
+  = ReservedCacheNodesOfferingMessage { "Marker" :: Maybe (String), "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList) }
 ```
 
 <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
@@ -4503,7 +4503,7 @@ Constructs ReservedCacheNodesOfferingMessage from required parameters
 #### `newReservedCacheNodesOfferingMessage'`
 
 ``` purescript
-newReservedCacheNodesOfferingMessage' :: ({ "Marker" :: NullOrUndefined (String), "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList) } -> { "Marker" :: NullOrUndefined (String), "ReservedCacheNodesOfferings" :: NullOrUndefined (ReservedCacheNodesOfferingList) }) -> ReservedCacheNodesOfferingMessage
+newReservedCacheNodesOfferingMessage' :: ({ "Marker" :: Maybe (String), "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList) } -> { "Marker" :: Maybe (String), "ReservedCacheNodesOfferings" :: Maybe (ReservedCacheNodesOfferingList) }) -> ReservedCacheNodesOfferingMessage
 ```
 
 Constructs ReservedCacheNodesOfferingMessage's fields from required parameters
@@ -4530,7 +4530,7 @@ Encode ReservedCacheNodesOfferingNotFoundFault
 
 ``` purescript
 newtype ResetCacheParameterGroupMessage
-  = ResetCacheParameterGroupMessage { "CacheParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList) }
+  = ResetCacheParameterGroupMessage { "CacheParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "ParameterNameValues" :: Maybe (ParameterNameValueList) }
 ```
 
 <p>Represents the input of a <code>ResetCacheParameterGroup</code> operation.</p>
@@ -4555,7 +4555,7 @@ Constructs ResetCacheParameterGroupMessage from required parameters
 #### `newResetCacheParameterGroupMessage'`
 
 ``` purescript
-newResetCacheParameterGroupMessage' :: String -> ({ "CacheParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList) } -> { "CacheParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "ParameterNameValues" :: NullOrUndefined (ParameterNameValueList) }) -> ResetCacheParameterGroupMessage
+newResetCacheParameterGroupMessage' :: String -> ({ "CacheParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "ParameterNameValues" :: Maybe (ParameterNameValueList) } -> { "CacheParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "ParameterNameValues" :: Maybe (ParameterNameValueList) }) -> ResetCacheParameterGroupMessage
 ```
 
 Constructs ResetCacheParameterGroupMessage's fields from required parameters
@@ -4564,7 +4564,7 @@ Constructs ResetCacheParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ReshardingConfiguration
-  = ReshardingConfiguration { "PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) }
+  = ReshardingConfiguration { "PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList) }
 ```
 
 <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster.</p>
@@ -4589,7 +4589,7 @@ Constructs ReshardingConfiguration from required parameters
 #### `newReshardingConfiguration'`
 
 ``` purescript
-newReshardingConfiguration' :: ({ "PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) } -> { "PreferredAvailabilityZones" :: NullOrUndefined (AvailabilityZonesList) }) -> ReshardingConfiguration
+newReshardingConfiguration' :: ({ "PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList) } -> { "PreferredAvailabilityZones" :: Maybe (AvailabilityZonesList) }) -> ReshardingConfiguration
 ```
 
 Constructs ReshardingConfiguration's fields from required parameters
@@ -4614,7 +4614,7 @@ Encode ReshardingConfigurationList
 
 ``` purescript
 newtype ReshardingStatus
-  = ReshardingStatus { "SlotMigration" :: NullOrUndefined (SlotMigration) }
+  = ReshardingStatus { "SlotMigration" :: Maybe (SlotMigration) }
 ```
 
 <p>The status of an online resharding operation.</p>
@@ -4639,7 +4639,7 @@ Constructs ReshardingStatus from required parameters
 #### `newReshardingStatus'`
 
 ``` purescript
-newReshardingStatus' :: ({ "SlotMigration" :: NullOrUndefined (SlotMigration) } -> { "SlotMigration" :: NullOrUndefined (SlotMigration) }) -> ReshardingStatus
+newReshardingStatus' :: ({ "SlotMigration" :: Maybe (SlotMigration) } -> { "SlotMigration" :: Maybe (SlotMigration) }) -> ReshardingStatus
 ```
 
 Constructs ReshardingStatus's fields from required parameters
@@ -4682,7 +4682,7 @@ Constructs RevokeCacheSecurityGroupIngressMessage's fields from required paramet
 
 ``` purescript
 newtype RevokeCacheSecurityGroupIngressResult
-  = RevokeCacheSecurityGroupIngressResult { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }
+  = RevokeCacheSecurityGroupIngressResult { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }
 ```
 
 ##### Instances
@@ -4705,7 +4705,7 @@ Constructs RevokeCacheSecurityGroupIngressResult from required parameters
 #### `newRevokeCacheSecurityGroupIngressResult'`
 
 ``` purescript
-newRevokeCacheSecurityGroupIngressResult' :: ({ "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: NullOrUndefined (CacheSecurityGroup) }) -> RevokeCacheSecurityGroupIngressResult
+newRevokeCacheSecurityGroupIngressResult' :: ({ "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) } -> { "CacheSecurityGroup" :: Maybe (CacheSecurityGroup) }) -> RevokeCacheSecurityGroupIngressResult
 ```
 
 Constructs RevokeCacheSecurityGroupIngressResult's fields from required parameters
@@ -4730,7 +4730,7 @@ Encode SecurityGroupIdsList
 
 ``` purescript
 newtype SecurityGroupMembership
-  = SecurityGroupMembership { "SecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = SecurityGroupMembership { "SecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Represents a single cache security group and its status.</p>
@@ -4755,7 +4755,7 @@ Constructs SecurityGroupMembership from required parameters
 #### `newSecurityGroupMembership'`
 
 ``` purescript
-newSecurityGroupMembership' :: ({ "SecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "SecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> SecurityGroupMembership
+newSecurityGroupMembership' :: ({ "SecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) } -> { "SecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }) -> SecurityGroupMembership
 ```
 
 Constructs SecurityGroupMembership's fields from required parameters
@@ -4780,7 +4780,7 @@ Encode SecurityGroupMembershipList
 
 ``` purescript
 newtype SlotMigration
-  = SlotMigration { "ProgressPercentage" :: NullOrUndefined (Number) }
+  = SlotMigration { "ProgressPercentage" :: Maybe (Number) }
 ```
 
 <p>Represents the progress of an online resharding operation.</p>
@@ -4805,7 +4805,7 @@ Constructs SlotMigration from required parameters
 #### `newSlotMigration'`
 
 ``` purescript
-newSlotMigration' :: ({ "ProgressPercentage" :: NullOrUndefined (Number) } -> { "ProgressPercentage" :: NullOrUndefined (Number) }) -> SlotMigration
+newSlotMigration' :: ({ "ProgressPercentage" :: Maybe (Number) } -> { "ProgressPercentage" :: Maybe (Number) }) -> SlotMigration
 ```
 
 Constructs SlotMigration's fields from required parameters
@@ -4814,7 +4814,7 @@ Constructs SlotMigration's fields from required parameters
 
 ``` purescript
 newtype Snapshot
-  = Snapshot { "SnapshotName" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String), "ReplicationGroupDescription" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotStatus" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "TopicArn" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList) }
+  = Snapshot { "SnapshotName" :: Maybe (String), "ReplicationGroupId" :: Maybe (String), "ReplicationGroupDescription" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotStatus" :: Maybe (String), "SnapshotSource" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "TopicArn" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "NumNodeGroups" :: Maybe (IntegerOptional), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "NodeSnapshots" :: Maybe (NodeSnapshotList) }
 ```
 
 <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
@@ -4839,7 +4839,7 @@ Constructs Snapshot from required parameters
 #### `newSnapshot'`
 
 ``` purescript
-newSnapshot' :: ({ "SnapshotName" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String), "ReplicationGroupDescription" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotStatus" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "TopicArn" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList) } -> { "SnapshotName" :: NullOrUndefined (String), "ReplicationGroupId" :: NullOrUndefined (String), "ReplicationGroupDescription" :: NullOrUndefined (String), "CacheClusterId" :: NullOrUndefined (String), "SnapshotStatus" :: NullOrUndefined (String), "SnapshotSource" :: NullOrUndefined (String), "CacheNodeType" :: NullOrUndefined (String), "Engine" :: NullOrUndefined (String), "EngineVersion" :: NullOrUndefined (String), "NumCacheNodes" :: NullOrUndefined (IntegerOptional), "PreferredAvailabilityZone" :: NullOrUndefined (String), "CacheClusterCreateTime" :: NullOrUndefined (TStamp), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "TopicArn" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "CacheParameterGroupName" :: NullOrUndefined (String), "CacheSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "SnapshotRetentionLimit" :: NullOrUndefined (IntegerOptional), "SnapshotWindow" :: NullOrUndefined (String), "NumNodeGroups" :: NullOrUndefined (IntegerOptional), "AutomaticFailover" :: NullOrUndefined (AutomaticFailoverStatus), "NodeSnapshots" :: NullOrUndefined (NodeSnapshotList) }) -> Snapshot
+newSnapshot' :: ({ "SnapshotName" :: Maybe (String), "ReplicationGroupId" :: Maybe (String), "ReplicationGroupDescription" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotStatus" :: Maybe (String), "SnapshotSource" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "TopicArn" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "NumNodeGroups" :: Maybe (IntegerOptional), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "NodeSnapshots" :: Maybe (NodeSnapshotList) } -> { "SnapshotName" :: Maybe (String), "ReplicationGroupId" :: Maybe (String), "ReplicationGroupDescription" :: Maybe (String), "CacheClusterId" :: Maybe (String), "SnapshotStatus" :: Maybe (String), "SnapshotSource" :: Maybe (String), "CacheNodeType" :: Maybe (String), "Engine" :: Maybe (String), "EngineVersion" :: Maybe (String), "NumCacheNodes" :: Maybe (IntegerOptional), "PreferredAvailabilityZone" :: Maybe (String), "CacheClusterCreateTime" :: Maybe (TStamp), "PreferredMaintenanceWindow" :: Maybe (String), "TopicArn" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "CacheParameterGroupName" :: Maybe (String), "CacheSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "SnapshotRetentionLimit" :: Maybe (IntegerOptional), "SnapshotWindow" :: Maybe (String), "NumNodeGroups" :: Maybe (IntegerOptional), "AutomaticFailover" :: Maybe (AutomaticFailoverStatus), "NodeSnapshots" :: Maybe (NodeSnapshotList) }) -> Snapshot
 ```
 
 Constructs Snapshot's fields from required parameters
@@ -4968,7 +4968,7 @@ Encode SourceType
 
 ``` purescript
 newtype Subnet
-  = Subnet { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) }
+  = Subnet { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) }
 ```
 
 <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
@@ -4993,7 +4993,7 @@ Constructs Subnet from required parameters
 #### `newSubnet'`
 
 ``` purescript
-newSubnet' :: ({ "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) } -> { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) }) -> Subnet
+newSubnet' :: ({ "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) } -> { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) }) -> Subnet
 ```
 
 Constructs Subnet's fields from required parameters
@@ -5068,7 +5068,7 @@ Encode TStamp
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = Tag { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.</p>
@@ -5093,7 +5093,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -5118,7 +5118,7 @@ Encode TagList
 
 ``` purescript
 newtype TagListMessage
-  = TagListMessage { "TagList" :: NullOrUndefined (TagList) }
+  = TagListMessage { "TagList" :: Maybe (TagList) }
 ```
 
 <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
@@ -5143,7 +5143,7 @@ Constructs TagListMessage from required parameters
 #### `newTagListMessage'`
 
 ``` purescript
-newTagListMessage' :: ({ "TagList" :: NullOrUndefined (TagList) } -> { "TagList" :: NullOrUndefined (TagList) }) -> TagListMessage
+newTagListMessage' :: ({ "TagList" :: Maybe (TagList) } -> { "TagList" :: Maybe (TagList) }) -> TagListMessage
 ```
 
 Constructs TagListMessage's fields from required parameters
@@ -5236,7 +5236,7 @@ Encode TestFailoverNotAvailableFault
 
 ``` purescript
 newtype TestFailoverResult
-  = TestFailoverResult { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }
+  = TestFailoverResult { "ReplicationGroup" :: Maybe (ReplicationGroup) }
 ```
 
 ##### Instances
@@ -5259,7 +5259,7 @@ Constructs TestFailoverResult from required parameters
 #### `newTestFailoverResult'`
 
 ``` purescript
-newTestFailoverResult' :: ({ "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) } -> { "ReplicationGroup" :: NullOrUndefined (ReplicationGroup) }) -> TestFailoverResult
+newTestFailoverResult' :: ({ "ReplicationGroup" :: Maybe (ReplicationGroup) } -> { "ReplicationGroup" :: Maybe (ReplicationGroup) }) -> TestFailoverResult
 ```
 
 Constructs TestFailoverResult's fields from required parameters

@@ -83,7 +83,7 @@ deleteCacheCluster :: forall eff. Service -> DeleteCacheClusterMessage -> Aff (e
 #### `deleteCacheParameterGroup`
 
 ``` purescript
-deleteCacheParameterGroup :: forall eff. Service -> DeleteCacheParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteCacheParameterGroup :: forall eff. Service -> DeleteCacheParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>
@@ -91,7 +91,7 @@ deleteCacheParameterGroup :: forall eff. Service -> DeleteCacheParameterGroupMes
 #### `deleteCacheSecurityGroup`
 
 ``` purescript
-deleteCacheSecurityGroup :: forall eff. Service -> DeleteCacheSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteCacheSecurityGroup :: forall eff. Service -> DeleteCacheSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache security group if it is associated with any clusters.</p> </note>
@@ -99,7 +99,7 @@ deleteCacheSecurityGroup :: forall eff. Service -> DeleteCacheSecurityGroupMessa
 #### `deleteCacheSubnetGroup`
 
 ``` purescript
-deleteCacheSubnetGroup :: forall eff. Service -> DeleteCacheSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteCacheSubnetGroup :: forall eff. Service -> DeleteCacheSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet group if it is associated with any clusters.</p> </note>
